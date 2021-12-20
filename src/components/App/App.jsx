@@ -20,6 +20,11 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
+import HeadOut from '../HeadOut/HeadOut.jsx';
+import Inventory from '../Inventory/Inventory.jsx';
+import Pack from '../Pack/Pack.jsx';
+import Unpack from '../Unpack/Unpack/jsx';
+
 import './App.css';
 
 function App() {
