@@ -148,7 +148,7 @@ INSERT INTO "public"."categories"("id", "category") VALUES(10, 'Food') RETURNING
 INSERT INTO "public"."categories"("id", "category") VALUES(11, 'Flavor') RETURNING "id", "category";
 INSERT INTO "public"."categories"("id", "category") VALUES(11, 'Consumable') RETURNING "id", "category";
 
--- Consumables
+-- Consumables 25 items
 INSERT INTO "public"."consumables"("id", "food_category_id", "consumable", "weight", "calories") VALUES(1, 10, 'Pro-Pak Beef Stroganoff', 5.5, 600) RETURNING "id", "food_category_id", "consumable", "weight", "description", "calories", "food_image";
 INSERT INTO "public"."consumables"("id", "food_category_id", "consumable", "weight", "calories") VALUES(2, 10, 'Mountain House Biscuits & gravy', 5.3, 560) RETURNING "id", "food_category_id", "consumable", "weight", "description", "calories", "food_image";
 INSERT INTO "public"."consumables"("id", "food_category_id", "consumable", "weight", "calories") VALUES(3, 10, 'Mountain House Breakfast Skillet', 4.6, 510) RETURNING "id", "food_category_id", "consumable", "weight", "description", "calories", "food_image";
@@ -171,8 +171,13 @@ INSERT INTO "public"."consumables"("id", "food_category_id", "consumable", "weig
 INSERT INTO "public"."consumables"("id", "food_category_id", "consumable", "weight") VALUES(20, 10, 'Clif Bar', 2.5) RETURNING "id", "food_category_id", "consumable", "weight", "description", "calories", "food_image";
 INSERT INTO "public"."consumables"("id", "food_category_id", "consumable", "weight") VALUES(21, 11, 'Fizz Endurolytes', 2.5) RETURNING "id", "food_category_id", "consumable", "weight", "description", "calories", "food_image";
 INSERT INTO "public"."consumables"("id", "food_category_id", "consumable", "weight") VALUES(22, 10, 'Hershey''s Chocolate Bar', 1.5) RETURNING "id", "food_category_id", "consumable", "weight", "description", "calories", "food_image";
+INSERT INTO "public"."consumables"("id", "food_category_id", "consumable", "weight") VALUES(23, 12, 'Sunscreen', 3) RETURNING "id", "food_category_id", "consumable", "weight", "description", "calories", "food_image";
+INSERT INTO "public"."consumables"("id", "food_category_id", "consumable", "weight") VALUES(24, 12, 'Picardin Lotion', 4) RETURNING "id", "food_category_id", "consumable", "weight", "description", "calories", "food_image";
+INSERT INTO "public"."consumables"("id", "food_category_id", "consumable", "weight") VALUES(25, 12, 'DEET Repel', 5) RETURNING "id", "food_category_id", "consumable", "weight", "description", "calories", "food_image";
 
--- Gear
+
+
+-- Gear 100 items
 INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(1, 1, 'Hiking Boots (M)', 37.6) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
 INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(2, 1, 'Hiking Boots (W)', 30.2) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
 INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(3, 1, 'REI Trek Poles', 19) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
@@ -227,3 +232,39 @@ INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(6
 INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(62, 6, 'Longsleeve Smartwool (M)', 7.6) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
 INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(63, 6, 'Underlayer Pant (M)', 7.1) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
 INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(64, 6, 'Wool Socks', 2.9) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(65, 7, 'Toothbrush', 0.4) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(66, 7, 'Toothpaste', 1) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(67, 7, 'Microfiber Towel', 1.5) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(68, 7, 'Hand Sanitizer', 3) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(69, 7, 'Fabric Mask', 0.4) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(70, 7, 'Pee Funnel', 0.6) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(71, 7, 'Anti-Microbial Cloth', 0.4) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(72, 7, 'Hairties', 0.05) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES('73 ', 7, 'Chapstick', 0.4) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(74, 7, 'Wilderness Wipes', 3.4) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(75, 7, 'Blister Strips', 0.05) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(76, 8, 'First Aid Kit', 10.1) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(77, 8, 'Emergency Kit', 4.7) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(78, 8, 'Emergency Matches', 2.5) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(79, 9, 'Headlamp', 2.9) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES('80 ', 9, 'Minimalist Knife', 1.3) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES('81 ', 9, '50'' Utility Cord', 3.5) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES('82 ', 9, 'Pillowcase', 2.5) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(83, 9, 'Stuff Sacks (S/M/L)', 2.9) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(84, 9, 'Small Steel Carabiners (x5)', 0.7) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(85, 9, 'Parahatchet', 10.8) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(86, 9, 'Medium Carabiners (x2)', 0.2) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(87, 9, 'Theraband', 1.6) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(88, 8, 'White Cloth', 1.6) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(89, 9, 'Leatherman', 8.7) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(90, 9, 'Spare AAA (x3)', 1.2) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(91, 9, '2'' Duct Tape', 0.4) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(92, 9, 'Emergency Whistle', 0.7) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(93, 8, 'Emergency Weather Radio', 10.6) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(94, 9, 'Clothespin (x5)', 0.9) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(95, 7, 'Toilet Paper', 1) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES('96 ', 9, 'Anker Battery', 4.6) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(97, 9, '22000 MAH Battery', 14) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(98, 6, 'Teva Sandals (M)', 15.3) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(99, 5, 'Nalgene Bottle (empty)', 6.5) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(100, 5, 'Sawyer Squeeze', 8.3) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
