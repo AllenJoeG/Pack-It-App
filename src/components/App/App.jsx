@@ -23,7 +23,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import HeadOut from '../HeadOut/HeadOut.jsx';
 import Inventory from '../Inventory/Inventory.jsx';
 import Pack from '../Pack/Pack.jsx';
-import Unpack from '../Unpack/Unpack/jsx';
+import Unpack from '../Unpack/Unpack.jsx';
 
 import './App.css';
 
@@ -51,6 +51,38 @@ function App() {
             path="/about"
           >
             <AboutPage />
+          </Route>
+          
+          <Route
+            // shows AboutPage at all times (logged in or not)
+            exact
+            path="/headout"
+          >
+            <HeadOut />
+          </Route>
+
+          <Route
+            // shows AboutPage at all times (logged in or not)
+            exact
+            path="/pack"
+          >
+            <Pack />
+          </Route>
+
+          <Route
+            // shows AboutPage at all times (logged in or not)
+            exact
+            path="/inventory"
+          >
+            <Inventory />
+          </Route>
+
+          <Route
+            // shows AboutPage at all times (logged in or not)
+            exact
+            path="/unpack"
+          >
+            <Unpack />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.

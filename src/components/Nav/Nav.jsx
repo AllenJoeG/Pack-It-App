@@ -28,8 +28,20 @@ function Nav() {
               Home
             </Link>
 
-            <Link className="navLink" to="/info">
-              Info Page
+            <Link className="navLink" to="/headout">
+              Head Out
+            </Link>
+
+            <Link className="navLink" to="/pack">
+              Pack
+            </Link>
+
+            <Link className="navLink" to="/inventory">
+              Inventory
+            </Link>
+
+            <Link className="navLink" to="/unpack">
+              Unpack
             </Link>
 
             <LogOutButton className="navLink" />
