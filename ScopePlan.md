@@ -4,6 +4,11 @@
 [ 👍 ] Database Creation from ERD
 [ 👍 ] Loading Dummy Data for Inventory
 [ 👍 ] Routes & Auth Routes for Views
+[ ] Reducers & Sagas
+  [ 👍 ] inventory.reducer
+  [ 👍 ] category.reducer
+  [ ] inventory.saga GET
+  [ ] category.saga GET
 [ ] Inventory View
   [ ] Reducers & Sagas
   [ ] Server-side Axios
