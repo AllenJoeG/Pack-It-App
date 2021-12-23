@@ -1,14 +1,15 @@
 ## Base Mode
 [ 👍 ] Skeleton Component Views
 [ 👍 ] Nav Bar 
+  [ ] Nav Bar STYLING
 [ 👍 ] Database Creation from ERD
 [ 👍 ] Loading Dummy Data for Inventory
 [ 👍 ] Routes & Auth Routes for Views
 [ ] Reducers & Sagas
   [ 👍 ] inventory.reducer
-  [ 👍 ] category.reducer
+  [ 👍 ] categories.reducer
   [ ] inventory.saga GET
-  [ ] category.saga GET
+  [ ] categories.saga GET
 [ ] Inventory View
   [ ] Reducers & Sagas
   [ ] Server-side Axios
