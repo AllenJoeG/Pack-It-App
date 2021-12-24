@@ -8,7 +8,9 @@
 [ ] Reducers & Sagas
   [ 👍 ] inventory.reducer
   [ 👍 ] categories.reducer
-  [ ] inventory.saga GET
+  [ 👍 ] Gear.saga GET
+  [ ] Consumables.saga GET
+  [ ] Packs.saga GET
   [ ] categories.saga GET
 [ ] Inventory View
   [ ] Reducers & Sagas
