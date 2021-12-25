@@ -1,21 +1,21 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* gearAxiosGET() {
+function* packsAxiosGET() {
   try {
     const response = yield axios({
       method: 'GET',
-      url: '/api/gear'
+      url: '/api/packs'
     })
     yield put({
       type: "SET_INVENTORY",
       payload: response.data
     });
   } catch(error){
-    console.log('error GETting Gear from DB', error);
+    console.log('error GETting Packs from DB', error);
   }
 }
 
-export default function* gearGET() {
-  yield takeLatest('GET_GEAR', gearAxiosGET);
+export default function* packsGET() {
+  yield takeLatest('GET_PACKS', packsAxiosGET);
 }

@@ -9,7 +9,7 @@
   [ 👍 ] inventory.reducer
   [ 👍 ] categories.reducer
   [ 👍 ] Gear.saga GET
-  [ ] Consumables.saga GET
+  [ 👍 ] Consumables.saga GET
   [ ] Packs.saga GET
   [ ] categories.saga GET
 [ ] Inventory View

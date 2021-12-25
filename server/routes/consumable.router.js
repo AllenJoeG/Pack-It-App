@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   // GET route code here
   pool
-  .query (`SELECT * FROM "gear";`) 
+  .query (`SELECT * FROM "consumables";`) 
   .then ((results) => res.send(results.rows))
   .catch ((error) => {
     console.log ('ERROR SELECTING FROM "ITEM"', error)
@@ -23,4 +23,4 @@ router.post('/', (req, res) => {
   // POST route code here
 });
 
-module.exports = gearRouter;
+module.exports = consumableRouter;
