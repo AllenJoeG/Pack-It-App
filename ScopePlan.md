@@ -10,10 +10,10 @@
   [ 👍 ] categories.reducer
   [ 👍 ] Gear.saga GET
   [ 👍 ] Consumables.saga GET
-  [ ] Packs.saga GET
-  [ ] categories.saga GET
+  [ 👍 ] Packs.saga GET
+  [ 👍 ] categories.saga GET
 [ ] Inventory View
-  [ ] Reducers & Sagas
+  [ 👍 ] Reducers & Sagas
   [ ] Server-side Axios
   [ ] MUI & layout
 [ ] Pack View

@@ -1,5 +1,6 @@
-import react from 'react';
+import react, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 //MUI stuff
 import { styled } from '@mui/material/styles';
@@ -26,8 +27,17 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export default function Inventory() {
+  //alias HOOKS
+  const dispatch = useDispatch();
+  const history = useHistory();
+  //Reducers
   const inventory = useSelector((store) => store.inventoryReducer);
   const categories = useSelector((store) => store.categoriesReducer);
+
+  useEffect(() => {
+    dispatch({type: 'GET_GEAR'})
+    dispatch({type: 'GET_CATEGORIES'})
+  }, [])
 
   return(
     <Box>
@@ -51,11 +61,25 @@ export default function Inventory() {
           <TableHead>
             <TableRow>
               <StyledTableCell>Conditionally render STUFF</StyledTableCell>
+              <StyledTableCell>Weight (ounces) </StyledTableCell>
+              <StyledTableCell>Category ID</StyledTableCell>
             </TableRow>
           </TableHead>
           
           <TableBody>
-            {/* conditionally map here */}
+            {inventory.map((item) => {
+              return <StyledTableRow key={item.id}>
+                <StyledTableCell>
+                  {item.gear}
+                </StyledTableCell>
+                <StyledTableCell>
+                  {item.weight}
+                </StyledTableCell>
+                <StyledTableCell>
+                  {item.gear_category_id}
+                </StyledTableCell>
+              </StyledTableRow>
+            })}
           </TableBody>
 
         </Table>
