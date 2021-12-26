@@ -33,12 +33,12 @@ CREATE TABLE "categories" (
 
 CREATE TABLE "consumables" (
 	"id" serial NOT NULL,
-	"food_category_id" integer NOT NULL,
-	"consumable" varchar(255) NOT NULL,
+	"category_id" integer NOT NULL,
+	"name" varchar(255) NOT NULL,
 	"weight" DECIMAL(5,2) NOT NULL,
 	"description" varchar(255),
 	"calories" integer,
-	"food_image" varchar(255),
+	"image" varchar(255),
 	CONSTRAINT "consumables_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -48,7 +48,7 @@ CREATE TABLE "consumables" (
 
 CREATE TABLE "packs" (
 	"id" serial NOT NULL,
-	"pack_name" varchar(255) NOT NULL,
+	"name" varchar(255) NOT NULL,
 	"capacity" varchar(16),
 	CONSTRAINT "packs_pk" PRIMARY KEY ("id")
 ) WITH (
@@ -59,11 +59,11 @@ CREATE TABLE "packs" (
 
 CREATE TABLE "gear" (
 	"id" serial NOT NULL,
-	"gear_category_id" integer NOT NULL,
-	"gear" varchar(255) NOT NULL,
+	"category_id" integer NOT NULL,
+	"name" varchar(255) NOT NULL,
 	"weight" DECIMAL(5,2) NOT NULL,
 	"details" varchar(255),
-	"gear_image" varchar(255),
+	"image" varchar(255),
 	CONSTRAINT "gear_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -268,3 +268,11 @@ INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(9
 INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(98, 6, 'Teva Sandals (M)', 15.3) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
 INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(99, 5, 'Nalgene Bottle (empty)', 6.5) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
 INSERT INTO "public"."gear"("id", "gear_category_id", "gear", "weight") VALUES(100, 5, 'Sawyer Squeeze', 8.3) RETURNING "id", "gear_category_id", "gear", "weight", "details", "gear_image";
+
+
+ALTER TABLE "gear" RENAME COLUMN "gear_category_id" TO "category_id";
+ALTER TABLE "gear" RENAME COLUMN "gear" TO "name";
+ALTER TABLE "gear" RENAME COLUMN "gear_image" TO "image";
+ALTER TABLE "consumables" RENAME COLUMN "food_category_id" TO "category_id";
+ALTER TABLE "consumables" RENAME COLUMN "consumable" TO "name";
+ALTER TABLE "consumables" RENAME COLUMN "food_image" TO "image";
