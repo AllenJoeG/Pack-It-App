@@ -1,4 +1,4 @@
-import react, {useEffect} from 'react';
+import react, {useEffect, useState } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
@@ -31,15 +31,21 @@ export default function Inventory() {
   const dispatch = useDispatch();
   const history = useHistory();
   //Reducers
-  const inventory = useSelector((store) => store.inventoryReducer);
+  const packs = useSelector((store) => store.packReducer);
+  const gear = useSelector((store) => store.gearReducer);
+  const consumables = useSelector((store) => store.consumablesReducer);
   const categories = useSelector((store) => store.categoriesReducer);
+  //Local State?
+  const [inventory, setInventory] = useState([]);
 
   useEffect(() => {
+    dispatch({type: 'GET_PACKS'})
+    dispatch({type: 'GET_CONSUMABLES'})
     dispatch({type: 'GET_GEAR'})
     dispatch({type: 'GET_CATEGORIES'})
   }, [])
 
-  
+
 
   return(
     <Box>

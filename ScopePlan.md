@@ -10,6 +10,7 @@
   [ 👍 ] gear.reducer
   [ 👍 ] consumables.reducer
   [ 👍 ] categories.reducer
+  [ 👍 ] packs.reducer
   [ ] currentPack.reducer
   [ 👍 ] Gear.saga GET
   [ 👍 ] Consumables.saga GET
@@ -17,6 +18,7 @@
   [ 👍 ] categories.saga GET
 <!--  -->
 [ ] Inventory View
+  [ ] Local state inventory
   [ 👍 ] Reducers & Sagas
   [ 👍 ] Server-side Axios
   [ ] Wire up four buttons to each display

@@ -8,7 +8,7 @@ function* packsAxiosGET() {
       url: '/api/packs'
     })
     yield put({
-      type: "SET_INVENTORY",
+      type: "SET_PACKS",
       payload: response.data
     });
   } catch(error){
