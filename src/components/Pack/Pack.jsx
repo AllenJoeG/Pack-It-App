@@ -70,6 +70,10 @@ export default function Pack() {
                 <StyledTableCell>
                   {item.gear_category_id}
                 </StyledTableCell>
+                <StyledTableCell>
+                  Delete Button
+                </StyledTableCell>
+
               </StyledTableRow>
             })} */}
           </TableBody>
