@@ -30,28 +30,47 @@ export default function Inventory() {
   //alias HOOKS
   const dispatch = useDispatch();
   const history = useHistory();
-  //Reducers
-  const packs = useSelector((store) => store.packReducer);
+  //alias Reducers
+  const packs = useSelector((store) => store.packsReducer);
   const gear = useSelector((store) => store.gearReducer);
   const consumables = useSelector((store) => store.consumablesReducer);
   const categories = useSelector((store) => store.categoriesReducer);
   //Local State?
   const [inventory, setInventory] = useState([]);
 
-  useEffect(() => {
-    dispatch({type: 'GET_PACKS'})
-    dispatch({type: 'GET_CONSUMABLES'})
-    dispatch({type: 'GET_GEAR'})
-    dispatch({type: 'GET_CATEGORIES'})
-  }, [])
+  // useEffect(() => {
+  //   dispatch({type: 'GET_PACKS'})
+  //   dispatch({type: 'GET_CONSUMABLES'})
+  //   dispatch({type: 'GET_GEAR'})
+  //   dispatch({type: 'GET_CATEGORIES'})
+  // }, [])
 
-
+  const handleShowPacks = () => {
+    setInventory(packs)
+  }
+  const handleShowGear = () => {
+    setInventory(gear)
+  }
+  const handleShowConsumables = () => {
+    setInventory(consumables)
+  }
+  const handleAddToCurrentPack = (item) => {
+    dispatch({
+      type: 'ADD_CURRENTPACK',
+      payload: item
+    })
+  }
 
   return(
     <Box>
       <Grid container>
         <Grid item xs={6} sm={3}>
-          <Button variant="contained">Show Packs</Button>
+          <Button
+            variant="contained"
+            onClick={handleShowPacks}
+          >
+            Show Packs
+          </Button>
         </Grid>
         <Grid item xs={3} sm={3}>
           <Button 
@@ -61,7 +80,12 @@ export default function Inventory() {
             Show Gear</Button>
         </Grid>
         <Grid item xs={3} sm={3}>
-          <Button variant="contained">Show Consumables</Button>
+          <Button
+            variant="contained"
+            onClick={handleShowConsumables}
+          >
+            Show Consumables
+          </Button>
         </Grid>
         <Grid item xs={3} sm={3}>
           <Button variant="contained">Categories</Button>
@@ -83,7 +107,11 @@ export default function Inventory() {
             {inventory.map((item) => {
               return <StyledTableRow key={item.id}>
                 <StyledTableCell>
-                  <Button>Add to Pack</Button>
+                  <Button 
+                    onClick={(e) => handleAddToCurrentPack(item)}
+                  >
+                    Add to Pack
+                  </Button>
                 </StyledTableCell>
                 <StyledTableCell>
                   {item.name}

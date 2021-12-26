@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 //MUI stuff
 import { styled } from '@mui/material/styles';
-import {Box, Container, Grid, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow, Paper, Button} from '@mui/material';
+import {Box, Container, Grid, Table, TableBody, TableFooter, TableCell, tableCellClasses, TableContainer, TableHead, TableRow, Paper, Button} from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -26,6 +26,13 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export default function Pack() {
+  //
+
+  const currentPack = useSelector((store) => store.currentPackReducer);
+
+  useEffect(() => {
+
+  }, [])
 
   return(
     <Box>
@@ -52,11 +59,12 @@ export default function Pack() {
               <StyledTableCell> x </StyledTableCell>
               <StyledTableCell> x </StyledTableCell>
               <StyledTableCell>Cumulative Weight</StyledTableCell>
+              <StyledTableCell> x </StyledTableCell>
             </TableRow>
           </TableHead>
           {/* TableBoy maps through currentPack reducer */}
           <TableBody>
-            {/* {currentPack.map((item) => {
+            {currentPack.map((item) => {
               return <StyledTableRow key={item.id}>
                 <StyledTableCell>
                   <Button>Add to Pack</Button>
@@ -75,7 +83,7 @@ export default function Pack() {
                 </StyledTableCell>
 
               </StyledTableRow>
-            })} */}
+            })}
           </TableBody>
           <TableFooter>
             <StyledTableCell><Button>ADD</Button></StyledTableCell>

@@ -5,6 +5,7 @@ import packsReducer from './packs.reducer';
 import gearReducer from './gear.reducer';
 import consumablesReducer from './consumables.reducer';
 import categoriesReducer from './categories.reducer';
+import currentPackReducer from './currentPack.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   packsReducer,
   gearReducer,
   consumablesReducer,
-  categoriesReducer
+  categoriesReducer,
+  currentPackReducer,
 });
 
 export default rootReducer;

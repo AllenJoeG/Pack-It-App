@@ -34,6 +34,10 @@ function App() {
 
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
+    dispatch({type: 'GET_PACKS'})
+    dispatch({type: 'GET_CONSUMABLES'})
+    dispatch({type: 'GET_GEAR'})
+    dispatch({type: 'GET_CATEGORIES'})
   }, [dispatch]);
 
   return (

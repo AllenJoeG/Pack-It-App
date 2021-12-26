@@ -11,7 +11,7 @@
   [ 👍 ] consumables.reducer
   [ 👍 ] categories.reducer
   [ 👍 ] packs.reducer
-  [ ] currentPack.reducer
+  [ 👍 ] currentPack.reducer
   [ 👍 ] Gear.saga GET
   [ 👍 ] Consumables.saga GET
   [ 👍 ] Packs.saga GET
@@ -23,6 +23,8 @@
   [ 👍 ] Server-side Axios
   [ ] Wire up four buttons to each display
   [ ] Wire up ADD Button
+    should dispatch to add
+    to currentPack.reducer
   [ ] MUI & layout
 <!--  -->
 [ ] Pack View
