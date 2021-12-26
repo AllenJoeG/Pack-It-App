@@ -5,21 +5,34 @@
 [ 👍 ] Database Creation from ERD
 [ 👍 ] Loading Dummy Data for Inventory
 [ 👍 ] Routes & Auth Routes for Views
+<!--  -->
 [ ] Reducers & Sagas
   [ 👍 ] inventory.reducer
   [ 👍 ] categories.reducer
+  [ ] currentPack.reducer
   [ 👍 ] Gear.saga GET
   [ 👍 ] Consumables.saga GET
   [ 👍 ] Packs.saga GET
   [ 👍 ] categories.saga GET
+<!--  -->
 [ ] Inventory View
   [ 👍 ] Reducers & Sagas
-  [ ] Server-side Axios
+  [ 👍 ] Server-side Axios
+  [ ] Wire up four buttons to each display
+  [ ] Wire up ADD Button
   [ ] MUI & layout
+<!--  -->
 [ ] Pack View
   [ ] Reducers & Sagas
+    [ ] Pack Reducer Dropdown
+    [ ] Category Reducer Dropdown
+    [ ] ADD to pack dispatch
   [ ] Server-side Axios
+    [ ] POST save pack
+    [ ] GET load pack
+    [ ] 
   [ ] MUI & layout
+<!--  -->
 [ ] Unpack View
   [ ] Reducers & Sagas
   [ ] Server-side Axios

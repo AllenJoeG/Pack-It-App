@@ -60,6 +60,7 @@ export default function Inventory() {
         <Table>
           <TableHead>
             <TableRow>
+              <StyledTableCell>Add to Pack</StyledTableCell>
               <StyledTableCell>Conditionally render STUFF</StyledTableCell>
               <StyledTableCell>Weight (ounces) </StyledTableCell>
               <StyledTableCell>Category ID</StyledTableCell>
@@ -69,6 +70,9 @@ export default function Inventory() {
           <TableBody>
             {inventory.map((item) => {
               return <StyledTableRow key={item.id}>
+                <StyledTableCell>
+                  <Button>Add to Pack</Button>
+                </StyledTableCell>
                 <StyledTableCell>
                   {item.gear}
                 </StyledTableCell>
