@@ -7,7 +7,8 @@
 [ 👍 ] Routes & Auth Routes for Views
 <!--  -->
 [ ] Reducers & Sagas
-  [ 👍 ] inventory.reducer
+  [ 👍 ] gear.reducer
+  [ 👍 ] consumables.reducer
   [ 👍 ] categories.reducer
   [ ] currentPack.reducer
   [ 👍 ] Gear.saga GET

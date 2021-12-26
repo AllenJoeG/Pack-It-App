@@ -39,6 +39,8 @@ export default function Inventory() {
     dispatch({type: 'GET_CATEGORIES'})
   }, [])
 
+  
+
   return(
     <Box>
       <Grid container>
@@ -46,7 +48,11 @@ export default function Inventory() {
           <Button variant="contained">Show Packs</Button>
         </Grid>
         <Grid item xs={3} sm={3}>
-          <Button variant="contained">Show Gear</Button>
+          <Button 
+            variant="contained"
+            onClick={handleShowGear}
+          >
+            Show Gear</Button>
         </Grid>
         <Grid item xs={3} sm={3}>
           <Button variant="contained">Show Consumables</Button>
@@ -74,13 +80,13 @@ export default function Inventory() {
                   <Button>Add to Pack</Button>
                 </StyledTableCell>
                 <StyledTableCell>
-                  {item.gear}
+                  {item.name}
                 </StyledTableCell>
                 <StyledTableCell>
                   {item.weight}
                 </StyledTableCell>
                 <StyledTableCell>
-                  {item.gear_category_id}
+                  {item.category_id}
                 </StyledTableCell>
               </StyledTableRow>
             })}

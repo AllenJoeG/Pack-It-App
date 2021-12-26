@@ -8,7 +8,7 @@ function* gearAxiosGET() {
       url: '/api/gear'
     })
     yield put({
-      type: "SET_INVENTORY",
+      type: "SET_GEAR",
       payload: response.data
     });
   } catch(error){

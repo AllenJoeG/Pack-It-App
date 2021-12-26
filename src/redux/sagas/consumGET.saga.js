@@ -8,7 +8,7 @@ function* consumAxiosGET() {
       url: '/api/consumables'
     })
     yield put({
-      type: "SET_INVENTORY",
+      type: "SET_CONSUMABLES",
       payload: response.data
     });
   } catch(error){
