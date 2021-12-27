@@ -21,7 +21,11 @@
   [ ] Local state inventory
   [ 👍 ] Reducers & Sagas
   [ 👍 ] Server-side Axios
-  [ ] Wire up four buttons to each display
+  [ ] Four Buttons
+    [ 👍 ] Show Gear
+    [ 👍 ] Show Consumables
+    [ ] Show Pack (REASSIGN?)
+    [ ] Show Categories
   [ ] Wire up ADD Button
     should dispatch to add
     to currentPack.reducer
@@ -29,6 +33,7 @@
 <!--  -->
 [ ] Pack View
   [ ] Reducers & Sagas
+    [ 👍 ] currentPackReducer
     [ ] Pack Reducer Dropdown
     [ ] Category Reducer Dropdown
     [ ] ADD to pack dispatch
