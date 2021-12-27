@@ -26,13 +26,22 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export default function Pack() {
-  //
+  //alias HOOKS
+  const dispatch = useDispatch();
 
   const currentPack = useSelector((store) => store.currentPackReducer);
 
   useEffect(() => {
 
   }, [])
+
+  const handleDeleteFromCurrentPack = (id) => {
+    console.log(id);
+    dispatch({
+      type: 'DELETE_CURRENTPACKITEM',
+      payload: id
+    })
+  }
 
   return(
     <Box>
@@ -76,10 +85,13 @@ export default function Pack() {
                   {item.weight}
                 </StyledTableCell>
                 <StyledTableCell>
-                  {item.gear_category_id}
+                  {item.category_id}
                 </StyledTableCell>
                 <StyledTableCell>
-                  Delete Button
+                  <Button
+                    variant="contained"
+                    onClick={() => handleDeleteFromCurrentPack(item.id)}
+                  >X</Button>
                 </StyledTableCell>
 
               </StyledTableRow>

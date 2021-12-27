@@ -37,6 +37,7 @@ export default function Inventory() {
   const categories = useSelector((store) => store.categoriesReducer);
   //Local State?
   const [inventory, setInventory] = useState([]);
+  const [cPackItemID, setCPackItemID] = useState(0);
 
   // useEffect(() => {
   //   dispatch({type: 'GET_PACKS'})
@@ -55,9 +56,13 @@ export default function Inventory() {
     setInventory(consumables)
   }
   const handleAddToCurrentPack = (item) => {
+    //Ensures unique item id in currentPackReducer
+    let addItem = {...item, id: cPackItemID}
+    setCPackItemID(addItem.id + 1)
+
     dispatch({
       type: 'ADD_CURRENTPACK',
-      payload: item
+      payload: addItem
     })
   }
 

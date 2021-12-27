@@ -3,6 +3,8 @@ const currentPackReducer = (state = []
   switch (action.type) {
     case 'ADD_CURRENTPACK':
       return [...state, action.payload];
+    case 'DELETE_CURRENTPACKITEM':
+      return state.filter(item => (item.id !== action.payload))
     case 'CLEAR_CURRENTPACK':
       return [];
     default:
