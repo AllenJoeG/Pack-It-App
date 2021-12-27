@@ -18,19 +18,16 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
     backgroundColor: theme.palette.action.hover,
-  },
-  // hide last border
-  '&:last-child td, &:last-child th': {
-    border: 0,
-  },
+  }
 }));
 
 export default function Pack() {
   //alias HOOKS
   const dispatch = useDispatch();
-
+  //REDUCERS
   const currentPack = useSelector((store) => store.currentPackReducer);
 
+  //UnUSEd effect, lol
   useEffect(() => {
 
   }, [])
@@ -40,6 +37,12 @@ export default function Pack() {
     dispatch({
       type: 'DELETE_CURRENTPACKITEM',
       payload: id
+    })
+  }
+
+  const handleClearCurrentPack = () => {
+    dispatch({
+      type: 'CLEAR_CURRENTPACK'
     })
   }
 
@@ -56,7 +59,10 @@ export default function Pack() {
           <Button variant="contained">Load Category</Button>
         </Grid>
         <Grid item xs={3} sm={3}>
-          <Button variant="contained">Clear Pack</Button>
+          <Button 
+            variant="contained"
+            onClick={handleClearCurrentPack}
+          >Clear Pack</Button>
         </Grid>
       </Grid>
 
@@ -71,7 +77,7 @@ export default function Pack() {
               <StyledTableCell> x </StyledTableCell>
             </TableRow>
           </TableHead>
-          {/* TableBoy maps through currentPack reducer */}
+          {/* TableBody maps through currentPack reducer */}
           <TableBody>
             {currentPack.map((item) => {
               return <StyledTableRow key={item.id}>
@@ -82,7 +88,7 @@ export default function Pack() {
                   {item.name}
                 </StyledTableCell>
                 <StyledTableCell>
-                  {item.weight}
+                  {item.weight} oz
                 </StyledTableCell>
                 <StyledTableCell>
                   {item.category_id}
@@ -98,9 +104,13 @@ export default function Pack() {
             })}
           </TableBody>
           <TableFooter>
-            <StyledTableCell><Button>ADD</Button></StyledTableCell>
-            <StyledTableCell>Map Categories Dropdown</StyledTableCell>
-            <StyledTableCell>Selected Category Dropdown</StyledTableCell>
+            <StyledTableRow>
+              <StyledTableCell><Button>ADD</Button></StyledTableCell>
+              <StyledTableCell>Map Categories Dropdown</StyledTableCell>
+              <StyledTableCell>Selected Category Dropdown</StyledTableCell>
+              <StyledTableCell></StyledTableCell>
+              <StyledTableCell></StyledTableCell>
+            </StyledTableRow>
           </TableFooter>
 
         </Table>

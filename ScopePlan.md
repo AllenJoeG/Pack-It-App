@@ -26,14 +26,16 @@
     [ 👍 ] Show Consumables
     [ ] Show Pack (REASSIGN?)
     [ ] Show Categories
-  [ ] Wire up ADD Button
-    should dispatch to add
-    to currentPack.reducer
+  [ 👍 ] ADD to currentPack
+    [ 👍 ] currently generating new ID to avoid duplication
+    [ ] anticipate errors if localState for cpackID resets
   [ ] MUI & layout
+
 <!--  -->
 [ ] Pack View
   [ ] Reducers & Sagas
     [ 👍 ] currentPackReducer
+      [ 👍 ] delete item w filter
     [ ] Pack Reducer Dropdown
     [ ] Category Reducer Dropdown
     [ ] ADD to pack dispatch
@@ -48,6 +50,7 @@
   [ ] Functionality
     [ ] UseEffect dispatches
     [ ] Buttons
+      [ 👍 ] Clear Pack Button
 
 <!--  -->
 [ ] Unpack View

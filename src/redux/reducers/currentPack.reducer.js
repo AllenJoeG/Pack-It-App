@@ -1,5 +1,4 @@
-const currentPackReducer = (state = []
-  , action) => {
+const currentPackReducer = (state = [], action) => {
   switch (action.type) {
     case 'ADD_CURRENTPACK':
       return [...state, action.payload];
