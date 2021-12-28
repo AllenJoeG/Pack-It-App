@@ -34,7 +34,9 @@ export default function Pack() {
   const categories = useSelector((store) => store.categoriesReducer);
   //Local State
   const [chosenPack, setChosenPack] = useState({pack_name: 'Choose Pack', capacity: 0});
-  const [browseCategory, setBrowseCategory] = useState('')
+  const [browseCategory, setBrowseCategory] = useState('');
+  const [addToPackDropdown, setAddToPackDropdown] = useState([]);
+  const [browseToAdd, setBrowseToAdd] = useState('');
   
 
   //UnUSEd effect, lol
@@ -63,7 +65,6 @@ export default function Pack() {
   }
 
   const handleDeleteFromCurrentPack = (id) => {
-    console.log(id);
     dispatch({
       type: 'DELETE_CURRENTPACKITEM',
       payload: id
@@ -76,19 +77,25 @@ export default function Pack() {
     })
   }
 
+  const handleBrowseToAddSelect = (e) => {
+    setBrowseToAdd(e.target.value)
+  }
+
   const handleBrowseCategorySelect = (e) => {
     let categoryID = e.target.value;
     setBrowseCategory(categoryID);
     if (categoryID < 10){
-      dispatch({
-        type: 'GET_GEAR_CATEGORY',
-        payload: categoryID
-      })
+      setAddToPackDropdown(gear.filter(item => (item.category_id == categoryID)))
+      // dispatch({
+      //   type: 'GET_GEAR_CATEGORY',
+      //   payload: categoryID
+      // })
     } else if (categoryID < 13) {
-      dispatch({
-        type: 'GET_CONSUMABLE_CATEGORY',
-        payload: categoryID
-      })
+      setAddToPackDropdown(consumables.filter(item => (item.category_id == categoryID)))
+      // dispatch({
+      //   type: 'GET_CONSUMABLE_CATEGORY',
+      //   payload: categoryID
+      // })
     }
   }
 
@@ -167,6 +174,7 @@ export default function Pack() {
               </StyledTableRow>
             })}
           </TableBody>
+          {/* TABLE FOOTER CONTAINS LINE ITEM ADD FUNCTIONALITY */}
           <TableFooter>
             <StyledTableRow>
               <StyledTableCell><Button>ADD</Button></StyledTableCell>
@@ -189,7 +197,25 @@ export default function Pack() {
                   })}
                 </TextField>
               </StyledTableCell>
-              <StyledTableCell>Selected Category Dropdown</StyledTableCell>
+              <StyledTableCell>
+              <TextField
+                  select
+                  fullWidth
+                  variant="outlined"
+                  formlabel="Select an item"
+                  value={browseToAdd}
+                  onChange={handleBrowseToAddSelect}
+                >
+                  {addToPackDropdown.map((item) => {
+                    return <MenuItem 
+                            key={item.id} 
+                            value={item.id}
+                          >
+                            {item.name}
+                          </MenuItem>
+                  })}
+                </TextField>
+              </StyledTableCell>
               <StyledTableCell></StyledTableCell>
               <StyledTableCell></StyledTableCell>
             </StyledTableRow>

@@ -12,10 +12,12 @@
   [ 👍 ] categories.reducer
   [ 👍 ] packs.reducer
   [ 👍 ] currentPack.reducer
+  [ 👍 ] addtopackdropdown.reducer
   [ 👍 ] Gear.saga GET
   [ 👍 ] Consumables.saga GET
   [ 👍 ] Packs.saga GET
   [ 👍 ] categories.saga GET
+  
 <!--  -->
 [ ] Inventory View
   [ ] Local state inventory

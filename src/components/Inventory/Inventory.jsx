@@ -35,16 +35,11 @@ export default function Inventory() {
   const gear = useSelector((store) => store.gearReducer);
   const consumables = useSelector((store) => store.consumablesReducer);
   const categories = useSelector((store) => store.categoriesReducer);
+  const currentPackIndex = useSelector((store) => {store.currentPackIndex})
   //Local State?
   const [inventory, setInventory] = useState([]);
-  const [cPackItemID, setCPackItemID] = useState(0);
+  const [cPackItemID, setCPackItemID] = useState(currentPackIndex);
 
-  // useEffect(() => {
-  //   dispatch({type: 'GET_PACKS'})
-  //   dispatch({type: 'GET_CONSUMABLES'})
-  //   dispatch({type: 'GET_GEAR'})
-  //   dispatch({type: 'GET_CATEGORIES'})
-  // }, [])
 
   const handleShowPacks = () => {
     setInventory(packs)
@@ -56,13 +51,13 @@ export default function Inventory() {
     setInventory(consumables)
   }
   const handleAddToCurrentPack = (item) => {
-    //Ensures unique item id in currentPackReducer
     let addItem = {...item, id: cPackItemID}
-    setCPackItemID(addItem.id + 1)
-
     dispatch({
       type: 'ADD_CURRENTPACK',
       payload: addItem
+    })
+    dispatch({
+      type: 'INCR_CP_INDEX'
     })
   }
 
