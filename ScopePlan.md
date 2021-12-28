@@ -36,7 +36,7 @@
   [ ] Reducers & Sagas
     [ 👍 ] currentPackReducer
       [ 👍 ] delete item w filter
-    [ ] Pack Reducer Dropdown
+    [ 👍 ] Pack Reducer Dropdown
     [ ] Category Reducer Dropdown
     [ ] ADD to pack dispatch
   [ ] Server-side Axios
@@ -51,7 +51,7 @@
     [ 👍 ] Pack Dropdown
       [ ] FIX COLOR
     [ 👍 ] Pack Capacity
-    [ ] Cumulative Weight
+    [ 👍 ] Cumulative Weight
     [ ] Buttons
       [ 👍 ] Clear Pack Button
       [ ] Save Pack

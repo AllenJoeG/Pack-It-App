@@ -34,6 +34,7 @@ export default function Pack() {
   const categories = useSelector((store) => store.categoriesReducer);
   //Local State
   const [chosenPack, setChosenPack] = useState({pack_name: 'Choose Pack', capacity: 0});
+  // const [packWeight, setPackWeight] = useState(0);
 
   //UnUSEd effect, lol
   useEffect(() => {
@@ -43,6 +44,22 @@ export default function Pack() {
   const handlePackChange = (e) => {
     console.log(e.target.value);
     setChosenPack(e.target.value);
+  }
+
+  const calculatePackWeight = () => {
+    if (!currentPack) {
+      return 0;
+    } else {
+      let packWeight = 0;
+      let weightArray = currentPack.map((item) => {
+        return Number(item.weight)
+      })
+      console.log(weightArray);
+      for (let weight of weightArray) {
+        packWeight += weight;
+      }
+      return `${packWeight.toFixed(2)} oz, (${(packWeight / 16).toFixed(2)} lbs)`;
+    }
   }
 
   const handleDeleteFromCurrentPack = (id) => {
@@ -104,7 +121,7 @@ export default function Pack() {
               </StyledTableCell>
               <StyledTableCell> {chosenPack.capacity} Liters </StyledTableCell>
               <StyledTableCell> x </StyledTableCell>
-              <StyledTableCell>Cumulative Weight</StyledTableCell>
+              <StyledTableCell>{calculatePackWeight()}</StyledTableCell>
               <StyledTableCell> x </StyledTableCell>
             </TableRow>
           </TableHead>
