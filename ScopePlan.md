@@ -52,6 +52,8 @@
       [ ] FIX COLOR
     [ 👍 ] Pack Capacity
     [ 👍 ] Cumulative Weight
+    [ 👍 ] Category Dropdown
+    
     [ ] Buttons
       [ 👍 ] Clear Pack Button
       [ ] Save Pack

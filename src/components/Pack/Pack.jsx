@@ -34,7 +34,8 @@ export default function Pack() {
   const categories = useSelector((store) => store.categoriesReducer);
   //Local State
   const [chosenPack, setChosenPack] = useState({pack_name: 'Choose Pack', capacity: 0});
-  // const [packWeight, setPackWeight] = useState(0);
+  const [browseCategory, setBrowseCategory] = useState('')
+  
 
   //UnUSEd effect, lol
   useEffect(() => {
@@ -54,7 +55,6 @@ export default function Pack() {
       let weightArray = currentPack.map((item) => {
         return Number(item.weight)
       })
-      console.log(weightArray);
       for (let weight of weightArray) {
         packWeight += weight;
       }
@@ -74,6 +74,22 @@ export default function Pack() {
     dispatch({
       type: 'CLEAR_CURRENTPACK'
     })
+  }
+
+  const handleBrowseCategorySelect = (e) => {
+    let categoryID = e.target.value;
+    setBrowseCategory(categoryID);
+    if (categoryID < 10){
+      dispatch({
+        type: 'GET_GEAR_CATEGORY',
+        payload: categoryID
+      })
+    } else if (categoryID < 13) {
+      dispatch({
+        type: 'GET_CONSUMABLE_CATEGORY',
+        payload: categoryID
+      })
+    }
   }
 
   return(
@@ -154,7 +170,25 @@ export default function Pack() {
           <TableFooter>
             <StyledTableRow>
               <StyledTableCell><Button>ADD</Button></StyledTableCell>
-              <StyledTableCell>Map Categories Dropdown</StyledTableCell>
+              <StyledTableCell>
+                <TextField
+                  select
+                  fullWidth
+                  variant="outlined"
+                  formlabel="Select a Category"
+                  value={browseCategory}
+                  onChange={handleBrowseCategorySelect}
+                >
+                  {categories.map((category) => {
+                    return <MenuItem 
+                            key={category.id} 
+                            value={category.id}
+                          >
+                            {category.category}
+                          </MenuItem>
+                  })}
+                </TextField>
+              </StyledTableCell>
               <StyledTableCell>Selected Category Dropdown</StyledTableCell>
               <StyledTableCell></StyledTableCell>
               <StyledTableCell></StyledTableCell>
