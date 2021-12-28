@@ -81,6 +81,25 @@ export default function Pack() {
     setBrowseToAdd(e.target.value)
   }
 
+  const handleAddToCurrentPack = () => {
+    if (browseCategory < 10){
+      let addItemArray = gear.filter(item => (item.id == browseToAdd))
+      let addItem = {...addItemArray[0], id: currentPack.length}
+      dispatch({
+        type: 'ADD_CURRENTPACK',
+        payload: addItem
+      })
+    } else if (browseCategory < 13){
+      let addItemArray = consumables.filter(item => (item.id == browseToAdd))
+      let addItem = {...addItemArray[0], id: currentPack.length}
+      dispatch({
+        type: 'ADD_CURRENTPACK',
+        payload: addItem
+      })
+    }
+    
+  }
+
   const handleBrowseCategorySelect = (e) => {
     let categoryID = e.target.value;
     setBrowseCategory(categoryID);
@@ -177,7 +196,11 @@ export default function Pack() {
           {/* TABLE FOOTER CONTAINS LINE ITEM ADD FUNCTIONALITY */}
           <TableFooter>
             <StyledTableRow>
-              <StyledTableCell><Button>ADD</Button></StyledTableCell>
+              <StyledTableCell>
+                <Button onClick={handleAddToCurrentPack}>
+                  Add to Pack
+                </Button>
+              </StyledTableCell>
               <StyledTableCell>
                 <TextField
                   select

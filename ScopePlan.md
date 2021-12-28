@@ -39,7 +39,7 @@
     [ 👍 ] currentPackReducer
       [ 👍 ] delete item w filter
     [ 👍 ] Pack Reducer Dropdown
-    [ ] Category Reducer Dropdown
+    [ 👍 ] Category Reducer Dropdown
     [ ] ADD to pack dispatch
   [ ] Server-side Axios
     [ ] POST save pack
