@@ -48,9 +48,15 @@
     [ 👍 ] Table
     [ ] Styled
   [ ] Functionality
-    [ ] UseEffect dispatches
+    [ 👍 ] Pack Dropdown
+      [ ] FIX COLOR
+    [ 👍 ] Pack Capacity
+    [ ] Cumulative Weight
     [ ] Buttons
       [ 👍 ] Clear Pack Button
+      [ ] Save Pack
+      [ ] Load Pack
+      [ ] Load Category
 
 <!--  -->
 [ ] Unpack View

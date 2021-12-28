@@ -1,14 +1,16 @@
-import react, {useEffect} from 'react';
+import react, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 //MUI stuff
 import { styled } from '@mui/material/styles';
-import {Box, Container, Grid, Table, TableBody, TableFooter, TableCell, tableCellClasses, TableContainer, TableHead, TableRow, Paper, Button} from '@mui/material';
+import {Box, Container, Grid, Table, TableBody, TableFooter, TableCell, 
+  tableCellClasses, TableContainer, TableHead, TableRow, Paper, Button,
+  TextField, MenuItem} from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    // backgroundColor: theme.palette.common.black,
+    // color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
@@ -26,11 +28,22 @@ export default function Pack() {
   const dispatch = useDispatch();
   //REDUCERS
   const currentPack = useSelector((store) => store.currentPackReducer);
+  const packs = useSelector((store) => store.packsReducer);
+  const gear = useSelector((store) => store.gearReducer);
+  const consumables = useSelector((store) => store.consumablesReducer);
+  const categories = useSelector((store) => store.categoriesReducer);
+  //Local State
+  const [chosenPack, setChosenPack] = useState({pack_name: 'Choose Pack', capacity: 0});
 
   //UnUSEd effect, lol
   useEffect(() => {
 
   }, [])
+
+  const handlePackChange = (e) => {
+    console.log(e.target.value);
+    setChosenPack(e.target.value);
+  }
 
   const handleDeleteFromCurrentPack = (id) => {
     console.log(id);
@@ -70,8 +83,26 @@ export default function Pack() {
         <Table>
           <TableHead>
             <TableRow>
-              <StyledTableCell>Pack Dropdown</StyledTableCell>
-              <StyledTableCell> x </StyledTableCell>
+              <StyledTableCell>
+                <TextField
+                  select
+                  fullWidth
+                  variant="outlined"
+                  formlabel="Select a Pack"
+                  value={chosenPack}
+                  onChange={handlePackChange}
+                >
+                  {packs.map((pack) => {
+                    return <MenuItem 
+                            key={pack.id} 
+                            value={pack}
+                          >
+                            {pack.pack_name}
+                          </MenuItem>
+                  })}
+                </TextField>
+              </StyledTableCell>
+              <StyledTableCell> {chosenPack.capacity} Liters </StyledTableCell>
               <StyledTableCell> x </StyledTableCell>
               <StyledTableCell>Cumulative Weight</StyledTableCell>
               <StyledTableCell> x </StyledTableCell>
@@ -82,9 +113,6 @@ export default function Pack() {
             {currentPack.map((item) => {
               return <StyledTableRow key={item.id}>
                 <StyledTableCell>
-                  <Button>Add to Pack</Button>
-                </StyledTableCell>
-                <StyledTableCell>
                   {item.name}
                 </StyledTableCell>
                 <StyledTableCell>
@@ -92,6 +120,9 @@ export default function Pack() {
                 </StyledTableCell>
                 <StyledTableCell>
                   {item.category_id}
+                </StyledTableCell>
+                <StyledTableCell>
+                  {item.description}
                 </StyledTableCell>
                 <StyledTableCell>
                   <Button
