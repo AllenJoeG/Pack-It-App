@@ -12,11 +12,18 @@
   [ 👍 ] categories.reducer
   [ 👍 ] packs.reducer
   [ 👍 ] currentPack.reducer
+  [ 👍 ] CPIndex.reducer
   [ 👍 ] addtopackdropdown.reducer
+  [ ] Unpack reducer
+  <!--  -->
   [ 👍 ] Gear.saga GET
   [ 👍 ] Consumables.saga GET
   [ 👍 ] Packs.saga GET
   [ 👍 ] categories.saga GET
+  [ ] Unpack GET
+  [ ] Unpack PUT updates
+  [ ] Unpack DELETE
+  [ 👍 ] Pack POST to userCustom
   
 <!--  -->
 [ ] Inventory View

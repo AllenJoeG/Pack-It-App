@@ -6,6 +6,7 @@ import gearGET from './gearGET.saga';
 import consumGET from './consumGET.saga';
 import packsGET from './packsGET.saga';
 import categorGET from './categorGET.saga';
+import cpackPOST from './cpackPOST.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -23,5 +24,6 @@ export default function* rootSaga() {
     consumGET(),
     packsGET(),
     categorGET(),
+    cpackPOST(),
   ]);
 }

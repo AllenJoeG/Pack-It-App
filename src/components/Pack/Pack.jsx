@@ -88,7 +88,7 @@ export default function Pack() {
   const handleAddToCurrentPack = () => {
     if (browseCategory < 10){
       let addItemArray = gear.filter(item => (item.id == browseToAdd))
-      let addItem = {...addItemArray[0], id: currentPackIndex}
+      let addItem = {...addItemArray[0], id: currentPackIndex, gear_id: addItemArray[0].id}
       dispatch({
         type: 'ADD_CURRENTPACK',
         payload: addItem
@@ -98,7 +98,7 @@ export default function Pack() {
       })
     } else if (browseCategory < 13){
       let addItemArray = consumables.filter(item => (item.id == browseToAdd))
-      let addItem = {...addItemArray[0], id: currentPackIndex}
+      let addItem = {...addItemArray[0], id: currentPackIndex, consumable_id: addItemArray[0].id}
       dispatch({
         type: 'ADD_CURRENTPACK',
         payload: addItem

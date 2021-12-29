@@ -13,6 +13,7 @@ const gearRouter = require('./routes/gear.router');
 const consumablesRouter = require('./routes/consumables.router')
 const packsRouter = require('./routes/packs.router');
 const categoriesRouter = require('./routes/categories.router');
+const userCustomRouter = require('./routes/usercustom.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -31,6 +32,7 @@ app.use('/api/gear', gearRouter);
 app.use('/api/consumables', consumablesRouter);
 app.use('/api/packs', packsRouter);
 app.use('/api/categories', categoriesRouter);
+app.use('/api/usercustom', userCustomRouter);
 
 // Serve static files
 app.use(express.static('build'));
