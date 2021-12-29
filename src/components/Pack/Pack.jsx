@@ -72,6 +72,17 @@ export default function Pack() {
     })
   }
 
+  const handleSavePack = () => {
+    dispatch({
+      type: 'POST_CURRENT_PACK',
+      payload: currentPack
+    })
+    dispatch({
+      type: 'CREATE_TRIP',
+      payload: chosenPack
+    })
+  }
+
   const handleClearCurrentPack = () => {
     dispatch({
       type: 'CLEAR_CURRENTPACK'
@@ -115,16 +126,8 @@ export default function Pack() {
     setBrowseCategory(categoryID);
     if (categoryID < 10){
       setAddToPackDropdown(gear.filter(item => (item.category_id == categoryID)))
-      // dispatch({
-      //   type: 'GET_GEAR_CATEGORY',
-      //   payload: categoryID
-      // })
     } else if (categoryID < 13) {
       setAddToPackDropdown(consumables.filter(item => (item.category_id == categoryID)))
-      // dispatch({
-      //   type: 'GET_CONSUMABLE_CATEGORY',
-      //   payload: categoryID
-      // })
     }
   }
 
@@ -132,7 +135,10 @@ export default function Pack() {
     <Box>
       <Grid container>
         <Grid item xs={6} sm={3}>
-          <Button variant="contained">Save Pack</Button>
+          <Button 
+            variant="contained"
+            onClick={handleSavePack}
+          >Save Pack</Button>
         </Grid>
         <Grid item xs={3} sm={3}>
           <Button variant="contained">Load Pack</Button>

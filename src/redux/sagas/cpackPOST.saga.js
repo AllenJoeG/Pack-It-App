@@ -2,6 +2,8 @@ import { actionChannel, put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 function* currentPackAxiosPost(action) {
+  console.log(action.payload);
+  let packToPort = action.payload;
   try {
     const response = yield axios({
       method: 'POST',

@@ -14,6 +14,7 @@ const consumablesRouter = require('./routes/consumables.router')
 const packsRouter = require('./routes/packs.router');
 const categoriesRouter = require('./routes/categories.router');
 const userCustomRouter = require('./routes/usercustom.router');
+const headoutsRouter = require('./routes/headouts.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -33,6 +34,7 @@ app.use('/api/consumables', consumablesRouter);
 app.use('/api/packs', packsRouter);
 app.use('/api/categories', categoriesRouter);
 app.use('/api/usercustom', userCustomRouter);
+app.use('/api/headouts', headoutsRouter);
 
 // Serve static files
 app.use(express.static('build'));
