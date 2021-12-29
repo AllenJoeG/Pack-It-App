@@ -9,7 +9,7 @@ import {Box, Container, Grid, Table, TableBody, TableFooter, TableCell,
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    // backgroundColor: theme.palette.common.black,
+    backgroundColor: theme.palette.primary.light,
     // color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
@@ -28,6 +28,7 @@ export default function Pack() {
   const dispatch = useDispatch();
   //REDUCERS
   const currentPack = useSelector((store) => store.currentPackReducer);
+  const currentPackIndex = useSelector((store) => store.currentPackIndex);
   const packs = useSelector((store) => store.packsReducer);
   const gear = useSelector((store) => store.gearReducer);
   const consumables = useSelector((store) => store.consumablesReducer);
@@ -75,6 +76,9 @@ export default function Pack() {
     dispatch({
       type: 'CLEAR_CURRENTPACK'
     })
+    dispatch({
+      type: 'CLEAR_CP_INDEX'
+    })
   }
 
   const handleBrowseToAddSelect = (e) => {
@@ -84,17 +88,23 @@ export default function Pack() {
   const handleAddToCurrentPack = () => {
     if (browseCategory < 10){
       let addItemArray = gear.filter(item => (item.id == browseToAdd))
-      let addItem = {...addItemArray[0], id: currentPack.length}
+      let addItem = {...addItemArray[0], id: currentPackIndex}
       dispatch({
         type: 'ADD_CURRENTPACK',
         payload: addItem
       })
+      dispatch({
+        type: 'INCR_CP_INDEX'
+      })
     } else if (browseCategory < 13){
       let addItemArray = consumables.filter(item => (item.id == browseToAdd))
-      let addItem = {...addItemArray[0], id: currentPack.length}
+      let addItem = {...addItemArray[0], id: currentPackIndex}
       dispatch({
         type: 'ADD_CURRENTPACK',
         payload: addItem
+      })
+      dispatch({
+        type: 'INCR_CP_INDEX'
       })
     }
     
@@ -207,6 +217,7 @@ export default function Pack() {
                   fullWidth
                   variant="outlined"
                   formlabel="Select a Category"
+                  label="Select Category"
                   value={browseCategory}
                   onChange={handleBrowseCategorySelect}
                 >
@@ -226,6 +237,7 @@ export default function Pack() {
                   fullWidth
                   variant="outlined"
                   formlabel="Select an item"
+                  label="Select Item"
                   value={browseToAdd}
                   onChange={handleBrowseToAddSelect}
                 >

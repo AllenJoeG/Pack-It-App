@@ -40,7 +40,7 @@
       [ 👍 ] delete item w filter
     [ 👍 ] Pack Reducer Dropdown
     [ 👍 ] Category Reducer Dropdown
-    [ ] ADD to pack dispatch
+    [ 👍 ] ADD to pack dispatch
   [ ] Server-side Axios
     [ ] POST save pack
     [ ] GET load pack
@@ -55,9 +55,9 @@
     [ 👍 ] Pack Capacity
     [ 👍 ] Cumulative Weight
     [ 👍 ] Category Dropdown
-    
     [ ] Buttons
       [ 👍 ] Clear Pack Button
+      [ 👍 ] Add line item
       [ ] Save Pack
       [ ] Load Pack
       [ ] Load Category

@@ -36,6 +36,7 @@ export default function Inventory() {
   const consumables = useSelector((store) => store.consumablesReducer);
   const categories = useSelector((store) => store.categoriesReducer);
   const currentPack = useSelector((store) => store.currentPackReducer)
+  const currentPackIndex = useSelector((store) => store.currentPackIndex);
   //Local State?
   const [inventory, setInventory] = useState([]);
   
@@ -51,10 +52,13 @@ export default function Inventory() {
     setInventory(consumables)
   }
   const handleAddToCurrentPack = (item) => {
-    let addItem = {...item, id: currentPack.length}
+    let addItem = {...item, id: currentPackIndex}
     dispatch({
       type: 'ADD_CURRENTPACK',
       payload: addItem
+    })
+    dispatch({
+      type: 'INCR_CP_INDEX'
     })
   }
 
