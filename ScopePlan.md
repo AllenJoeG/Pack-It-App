@@ -24,6 +24,7 @@
   [ ] Unpack PUT updates
   [ ] Unpack DELETE
   [ 👍 ] Pack POST to userCustom
+  [ 👍 ] Headouts POST 
   
 <!--  -->
 [ ] Inventory View
@@ -49,7 +50,8 @@
     [ 👍 ] Category Reducer Dropdown
     [ 👍 ] ADD to pack dispatch
   [ ] Server-side Axios
-    [ ] POST save pack
+    [ ] POST pack to usercustom
+    [ ] POST new trip
     [ ] GET load pack
     [ ] 
   [ ] MUI & layout

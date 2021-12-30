@@ -8,7 +8,9 @@ function* currentPackAxiosPost(action) {
     const response = yield axios({
       method: 'POST',
       url: '/api/usercustom',
-      data: action.payload
+      data: {
+        ...packToPort
+      }
     })
   } catch(error){
     console.log('error POSTing current pack to DB', error);
@@ -18,3 +20,14 @@ function* currentPackAxiosPost(action) {
 export default function* cpackPOST() {
   yield takeLatest('POST_CURRENT_PACK', currentPackAxiosPost);
 }
+
+//user_id
+//consumable_id
+//gear_id 
+//trip_id
+//required
+//category_id (+)
+//weight (weight)
+//pack_note
+//gear_note (details)
+//name (name)
