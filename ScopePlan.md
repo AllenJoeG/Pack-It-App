@@ -102,3 +102,6 @@
 [ ]
 [ ]
 [ ]
+
+<!-- Object with object and array
+cpackPOST.saga's out. The route will catch and sort data, and make two POST queries, one to headouts and one to usercustom. will not need trip-make reducer -->
