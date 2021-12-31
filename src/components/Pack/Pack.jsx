@@ -75,12 +75,15 @@ export default function Pack() {
   const handleSavePack = () => {
     dispatch({
       type: 'POST_CURRENT_PACK',
-      payload: currentPack
+      payload: {
+        currentPack,
+        chosenPack
+      }
     })
-    dispatch({
-      type: 'CREATE_TRIP',
-      payload: chosenPack
-    })
+    // dispatch({
+    //   type: 'CREATE_TRIP',
+    //   payload: chosenPack
+    // })
   }
 
   const handleClearCurrentPack = () => {

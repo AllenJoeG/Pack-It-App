@@ -8,9 +8,7 @@ function* currentPackAxiosPost(action) {
     const response = yield axios({
       method: 'POST',
       url: '/api/usercustom',
-      data: {
-        ...packToPort
-      }
+      data: packToPort
     })
   } catch(error){
     console.log('error POSTing current pack to DB', error);
