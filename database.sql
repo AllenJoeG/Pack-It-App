@@ -87,15 +87,16 @@ CREATE TABLE "headouts" (
 
 CREATE TABLE "user_custom" (
 	"id" serial NOT NULL,
-	"user_id_custom" integer NOT NULL,
-	"gear_id_custom" integer,
-	"consumable_id_custom" integer,
+	"user_id" integer NOT NULL,
+	"gear_id" integer,
+	"consumable_id" integer,
 	"trip_id" integer NOT NULL,
 	"required" BOOLEAN NOT NULL DEFAULT 'FALSE',
-	"custom_category" varchar(64),
-	"custom_weight" DECIMAL(5,2) NOT NULL,
-	"custom_pack_note" varchar(255),
-	"custom_gear_note" varchar(255),
+	"category_id" varchar(64),
+	"weight" DECIMAL(5,2) NOT NULL,
+	"pack_note" varchar(255),
+	"gear_note" varchar(255),
+  "name" varchar(255)
 	CONSTRAINT "user_custom_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE

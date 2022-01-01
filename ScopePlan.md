@@ -50,8 +50,8 @@
     [ 👍 ] Category Reducer Dropdown
     [ 👍 ] ADD to pack dispatch
   [ ] Server-side Axios
-    [ ] POST pack to usercustom
-    [ ] POST new trip
+    [ 👍 ] POST pack to usercustom
+    [ 👍 ] POST new trip
     [ ] GET load pack
     [ ] 
   [ ] MUI & layout
@@ -67,7 +67,7 @@
     [ ] Buttons
       [ 👍 ] Clear Pack Button
       [ 👍 ] Add line item
-      [ ] Save Pack
+      [ 👍 ] Save Pack
       [ ] Load Pack
       [ ] Load Category
 
