@@ -18,3 +18,5 @@ function* createTripPost(action) {
 export default function* tripPOST() {
   yield takeLatest('CREATE_TRIP', createTripPost);
 }
+
+//Uncertain whether this is NECESSARY!?

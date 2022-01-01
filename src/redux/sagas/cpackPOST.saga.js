@@ -2,13 +2,13 @@ import { actionChannel, put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 function* currentPackAxiosPost(action) {
-  console.log(action.payload);
-  let packToPort = action.payload;
+  // console.log(action.payload);
+  // let packToPort = action.payload;
   try {
     const response = yield axios({
       method: 'POST',
       url: '/api/usercustom',
-      data: packToPort
+      data: action.payload
     })
   } catch(error){
     console.log('error POSTing current pack to DB', error);
