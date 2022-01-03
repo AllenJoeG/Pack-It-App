@@ -1,5 +1,5 @@
 import react, {useEffect, useState} from 'react';
-
+import {useSelector, useDispatch} from 'react-redux';
 //MUI
 import {TextField, Box, Button, Typography, Modal} from '@mui/material';
 
@@ -23,8 +23,10 @@ export default function EditUnpackModal({tripID}) {
   const [tripName, setTripName] = useState('');
   const [tripNotes, setTripNotes] = useState('');
 
+  const dispatch = useDispatch();
+
   const handleUpdate = () => {
-    dispatchEvent({
+    dispatch({
       type: 'UPDATE_TRIP_DETAILS',
       payload: {
         id: tripID,
@@ -35,7 +37,14 @@ export default function EditUnpackModal({tripID}) {
   }
 
   const handleDelete = () => {
-    console.log(tripID)
+    dispatch({
+      type: 'DELETE_TRIP_ID',
+      payload: tripID
+    })
+    dispatch({
+      type: 'DELETE_TRIP_GEAR',
+      payload: tripID
+    })
   }
 
 

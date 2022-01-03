@@ -25,6 +25,9 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 //POST
 
 //PUT
+router.put('/:id', rejectUnauthenticated, (req, res) => {
+  
+})
 
 //DELETE
 

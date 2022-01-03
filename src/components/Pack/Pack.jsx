@@ -80,10 +80,6 @@ export default function Pack() {
         chosenPack
       }
     })
-    // dispatch({
-    //   type: 'CREATE_TRIP',
-    //   payload: chosenPack
-    // })
   }
 
   const handleClearCurrentPack = () => {
