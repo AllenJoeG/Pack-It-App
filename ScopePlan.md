@@ -78,14 +78,20 @@
     [ 👍 ] Reducer to hold trips
     [ 👍 ] Reducer holds all usercustom
     [ 👍 ] SAGA GETS
-    [ ] SAGA for trip PUT name/notes
+    [ 👍 ] SAGA for trip PUT name/notes
     [ ] SAGA for gear PUT weight/notes
+    [ ] SAGA for trip DELETE
+      trip and gear
   [ ] Server-side Axios
-    [ ] PUT routes for trip name/notes
+    [ 👍 ] PUT routes for trip name/notes
     [ ] PUT routes for gear weight/notes
+    [ ] DELETE headouts route
+    [ ] DELETE assoc usercustom
   [ ] MUI & layout
     [ 👍 ] Collapsible tables (modal?)
-    [ ] Edit button, or editable fields
+    [ 👍 ] Edit Trip info Modal
+    [ ] Edit gear info Modal
+
 
 
 

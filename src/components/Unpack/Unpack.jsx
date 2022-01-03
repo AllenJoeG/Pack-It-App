@@ -3,6 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
 import EditUnpackModal from '../EditUnpackModal/EditUnpackModal';
+import EditGearModal from '../EditGearModal/EditGearModal';
 //MUI stuff
 import { styled } from '@mui/material/styles';
 import {Box, Container, Grid, Table, TableBody, TableFooter, TableCell, 
@@ -71,7 +72,7 @@ function GearRows({tripID}) {
                       <TableCell align="right">{gear.weight}</TableCell>
                       <TableCell align="right">{gear.gear_note}</TableCell>
                       <TableCell align="right">{gear.pack_note}</TableCell>
-                      <TableCell align="right"></TableCell>
+                      <TableCell align="right"><EditGearModal thingID={gear.id}/></TableCell>
                     </TableRow>
                   })}
                 </TableBody>
