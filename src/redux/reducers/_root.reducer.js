@@ -7,6 +7,9 @@ import consumablesReducer from './consumables.reducer';
 import categoriesReducer from './categories.reducer';
 import currentPackReducer from './currentPack.reducer';
 import currentPackIndex from './currentpackindex.reducer';
+import headoutTripReducer from './headoutTrip.reducer';
+import userCustomReducer from './userCustom.reducer';
+
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -23,6 +26,8 @@ const rootReducer = combineReducers({
   categoriesReducer,
   currentPackReducer,
   currentPackIndex,
+  headoutTripReducer,
+  userCustomReducer,
 });
 
 export default rootReducer;

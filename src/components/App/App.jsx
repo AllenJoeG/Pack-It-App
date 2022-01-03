@@ -39,6 +39,8 @@ function App() {
     dispatch({type: 'GET_GEAR'})
     dispatch({type: 'GET_CATEGORIES'})
     dispatch({type: 'SET_CP_INDEX'})
+    // dispatch({type: 'GET_USER_TRIPS'})
+    // dispatch({type: 'GET_USER_CUSTOM'})
   }, [dispatch]);
 
   return (

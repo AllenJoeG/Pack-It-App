@@ -14,7 +14,8 @@
   [ 👍 ] currentPack.reducer
   [ 👍 ] CPIndex.reducer
   [ 👍 ] addtopackdropdown.reducer
-  [ ] Unpack reducer
+  [ 👍 ] usercustom reducer
+  [ 👍 ] user headouts reducer
   <!--  -->
   [ 👍 ] Gear.saga GET
   [ 👍 ] Consumables.saga GET
@@ -73,8 +74,8 @@
 <!--  -->
 [ ] Unpack View
   [ ] Reducers & Sagas
-    [ ] Reducer to hold trips
-    [ ] Reducer holds all usercustom
+    [ 👍 ] Reducer to hold trips
+    [ 👍 ] Reducer holds all usercustom
     [ ] SAGA for trip PUT name/notes
     [ ] SAGA for gear PUT weight/notes
   [ ] Server-side Axios
@@ -115,8 +116,6 @@
 [ ]
 
 <!-- Next to DO -->
-Reducer to hold unpack history
-Reducer to hold usercustom history
 Sort these two out on Unpack
 
 PUT functions that update edits in unpack
