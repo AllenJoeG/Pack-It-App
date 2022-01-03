@@ -90,7 +90,7 @@
   [ ] MUI & layout
     [ 👍 ] Collapsible tables (modal?)
     [ 👍 ] Edit Trip info Modal
-    [ ] Edit gear info Modal
+    [ 👍 ] Edit gear info Modal
 
 
 
