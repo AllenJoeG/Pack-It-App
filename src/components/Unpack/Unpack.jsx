@@ -1,6 +1,8 @@
 import react, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
+
+import EditUnpackModal from '../EditUnpackModal/EditUnpackModal';
 //MUI stuff
 import { styled } from '@mui/material/styles';
 import {Box, Container, Grid, Table, TableBody, TableFooter, TableCell, 
@@ -18,12 +20,13 @@ function GearRows({tripID}) {
   
   const filteredGear = userGear.filter(item => (item.trip_id == tripID))
   const filteredTrip = userTrips.filter(trip => (trip.id == tripID))
+  
 
   const [open, setOpen] = useState(false);
 
   return(
     <React.Fragment>
-      <TableRow key={filteredTrip.id} sx={{ '& > *': { borderBottom: 'unset' } }}>
+      <TableRow key={filteredTrip[0].id} sx={{ '& > *': { borderBottom: 'unset' } }}>
         <TableCell>
           <IconButton
             aria-label="expand row"
@@ -33,10 +36,16 @@ function GearRows({tripID}) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-        <TableCell>{filteredTrip.trip_name}</TableCell>
-        <TableCell>{filteredTrip.trip_date}</TableCell>
-        <TableCell></TableCell>
-        <TableCell>Weight?</TableCell>
+        <TableCell align="right">{filteredTrip[0].trip_name}</TableCell>
+        <TableCell align="right">{(filteredTrip[0].trip_date).slice(0,10)}</TableCell>
+        <TableCell align="right">
+          Trip Notes Placeholder
+        </TableCell>
+        <TableCell align="right">Weight?</TableCell>
+        <TableCell align="right">
+          <EditUnpackModal tripID={filteredTrip[0].id} />
+        </TableCell>
+        
       </TableRow>
 
       <TableRow>
@@ -48,9 +57,10 @@ function GearRows({tripID}) {
                   <TableRow>
                     <TableCell align="right">Category</TableCell>
                     <TableCell align="right">Thing</TableCell>
+                    <TableCell align="right">Weight (oz)</TableCell>
                     <TableCell align="right">Gear Notes</TableCell>
                     <TableCell align="right">Pack Notes</TableCell>
-                    <TableCell align="right">Weight (oz)</TableCell>
+                    <TableCell></TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -58,9 +68,10 @@ function GearRows({tripID}) {
                     return <TableRow key={gear.id}>
                       <TableCell align="right">{gear.category}</TableCell>
                       <TableCell align="right">{gear.name}</TableCell>
+                      <TableCell align="right">{gear.weight}</TableCell>
                       <TableCell align="right">{gear.gear_note}</TableCell>
                       <TableCell align="right">{gear.pack_note}</TableCell>
-                      <TableCell align="right">{gear.weight}</TableCell>
+                      <TableCell align="right"></TableCell>
                     </TableRow>
                   })}
                 </TableBody>
@@ -71,10 +82,17 @@ function GearRows({tripID}) {
       </TableRow>
     </React.Fragment>
   )
-}
+};
 
 export default function Unpack() {
   const userTrips = useSelector((store) => store.headoutTripReducer);
+
+  //Updates in case of nav after pack save
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch({type: 'GET_USER_TRIPS'})
+    dispatch({type: 'GET_USER_CUSTOM'})
+  }, []);
 
   return(
     <Box>
@@ -84,10 +102,10 @@ export default function Unpack() {
           <TableHead>
             <TableRow>
               <TableCell />
-              <TableCell>Trip Name</TableCell>
-              <TableCell align="right">Trip Date</TableCell>
-              <TableCell align="right"> </TableCell>
-              <TableCell align="right"> </TableCell>
+              <TableCell align="right"> Trip Name </TableCell>
+              <TableCell align="right"> Trip Date </TableCell>
+              <TableCell align="right"> Trip Notes </TableCell>
+              <TableCell align="right"> Pack Weight </TableCell>
               <TableCell align="right"> </TableCell>
             </TableRow>
           </TableHead>

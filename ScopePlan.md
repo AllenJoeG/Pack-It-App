@@ -77,14 +77,14 @@
   [ ] Reducers & Sagas
     [ 👍 ] Reducer to hold trips
     [ 👍 ] Reducer holds all usercustom
-    [ ] SAGA GETS
+    [ 👍 ] SAGA GETS
     [ ] SAGA for trip PUT name/notes
     [ ] SAGA for gear PUT weight/notes
   [ ] Server-side Axios
     [ ] PUT routes for trip name/notes
     [ ] PUT routes for gear weight/notes
   [ ] MUI & layout
-    [ ] Collapsible tables (modal?)
+    [ 👍 ] Collapsible tables (modal?)
     [ ] Edit button, or editable fields
 
 
