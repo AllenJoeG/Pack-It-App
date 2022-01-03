@@ -39,7 +39,7 @@ function GearRows({tripID}) {
         <TableCell align="right">{filteredTrip[0].trip_name}</TableCell>
         <TableCell align="right">{(filteredTrip[0].trip_date).slice(0,10)}</TableCell>
         <TableCell align="right">
-          Trip Notes Placeholder
+          {filteredTrip[0].trip_notes}
         </TableCell>
         <TableCell align="right">Weight?</TableCell>
         <TableCell align="right">

@@ -7,7 +7,7 @@ function* updateTripPUT(action) {
   try {
     const response = yield axios({
       method: 'PUT',
-      url: `/api/headouts${action.payload.id}`,
+      url: `/api/headouts/${action.payload.id}`,
       data: action.payload
     })
     yield put({type: 'GET_USER_TRIPS'})
