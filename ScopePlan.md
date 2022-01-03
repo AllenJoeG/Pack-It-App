@@ -22,7 +22,7 @@
   [ 👍 ] Packs.saga GET
   [ 👍 ] categories.saga GET
   [ 👍 ] userCustom GET
-  [ ] userHeadouts GET
+  [ 👍 ] userHeadouts GET
   [ ] Unpack PUT updates
   [ ] Unpack DELETE
   [ 👍 ] Pack POST to userCustom
@@ -77,6 +77,7 @@
   [ ] Reducers & Sagas
     [ 👍 ] Reducer to hold trips
     [ 👍 ] Reducer holds all usercustom
+    [ ] SAGA GETS
     [ ] SAGA for trip PUT name/notes
     [ ] SAGA for gear PUT weight/notes
   [ ] Server-side Axios
