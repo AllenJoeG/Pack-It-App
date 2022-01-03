@@ -5,6 +5,23 @@ const router = express.Router();
 
 
 //GET
+router.get('/', rejectUnauthenticated, (req, res) => {
+  const sqlQuery = `
+    SELECT * FROM "user_custom"
+      WHERE "user_id" = $1
+    `;
+  const sqlValues = [req.user.id]
+
+  pool.query(sqlQuery, sqlValues)
+  .then((result) => {
+    res.send(result.rows)
+  })
+  .catch((error) => {
+    console.log('error fetching usercustom', error)
+    res.sendStatus(500);
+  })
+})
+
 
 //POST
 router.post('/', rejectUnauthenticated, (req, res) => {

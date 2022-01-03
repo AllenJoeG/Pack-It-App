@@ -1,6 +1,6 @@
 const headoutTripReducer = (state = [], action) => {
   switch (action.type) {
-    case 'GET_USER_TRIPS':
+    case 'SET_USER_TRIPS':
       return action.payload;
     case 'CLEAR_USER_TRIPS':
       return [];

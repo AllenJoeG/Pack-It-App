@@ -21,7 +21,8 @@
   [ 👍 ] Consumables.saga GET
   [ 👍 ] Packs.saga GET
   [ 👍 ] categories.saga GET
-  [ ] Unpack GET
+  [ 👍 ] userCustom GET
+  [ ] userHeadouts GET
   [ ] Unpack PUT updates
   [ ] Unpack DELETE
   [ 👍 ] Pack POST to userCustom
