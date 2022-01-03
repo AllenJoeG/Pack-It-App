@@ -28,7 +28,7 @@
   
 <!--  -->
 [ ] Inventory View
-  [ ] Local state inventory
+  [ 👍 ] Local state inventory
   [ 👍 ] Reducers & Sagas
   [ 👍 ] Server-side Axios
   [ ] Four Buttons
@@ -38,7 +38,6 @@
     [ ] Show Categories
   [ 👍 ] ADD to currentPack
     [ 👍 ] currently generating new ID to avoid duplication
-    [ ] anticipate errors if localState for cpackID resets
   [ ] MUI & layout
 
 <!--  -->
@@ -74,8 +73,20 @@
 <!--  -->
 [ ] Unpack View
   [ ] Reducers & Sagas
+    [ ] Reducer to hold trips
+    [ ] Reducer holds all usercustom
+    [ ] SAGA for trip PUT name/notes
+    [ ] SAGA for gear PUT weight/notes
   [ ] Server-side Axios
+    [ ] PUT routes for trip name/notes
+    [ ] PUT routes for gear weight/notes
   [ ] MUI & layout
+    [ ] Collapsible tables (modal?)
+    [ ] Edit button, or editable fields
+
+
+
+  <!--  -->
 [ ] Headout Functional Programming
   [ ] squel.js Server-side
 [ ] Headout View
@@ -103,5 +114,14 @@
 [ ]
 [ ]
 
-<!-- Object with object and array
-cpackPOST.saga's out. The route will catch and sort data, and make two POST queries, one to headouts and one to usercustom. will not need trip-make reducer -->
+<!-- Next to DO -->
+Reducer to hold unpack history
+Reducer to hold usercustom history
+Sort these two out on Unpack
+
+PUT functions that update edits in unpack
+
+Write Load Pack
+
+Think through how to track/save/load a
+pack from "edit"

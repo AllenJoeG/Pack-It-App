@@ -18,14 +18,3 @@ function* currentPackAxiosPost(action) {
 export default function* cpackPOST() {
   yield takeLatest('POST_CURRENT_PACK', currentPackAxiosPost);
 }
-
-//user_id
-//consumable_id
-//gear_id 
-//trip_id
-//required
-//category_id (+)
-//weight (weight)
-//pack_note
-//gear_note (details)
-//name (name)
