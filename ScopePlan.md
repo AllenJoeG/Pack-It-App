@@ -23,7 +23,9 @@
   [ 👍 ] categories.saga GET
   [ 👍 ] userCustom GET
   [ 👍 ] userHeadouts GET
-  [ ] Unpack PUT updates
+  [ 👍 ] Unpack PUT trip
+  [ 👍 ] Unpack PUT gear
+  [ ] Unpack PUT category?
   [ ] Unpack DELETE
   [ 👍 ] Pack POST to userCustom
   [ 👍 ] Headouts POST 
@@ -36,11 +38,13 @@
   [ ] Four Buttons
     [ 👍 ] Show Gear
     [ 👍 ] Show Consumables
-    [ ] Show Pack (REASSIGN?)
+    [ ] Show User's Custom Gear
     [ ] Show Categories
+      [ ] Conditional Render
   [ 👍 ] ADD to currentPack
     [ 👍 ] currently generating new ID to avoid duplication
   [ ] MUI & layout
+    [ ] Needs that stylin'
 
 <!--  -->
 [ ] Pack View
@@ -84,7 +88,7 @@
       trip and gear
   [ ] Server-side Axios
     [ 👍 ] PUT routes for trip name/notes
-    [ ] PUT routes for gear weight/notes
+    [ 👍 ] PUT routes for gear weight/notes
     [ ] DELETE headouts route
     [ ] DELETE assoc usercustom
   [ ] MUI & layout

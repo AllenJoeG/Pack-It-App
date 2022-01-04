@@ -22,8 +22,18 @@ function GearRows({tripID}) {
   const filteredGear = userGear.filter(item => (item.trip_id == tripID))
   const filteredTrip = userTrips.filter(trip => (trip.id == tripID))
   
-
   const [open, setOpen] = useState(false);
+
+  const calculatePackWeight = () => {
+      let packWeight = 0;
+      let weightArray = filteredGear.map((item) => {
+        return Number(item.weight)
+      })
+      for (let weight of weightArray) {
+        packWeight += weight;
+      }
+      return `${packWeight.toFixed(2)} oz, (${(packWeight / 16).toFixed(2)} lbs)`;
+    }
 
   return(
     <React.Fragment>
@@ -42,7 +52,7 @@ function GearRows({tripID}) {
         <TableCell align="right">
           {filteredTrip[0].trip_notes}
         </TableCell>
-        <TableCell align="right">Weight?</TableCell>
+        <TableCell align="right">{calculatePackWeight()}</TableCell>
         <TableCell align="right">
           <EditUnpackModal tripID={filteredTrip[0].id} />
         </TableCell>
