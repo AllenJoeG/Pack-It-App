@@ -94,5 +94,17 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
 })
 
 //DELETE
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+  const sqlQuery = `
+    DELETE FROM "user_custom"
+    WHERE "trip_id"=$1
+  `;
+  
+  pool.query(sqlQuery, [req.params.id])
+  .then(() => res.sendStatus(202))
+  .catch((error) => {
+    console.log('Issue deleting items from usercustom', error)
+  })
+})
 
 module.exports = router;

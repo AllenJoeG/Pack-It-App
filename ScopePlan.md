@@ -26,7 +26,7 @@
   [ 👍 ] Unpack PUT trip
   [ 👍 ] Unpack PUT gear
   [ ] Unpack PUT category?
-  [ ] Unpack DELETE
+  [ 👍 ] Unpack DELETE
   [ 👍 ] Pack POST to userCustom
   [ 👍 ] Headouts POST 
   
@@ -84,13 +84,13 @@
     [ 👍 ] SAGA GETS
     [ 👍 ] SAGA for trip PUT name/notes
     [ 👍 ] SAGA for gear PUT weight/notes
-    [ ] SAGA for trip DELETE
+    [ 👍 ] SAGA for trip DELETE
       trip and gear
   [ ] Server-side Axios
     [ 👍 ] PUT routes for trip name/notes
     [ 👍 ] PUT routes for gear weight/notes
-    [ ] DELETE headouts route
-    [ ] DELETE assoc usercustom
+    [ 👍 ] DELETE headouts route
+    [ 👍 ] DELETE assoc usercustom
   [ ] MUI & layout
     [ 👍 ] Collapsible tables (modal?)
     [ 👍 ] Edit Trip info Modal
@@ -111,7 +111,7 @@
   [ ] MUI & Layout
 
 ## Stretch Goals
-[ ] Unpack Card Views of gear
+[ ] Unpack Modal Views of gear
   [ ] Charts.JS graph of weight/category
 [ ] Custom Headout Functionality
 [ ] Wolfram API for weight/caloric ratios
@@ -121,7 +121,7 @@
 [ ] Google Authentication
 [ ] Emergency Contact SMS 
 [ ] Export .csv of pack
-[ ]
+[ ] redux-Persist for     currentPack
 [ ] Sort Tables by Column
 [ ]
 [ ]
@@ -135,4 +135,5 @@ Think through how to track/save/load a
 pack from "edit"
 
 <!-- Known Bugs -->
-[ ] Pack Add in Footer if empty
+[ ] Save Pack with empty CP
+[ ] Blue Buttons layout

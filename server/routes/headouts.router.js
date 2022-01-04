@@ -43,5 +43,17 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
 
 
 //DELETE
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+  const sqlQuery = `
+    DELETE FROM "headouts"
+    WHERE "id"=$1
+  `;
+
+  pool.query(sqlQuery, [req.params.id])
+  .then(() => res.sendStatus(202))
+  .catch((error) => {
+    console.log('Issue deleting trip from headouts', error)
+  })
+})
 
 module.exports = router;

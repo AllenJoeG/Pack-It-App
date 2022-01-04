@@ -130,22 +130,34 @@ export default function Pack() {
     }
   }
 
+  const handleLoadPack = () => {
+
+  }
+
   return(
     <Box>
-      <Grid container>
+      <Grid 
+        container 
+        direction="row" 
+        justifyContent="space-evenly" 
+        alignItems="center"
+      >
         <Grid item xs={6} sm={3}>
           <Button 
             variant="contained"
             onClick={handleSavePack}
           >Save Pack</Button>
         </Grid>
-        <Grid item xs={3} sm={3}>
-          <Button variant="contained">Load Pack</Button>
+        <Grid item xs={6} sm={3}>
+          <Button 
+            variant="contained"
+            onClick={handleLoadPack}
+          >Load Pack</Button>
         </Grid>
-        <Grid item xs={3} sm={3}>
+        <Grid item xs={6} sm={3}>
           <Button variant="contained">Load Category</Button>
         </Grid>
-        <Grid item xs={3} sm={3}>
+        <Grid item xs={6} sm={3}>
           <Button 
             variant="contained"
             onClick={handleClearCurrentPack}

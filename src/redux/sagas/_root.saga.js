@@ -11,6 +11,8 @@ import userCustomGET from './userCustomGET.saga';
 import userHeadoutsGET from './userHeadoutsGET.saga';
 import tripPUT from './tripPUT.saga';
 import gearPUT from './gearPUT.saga';
+import tripDELETE from './tripDELETE.saga';
+import customGearDELETE from './userCustomDELETE.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -33,5 +35,7 @@ export default function* rootSaga() {
     userHeadoutsGET(),
     tripPUT(),
     gearPUT(),
+    tripDELETE(),
+    customGearDELETE(),
   ]);
 }
