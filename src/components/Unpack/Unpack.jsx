@@ -57,7 +57,11 @@ function GearRows({tripID}) {
         </TableCell>
         <TableCell align="right">{calculatePackWeight()}</TableCell>
         <TableCell align="right">
-          <EditUnpackModal tripID={filteredTrip[0].id} />
+          <EditUnpackModal 
+            tripID={filteredTrip[0].id}
+            trip_Name={filteredTrip[0].trip_name}
+            trip_Notes={filteredTrip[0].trip_notes}
+          />
         </TableCell>
         
       </TableRow>

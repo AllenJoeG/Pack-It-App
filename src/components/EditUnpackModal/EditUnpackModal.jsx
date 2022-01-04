@@ -15,13 +15,14 @@ const style = {
   p: 4,
 };
 
-export default function EditUnpackModal({tripID}) {
+export default function EditUnpackModal({tripID, trip_Name, trip_Notes}) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [tripName, setTripName] = useState('');
-  const [tripNotes, setTripNotes] = useState('');
+  const [tripName, setTripName] = useState(trip_Name);
+  const [tripNotes, setTripNotes] = useState(trip_Notes);
+  const [deleteValue, setDeleteValue] = useState(false)
 
   const dispatch = useDispatch();
 
@@ -77,7 +78,33 @@ export default function EditUnpackModal({tripID}) {
                 No
               </TextField>
           <Button variant="contained" size="small" color="success" onClick={handleUpdate}>Update Pack!</Button>
-          <Button variant="contained" size="small" color="error" onClick={handleDelete}>Delete Pack?!</Button>
+          <Box>
+            <Button
+              variant="contained" 
+              size="small" 
+              color="error"
+              onClick={(e) => setDeleteValue(!deleteValue)} 
+            >Delete Pack?
+            </Button>
+            {deleteValue ?
+              <Button 
+                variant="contained" 
+                size="small" 
+                color="error" 
+                onClick={handleDelete}
+              >Yes, Delete This Pack!
+              </Button>
+              :
+              <Button 
+                disabled
+                variant="contained" 
+                size="small" 
+                color="error" 
+                onClick={handleDelete}
+              >Yes, Delete This Pack!
+              </Button>
+            }
+          </Box>
           
         </Box>
       </Modal>
