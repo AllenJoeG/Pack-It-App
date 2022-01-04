@@ -57,7 +57,6 @@
   [ ] Server-side Axios
     [ 👍 ] POST pack to usercustom
     [ 👍 ] POST new trip
-    [ ] GET load pack
     [ ] 
   [ ] MUI & layout
     [ 👍 ] Button Grid
@@ -142,3 +141,4 @@ pack from "edit"
     MERGE THEM
 [ ] Adding 'My Stuff' to      
     CurrentPack gets wonky
+[ ] objectobject Pack Select

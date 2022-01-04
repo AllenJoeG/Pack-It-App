@@ -19,8 +19,6 @@ function GearRows({tripID}) {
   const userGear = useSelector((store) => store.userCustomReducer);
   const userTrips = useSelector((store) => store.headoutTripReducer);
   const categories = useSelector((store) => store.categoriesReducer);
-  
-  
 
   const filteredGear = userGear.filter(item => (item.trip_id == tripID))
   const filteredTrip = userTrips.filter(trip => (trip.id == tripID))

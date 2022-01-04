@@ -1,6 +1,8 @@
 import react, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
+
+import LoadPackModal from '../LoadPackModal/LoadPackModal';
 //MUI stuff
 import { styled } from '@mui/material/styles';
 import {Box, Container, Grid, Table, TableBody, TableFooter, TableCell, 
@@ -130,9 +132,9 @@ export default function Pack() {
     }
   }
 
-  const handleLoadPack = () => {
+  // const handleLoadPack = () => {
 
-  }
+  // }
 
   return(
     <Box>
@@ -149,10 +151,7 @@ export default function Pack() {
           >Save Pack</Button>
         </Grid>
         <Grid item xs={6} sm={3}>
-          <Button 
-            variant="contained"
-            onClick={handleLoadPack}
-          >Load Pack</Button>
+          <LoadPackModal />
         </Grid>
         <Grid item xs={6} sm={3}>
           <Button variant="contained">Load Category</Button>
