@@ -10,6 +10,7 @@ import cpackPOST from './cpackPOST.saga';
 import userCustomGET from './userCustomGET.saga';
 import userHeadoutsGET from './userHeadoutsGET.saga';
 import tripPUT from './tripPUT.saga';
+import gearPUT from './gearPUT.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -31,5 +32,6 @@ export default function* rootSaga() {
     userCustomGET(),
     userHeadoutsGET(),
     tripPUT(),
+    gearPUT(),
   ]);
 }
