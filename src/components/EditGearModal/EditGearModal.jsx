@@ -15,12 +15,12 @@ const style = {
   p: 4,
 };
 
-export default function EditGearModal({thingID}) {
+export default function EditGearModal({thingID, thingWeight}) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [weight, setWeight] = useState('');
+  const [weight, setWeight] = useState(thingWeight);
   const [gearNote, setGearNote] = useState('');
   const [packNote, setPackNote] = useState('');
 

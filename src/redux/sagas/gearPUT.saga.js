@@ -12,7 +12,7 @@ function* updateGearPUT(action) {
     })
     yield put({type: 'GET_USER_CUSTOM'})
   } catch(error){
-    console.log('error updating trip headout to DB', error);
+    console.log('error updating usercustom gear to DB', error);
   }
 }
 

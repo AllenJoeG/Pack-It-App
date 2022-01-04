@@ -79,7 +79,7 @@
     [ 👍 ] Reducer holds all usercustom
     [ 👍 ] SAGA GETS
     [ 👍 ] SAGA for trip PUT name/notes
-    [ ] SAGA for gear PUT weight/notes
+    [ 👍 ] SAGA for gear PUT weight/notes
     [ ] SAGA for trip DELETE
       trip and gear
   [ ] Server-side Axios

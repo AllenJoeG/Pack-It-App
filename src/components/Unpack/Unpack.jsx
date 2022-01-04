@@ -72,7 +72,7 @@ function GearRows({tripID}) {
                       <TableCell align="right">{gear.weight}</TableCell>
                       <TableCell align="right">{gear.gear_note}</TableCell>
                       <TableCell align="right">{gear.pack_note}</TableCell>
-                      <TableCell align="right"><EditGearModal thingID={gear.id}/></TableCell>
+                      <TableCell align="right"><EditGearModal thingID={gear.id} thingWeight={gear.weight}/></TableCell>
                     </TableRow>
                   })}
                 </TableBody>

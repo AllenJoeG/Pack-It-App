@@ -38,7 +38,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     INSERT INTO "headouts" ("user_id", "pack_id", "trip_name", "trip_date")
       VALUES ($1, $2, $3, $4)
       RETURNING "id";
-    `;
+    `; //return from that query the tripID
   pool.query(createTripQuery, sqlValues1)
   .then((result) => {
     const tripID = result.rows[0].id
@@ -73,13 +73,25 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     console.log('error POSTing new Trip ID', error);
     res.sendStatus(500);
   });
-  //return from that query the tripID
-
-  
-})
+});
 
 
 //PUT
+router.put('/:id', rejectUnauthenticated, (req, res) => {
+  // console.log('you have reached usercustom PUT')
+  const sqlQuery = `
+    UPDATE "user_custom"
+    SET "weight"=$1, "gear_note"=$2, "pack_note"=$3
+    WHERE "id"=$4;`;
+  console.log(req.body)
+    const sqlValues = [req.body.weight, req.body.gear_note, req.body.pack_note, req.body.id]
+  
+  pool.query(sqlQuery, sqlValues)
+  .then(() => res.sendStatus(200))
+  .catch((error) => {
+    console.log('Issue updating usercustom gear data', error);
+  })
+})
 
 //DELETE
 
