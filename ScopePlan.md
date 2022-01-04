@@ -95,6 +95,7 @@
     [ 👍 ] Collapsible tables (modal?)
     [ 👍 ] Edit Trip info Modal
     [ 👍 ] Edit gear info Modal
+    [ 👍 ] display Category Name
 
 
 

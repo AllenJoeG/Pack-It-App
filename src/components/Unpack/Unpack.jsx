@@ -18,7 +18,10 @@ function GearRows({tripID}) {
   //Alias Reducers
   const userGear = useSelector((store) => store.userCustomReducer);
   const userTrips = useSelector((store) => store.headoutTripReducer);
+  const categories = useSelector((store) => store.categoriesReducer);
   
+  
+
   const filteredGear = userGear.filter(item => (item.trip_id == tripID))
   const filteredTrip = userTrips.filter(trip => (trip.id == tripID))
   
@@ -77,12 +80,14 @@ function GearRows({tripID}) {
                 <TableBody>
                   {filteredGear.map((gear) => {
                     return <TableRow key={gear.id}>
-                      <TableCell align="right">{gear.category}</TableCell>
+                      <TableCell align="right">{(categories.filter(cat => (cat.id == gear.category_id)))[0].category}</TableCell>
                       <TableCell align="right">{gear.name}</TableCell>
                       <TableCell align="right">{gear.weight}</TableCell>
                       <TableCell align="right">{gear.gear_note}</TableCell>
                       <TableCell align="right">{gear.pack_note}</TableCell>
-                      <TableCell align="right"><EditGearModal thingID={gear.id} thingWeight={gear.weight}/></TableCell>
+                      <TableCell align="right">
+                        <EditGearModal thingID={gear.id} thingWeight={gear.weight} thinGN={gear.gear_note} thinPN={gear.pack_note} />
+                        </TableCell>
                     </TableRow>
                   })}
                 </TableBody>
