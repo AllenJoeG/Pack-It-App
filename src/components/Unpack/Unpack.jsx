@@ -80,14 +80,16 @@ function GearRows({tripID}) {
                 <TableBody>
                   {filteredGear.map((gear) => {
                     return <TableRow key={gear.id}>
-                      <TableCell align="right">{(categories.filter(cat => (cat.id == gear.category_id)))[0].category}</TableCell>
+                      <TableCell align="right">
+                        {(categories.filter(cat => (cat.id == gear.category_id)))[0].category}
+                      </TableCell>
                       <TableCell align="right">{gear.name}</TableCell>
                       <TableCell align="right">{gear.weight}</TableCell>
                       <TableCell align="right">{gear.gear_note}</TableCell>
                       <TableCell align="right">{gear.pack_note}</TableCell>
                       <TableCell align="right">
                         <EditGearModal thingID={gear.id} thingWeight={gear.weight} thinGN={gear.gear_note} thinPN={gear.pack_note} />
-                        </TableCell>
+                      </TableCell>
                     </TableRow>
                   })}
                 </TableBody>
@@ -108,6 +110,7 @@ export default function Unpack() {
   useEffect(() => {
     dispatch({type: 'GET_USER_TRIPS'})
     dispatch({type: 'GET_USER_CUSTOM'})
+    dispatch({type: 'GET_CATEGORIES'})
   }, []);
 
   return(

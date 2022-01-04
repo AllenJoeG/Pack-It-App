@@ -38,8 +38,8 @@
   [ ] Four Buttons
     [ 👍 ] Show Gear
     [ 👍 ] Show Consumables
-    [ ] Show User's Custom Gear
-    [ ] Show Categories
+    [ 👍 ] Show User's Custom Gear
+    [ ] Show by Category
       [ ] Conditional Render
   [ 👍 ] ADD to currentPack
     [ 👍 ] currently generating new ID to avoid duplication
@@ -122,7 +122,7 @@
 [ ] Emergency Contact SMS 
 [ ] Export .csv of pack
 [ ]
-[ ]
+[ ] Sort Tables by Column
 [ ]
 [ ]
 [ ]

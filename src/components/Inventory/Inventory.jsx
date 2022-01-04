@@ -37,13 +37,14 @@ export default function Inventory() {
   const categories = useSelector((store) => store.categoriesReducer);
   const currentPack = useSelector((store) => store.currentPackReducer)
   const currentPackIndex = useSelector((store) => store.currentPackIndex);
+  const usercustom = useSelector((store) => store.userCustomReducer)
   //Local State?
   const [inventory, setInventory] = useState([]);
   
 
 
-  const handleShowPacks = () => {
-    setInventory(packs)
+  const handleShowUsercustom = () => {
+    setInventory(usercustom)
   }
   const handleShowGear = () => {
     setInventory(gear)
@@ -79,9 +80,9 @@ export default function Inventory() {
         <Grid item xs={6} sm={3}>
           <Button
             variant="contained"
-            onClick={handleShowPacks}
+            onClick={handleShowUsercustom}
           >
-            Show Packs
+            Show My Stuff
           </Button>
         </Grid>
         <Grid item xs={3} sm={3}>
@@ -132,7 +133,7 @@ export default function Inventory() {
                   {item.weight}
                 </StyledTableCell>
                 <StyledTableCell>
-                  {item.category_id}
+                {(categories.filter(cat => (cat.id == item.category_id)))[0].category}
                 </StyledTableCell>
               </StyledTableRow>
             })}
