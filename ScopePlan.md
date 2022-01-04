@@ -129,11 +129,10 @@
 [ ]
 
 <!-- Next to DO -->
-Sort these two out on Unpack
-
-PUT functions that update edits in unpack
-
 Write Load Pack
 
 Think through how to track/save/load a
 pack from "edit"
+
+<!-- Known Bugs -->
+[ ] Pack Add in Footer if empty

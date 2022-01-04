@@ -69,24 +69,24 @@ function GearRows({tripID}) {
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
-                    <TableCell align="right">Category</TableCell>
                     <TableCell align="right">Thing</TableCell>
-                    <TableCell align="right">Weight (oz)</TableCell>
                     <TableCell align="right">Gear Notes</TableCell>
                     <TableCell align="right">Pack Notes</TableCell>
+                    <TableCell align="right">Category</TableCell>
+                    <TableCell align="right">Weight (oz)</TableCell>
                     <TableCell></TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {filteredGear.map((gear) => {
                     return <TableRow key={gear.id}>
+                      <TableCell align="right">{gear.name}</TableCell>
+                      <TableCell align="right">{gear.gear_note}</TableCell>
+                      <TableCell align="right">{gear.pack_note}</TableCell>
                       <TableCell align="right">
                         {(categories.filter(cat => (cat.id == gear.category_id)))[0].category}
                       </TableCell>
-                      <TableCell align="right">{gear.name}</TableCell>
                       <TableCell align="right">{gear.weight}</TableCell>
-                      <TableCell align="right">{gear.gear_note}</TableCell>
-                      <TableCell align="right">{gear.pack_note}</TableCell>
                       <TableCell align="right">
                         <EditGearModal thingID={gear.id} thingWeight={gear.weight} thinGN={gear.gear_note} thinPN={gear.pack_note} />
                       </TableCell>

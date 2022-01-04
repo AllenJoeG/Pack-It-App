@@ -120,7 +120,10 @@ export default function Inventory() {
             {inventory.map((item) => {
               return <StyledTableRow key={item.id}>
                 <StyledTableCell>
-                  <Button 
+                  <Button
+                    variant="contained"
+                    size="small"
+                    color="success"
                     onClick={(e) => handleAddToCurrentPack(item)}
                   >
                     Add to Pack

@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import {Box, Container, Grid, Table, TableBody, TableFooter, TableCell, 
   tableCellClasses, TableContainer, TableHead, TableRow, Paper, Button,
-  TextField, MenuItem} from '@mui/material';
+  TextField, MenuItem, Typography} from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -193,7 +193,7 @@ export default function Pack() {
                   {item.weight} oz
                 </StyledTableCell>
                 <StyledTableCell>
-                  {item.category_id}
+                {(categories.filter(cat => (cat.id == item.category_id)))[0].category}
                 </StyledTableCell>
                 <StyledTableCell>
                   {item.description}
@@ -201,6 +201,8 @@ export default function Pack() {
                 <StyledTableCell>
                   <Button
                     variant="contained"
+                    color="error"
+                    size="small"
                     onClick={() => handleDeleteFromCurrentPack(item.id)}
                   >X</Button>
                 </StyledTableCell>
@@ -212,9 +214,7 @@ export default function Pack() {
           <TableFooter>
             <StyledTableRow>
               <StyledTableCell>
-                <Button onClick={handleAddToCurrentPack}>
-                  Add to Pack
-                </Button>
+                <Typography align="right">Browse to Add</Typography>
               </StyledTableCell>
               <StyledTableCell>
                 <TextField
@@ -256,7 +256,20 @@ export default function Pack() {
                   })}
                 </TextField>
               </StyledTableCell>
-              <StyledTableCell></StyledTableCell>
+              <StyledTableCell>
+              {browseToAdd ? 
+                  <Button 
+                    variant="contained"
+                    color="success"
+                    size="small"
+                    align="left"
+                    onClick={handleAddToCurrentPack}>
+                    Add to Pack
+                  </Button>
+                  : 
+                  <p>Select Item</p>
+                }
+              </StyledTableCell>
               <StyledTableCell></StyledTableCell>
             </StyledTableRow>
           </TableFooter>
