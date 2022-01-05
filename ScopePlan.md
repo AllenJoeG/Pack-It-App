@@ -16,6 +16,7 @@
   [ 👍 ] addtopackdropdown.reducer
   [ 👍 ] usercustom reducer
   [ 👍 ] user headouts reducer
+
   <!--  -->
   [ 👍 ] Gear.saga GET
   [ 👍 ] Consumables.saga GET
@@ -142,3 +143,5 @@ pack from "edit"
 [ ] Adding 'My Stuff' to      
     CurrentPack gets wonky
 [ ] objectobject Pack Select
+[ ] LOAD to Pack Index state
+    Modal is always behind.
