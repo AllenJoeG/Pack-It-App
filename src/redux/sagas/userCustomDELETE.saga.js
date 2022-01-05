@@ -18,3 +18,5 @@ function* customGearAxiosDELETE(action) {
 export default function* customGearDELETE() {
   yield takeLatest('DELETE_TRIP_GEAR', customGearAxiosDELETE);
 }
+
+//DEFUNCT CURRENTLY

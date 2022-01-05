@@ -39,11 +39,7 @@ export default function EditUnpackModal({tripID, trip_Name, trip_Notes}) {
 
   const handleDelete = () => {
     dispatch({
-      type: 'DELETE_TRIP_ID',
-      payload: tripID
-    })
-    dispatch({
-      type: 'DELETE_TRIP_GEAR',
+      type: 'DELETE_TRIP_ID_AND_GEAR',
       payload: tripID
     })
   }

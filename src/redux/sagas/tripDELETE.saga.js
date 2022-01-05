@@ -16,5 +16,5 @@ function* tripAxiosDELETE(action) {
 }
 
 export default function* tripDELETE() {
-  yield takeLatest('DELETE_TRIP_ID', tripAxiosDELETE);
+  yield takeLatest('DELETE_TRIP_ID_AND_GEAR', tripAxiosDELETE);
 }

@@ -135,7 +135,7 @@ pack from "edit"
 <!-- Known Bugs -->
 [ ] Save Pack with empty CP
 [ ] Blue Buttons layout
-[ ] DELETE needs to clear items
+[ 👍 ] DELETE needs to clear items
     THEN clear headouts
     MERGE THEM
 [ ] Adding 'My Stuff' to      

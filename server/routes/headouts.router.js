@@ -45,14 +45,28 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
 //DELETE
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
   const sqlQuery = `
-    DELETE FROM "headouts"
-    WHERE "id"=$1
+    DELETE FROM "user_custom"
+    WHERE "trip_id"=$1
   `;
-
   pool.query(sqlQuery, [req.params.id])
   .then(() => res.sendStatus(202))
+    
+  //Once the row items are deleted we can delete the corresponding trip
+    const sqlQuery2 = `
+      DELETE FROM "headouts"
+      WHERE "id"=$1
+    `;
+    pool.query(sqlQuery2, [req.params.id])
+    .then(() => {
+      console.log('succesfully deleted trip entry')
+    })
+    .catch((error) => {
+      console.log('Issue deleting trip from headouts', error)
+    })
+
+  //Catch for 1st query.
   .catch((error) => {
-    console.log('Issue deleting trip from headouts', error)
+    console.log('Issue deleting items from usercustom', error)
   })
 })
 
