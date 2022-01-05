@@ -35,31 +35,25 @@ export default function LoadPackModal() {
   const dispatch = useDispatch();
 
   const handleLoadPack = (tripID) => {
-    
-    
-
     const tripFilteredGear = userGear.filter(item => (item.trip_id == tripID))
-
     //better to dispatch once with full object?
     //or loop through and dispatch once per item to ADD_CURRENTPACK
       //this would allow it to load on top of stuff. Might be preferable.
-    
-    for (let item of tripFilteredGear) {
+    for (let i = 0; i < tripFilteredGear.length - 1; i++) {
       dispatch({
         type: 'ADD_CURRENTPACK',
         payload: {
-          id: 1000,
-          category_id: Number(item.category_id),
-          details: item.gear_note,
-          name: item.name,
-          weight: item.weight,
-          gear_id: item.gear_id,
-          consumable_id: item.consumable_id,
-          pack_note: item.pack_note          
+          id: (i + cPackIndex),
+          category_id: Number(tripFilteredGear[i].category_id),
+          details: tripFilteredGear[i].gear_note,
+          name: tripFilteredGear[i].name,
+          weight: tripFilteredGear[i].weight,
+          gear_id: tripFilteredGear[i].gear_id,
+          consumable_id: tripFilteredGear[i].consumable_id,
+          pack_note: tripFilteredGear[i].pack_note          
         }
       })
       dispatch({type: 'INCR_CP_INDEX'});
-      
     }
   }
 

@@ -73,7 +73,7 @@
       [ 👍 ] Clear Pack Button
       [ 👍 ] Add line item
       [ 👍 ] Save Pack
-      [ ] Load Pack
+      [ 👍 ] Load Pack
       [ ] Load Category
 
 <!--  -->
@@ -138,8 +138,8 @@ pack from "edit"
 [ 👍 ] DELETE needs to clear items
     THEN clear headouts
     MERGE THEM
-[ ] Adding 'My Stuff' to      
+[ 👍 ] Adding 'My Stuff' to
     CurrentPack gets wonky
 [ ] objectobject Pack Select
-[ ] LOAD to Pack Index state
+[ 👍 ] LOAD to Pack Index state
     Modal is always behind.
