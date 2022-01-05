@@ -53,7 +53,18 @@ export default function Inventory() {
     setInventory(consumables)
   }
   const handleAddToCurrentPack = (item) => {
-    if (item.category_id < 10) {
+    //checks if item is from 'my stuff' 
+    
+    if (item.trip_id) {
+      let addItem = {...item, id: currentPackIndex}
+      dispatch({
+        type: 'ADD_CURRENTPACK',
+        payload: addItem
+      })
+      dispatch({
+        type: 'INCR_CP_INDEX'
+      })
+    } else if (item.category_id < 10) {
       let addItem = {...item, id: currentPackIndex, gear_id: item.id}
       dispatch({
         type: 'ADD_CURRENTPACK',

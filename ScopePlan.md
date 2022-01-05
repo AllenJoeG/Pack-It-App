@@ -129,8 +129,6 @@
 [ ]
 
 <!-- Next to DO -->
-Write Load Pack
-
 Think through how to track/save/load a
 pack from "edit"
 
