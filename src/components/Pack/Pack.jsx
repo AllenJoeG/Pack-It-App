@@ -3,7 +3,8 @@ import {useSelector, useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
 import LoadPackModal from '../LoadPackModal/LoadPackModal';
-//MUI stuff
+
+////////// MUI stuff
 import { styled } from '@mui/material/styles';
 import {Box, Container, Grid, Table, TableBody, TableFooter, TableCell, 
   tableCellClasses, TableContainer, TableHead, TableRow, Paper, Button,
@@ -24,6 +25,12 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     backgroundColor: theme.palette.action.hover,
   }
 }));
+
+const cellStyling = {
+  width: '19%',
+};
+
+///////// end MUI Stuff
 
 export default function Pack() {
   //alias HOOKS
@@ -164,10 +171,10 @@ export default function Pack() {
       </Grid>
 
       <TableContainer>
-        <Table>
+        <Table stickyHeader>
           <TableHead>
             <TableRow>
-              <StyledTableCell>
+            <StyledTableCell sx = {{ ...cellStyling }} align="right">
                 <TextField
                   select
                   fullWidth
@@ -188,29 +195,46 @@ export default function Pack() {
                   })}
                 </TextField>
               </StyledTableCell>
-              <StyledTableCell> {chosenPack.capacity} Liters </StyledTableCell>
-              <StyledTableCell> Item Category </StyledTableCell>
-              <StyledTableCell>Weight: {calculatePackWeight()}</StyledTableCell>
-              <StyledTableCell> Remove Item </StyledTableCell>
+              <StyledTableCell sx = {{ ...cellStyling }} align="right"> 
+                {chosenPack.capacity} Liters 
+              </StyledTableCell>
+            </TableRow>
+
+            <TableRow>
+              <StyledTableCell sx = {{ ...cellStyling }} align="right">
+                Item Name
+              </StyledTableCell>
+              <StyledTableCell sx = {{ ...cellStyling }} align="right"> 
+                Item Notes
+              </StyledTableCell>
+              <StyledTableCell sx = {{ ...cellStyling }} align="right">
+                Item Category 
+              </StyledTableCell>
+              <StyledTableCell sx = {{ ...cellStyling }} align="right">
+                Weight: {calculatePackWeight()}
+              </StyledTableCell>
+              <StyledTableCell sx = {{ ...cellStyling }} align="right">
+                Remove Item 
+              </StyledTableCell>
             </TableRow>
           </TableHead>
-          {/* TableBody maps through currentPack reducer */}
+
           <TableBody>
             {currentPack.map((item) => {
               return <StyledTableRow key={item.id}>
-                <StyledTableCell>
+                <StyledTableCell sx = {{ ...cellStyling }} align="right">
                   {item.name}
                 </StyledTableCell>
-                <StyledTableCell>
-                  {item.weight} oz
-                </StyledTableCell>
-                <StyledTableCell>
-                {(categories.filter(cat => (cat.id == item.category_id)))[0].category}
-                </StyledTableCell>
-                <StyledTableCell>
+                <StyledTableCell sx = {{ ...cellStyling }} align="right">
                   {item.description}
                 </StyledTableCell>
-                <StyledTableCell>
+                <StyledTableCell sx = {{ ...cellStyling }} align="right">
+                {(categories.filter(cat => (cat.id == item.category_id)))[0].category}
+                </StyledTableCell>
+                <StyledTableCell sx = {{ ...cellStyling }} align="right">
+                  {item.weight} oz
+                </StyledTableCell>
+                <StyledTableCell sx = {{ ...cellStyling }} align="right">
                   <Button
                     variant="contained"
                     color="error"

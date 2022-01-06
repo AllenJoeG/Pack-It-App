@@ -77,6 +77,7 @@ export default function LoadPackModal() {
             fullWidth
             variant="outlined"
             formlabel="Load a Pack"
+            label="Select a Pack to Load"
             value={packLoad}
             onChange={(e) => setPackLoad(e.target.value)}
           >

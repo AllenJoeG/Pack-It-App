@@ -26,6 +26,10 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
+const cellStyling = {
+  width: '19%',
+};
+
 export default function Inventory() {
   //alias HOOKS
   const dispatch = useDispatch();
@@ -116,15 +120,15 @@ export default function Inventory() {
         </Grid>
       </Grid>
       
-      <TableContainer>
-        <Table>
+      <TableContainer sx={{ maxHeight: 750}}>
+        <Table stickyHeader>
           <TableHead>
             <TableRow>
-              <StyledTableCell>Item Name</StyledTableCell>
-              <StyledTableCell>Item Notes</StyledTableCell> 
-              <StyledTableCell>Category</StyledTableCell>
-              <StyledTableCell>Weight (oz) </StyledTableCell>
-              <StyledTableCell>Add to Pack</StyledTableCell>
+              <StyledTableCell sx = {{ ...cellStyling }} align="right">Item Name</StyledTableCell>
+              <StyledTableCell sx = {{ ...cellStyling }} align="right">Item Notes</StyledTableCell> 
+              <StyledTableCell sx = {{ ...cellStyling }} align="right">Category</StyledTableCell>
+              <StyledTableCell sx = {{ ...cellStyling }} align="right">Weight (oz) </StyledTableCell>
+              <StyledTableCell sx = {{ ...cellStyling }} align="right">Add to Pack</StyledTableCell>
             </TableRow>
           </TableHead>
           
@@ -132,21 +136,21 @@ export default function Inventory() {
             {inventory.map((item) => {
               return <StyledTableRow key={item.id}>
                 
-                <StyledTableCell>
+                <StyledTableCell sx = {{ ...cellStyling }} align="right">
                   {item.name}
                 </StyledTableCell>
-                <StyledTableCell>
+                <StyledTableCell sx = {{ ...cellStyling }} align="right">
                   {item.detail ?
                     item.detail :
                     item.gear_note}
                 </StyledTableCell>
-                <StyledTableCell>
+                <StyledTableCell sx = {{ ...cellStyling }} align="right">
                   {(categories.filter(cat => (cat.id == item.category_id)))[0].category}
                 </StyledTableCell>
-                <StyledTableCell>
+                <StyledTableCell sx = {{ ...cellStyling }} align="right">
                   {item.weight}
                 </StyledTableCell>
-                <StyledTableCell>
+                <StyledTableCell sx = {{ ...cellStyling }} align="right">
                   <Button
                     variant="contained"
                     size="small"
