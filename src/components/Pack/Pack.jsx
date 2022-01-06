@@ -36,7 +36,7 @@ export default function Pack() {
   const consumables = useSelector((store) => store.consumablesReducer);
   const categories = useSelector((store) => store.categoriesReducer);
   //Local State
-  const [chosenPack, setChosenPack] = useState({pack_name: 'Choose Pack', capacity: 0});
+  const [chosenPack, setChosenPack] = useState('Choose Pack');
   const [browseCategory, setBrowseCategory] = useState('');
   const [addToPackDropdown, setAddToPackDropdown] = useState([]);
   const [browseToAdd, setBrowseToAdd] = useState('');
@@ -48,7 +48,6 @@ export default function Pack() {
   }, [])
 
   const handlePackChange = (e) => {
-    console.log(e.target.value);
     setChosenPack(e.target.value);
   }
 
@@ -173,7 +172,9 @@ export default function Pack() {
                   select
                   fullWidth
                   variant="outlined"
+                  label="Select a Pack"
                   formlabel="Select a Pack"
+                  size="small"
                   value={chosenPack}
                   onChange={handlePackChange}
                 >
@@ -188,9 +189,9 @@ export default function Pack() {
                 </TextField>
               </StyledTableCell>
               <StyledTableCell> {chosenPack.capacity} Liters </StyledTableCell>
-              <StyledTableCell> x </StyledTableCell>
-              <StyledTableCell>{calculatePackWeight()}</StyledTableCell>
-              <StyledTableCell> x </StyledTableCell>
+              <StyledTableCell> Item Category </StyledTableCell>
+              <StyledTableCell>Weight: {calculatePackWeight()}</StyledTableCell>
+              <StyledTableCell> Remove Item </StyledTableCell>
             </TableRow>
           </TableHead>
           {/* TableBody maps through currentPack reducer */}

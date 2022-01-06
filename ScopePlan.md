@@ -133,13 +133,13 @@ Think through how to track/save/load a
 pack from "edit"
 
 <!-- Known Bugs -->
-[ ] Save Pack with empty CP
-[ ] Blue Buttons layout
 [ 👍 ] DELETE needs to clear items
     THEN clear headouts
-    MERGE THEM
+    chain the queries
 [ 👍 ] Adding 'My Stuff' to
     CurrentPack gets wonky
-[ ] objectobject Pack Select
 [ 👍 ] LOAD to Pack Index state
     Modal is always behind.
+[ ] Save Pack with empty CP
+[ ] Blue Buttons layout
+[ ] objectobject Pack Select

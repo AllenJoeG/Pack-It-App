@@ -8,8 +8,8 @@ import {Box, Container, Grid, Table, TableBody, TableCell, tableCellClasses, Tab
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: theme.palette.primary.light,
+    color: theme.palette.common.black,
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
@@ -120,16 +120,32 @@ export default function Inventory() {
         <Table>
           <TableHead>
             <TableRow>
+              <StyledTableCell>Item Name</StyledTableCell>
+              <StyledTableCell>Item Notes</StyledTableCell> 
+              <StyledTableCell>Category</StyledTableCell>
+              <StyledTableCell>Weight (oz) </StyledTableCell>
               <StyledTableCell>Add to Pack</StyledTableCell>
-              <StyledTableCell>Conditionally render STUFF</StyledTableCell>
-              <StyledTableCell>Weight (ounces) </StyledTableCell>
-              <StyledTableCell>Category ID</StyledTableCell>
             </TableRow>
           </TableHead>
           
           <TableBody>
             {inventory.map((item) => {
               return <StyledTableRow key={item.id}>
+                
+                <StyledTableCell>
+                  {item.name}
+                </StyledTableCell>
+                <StyledTableCell>
+                  {item.detail ?
+                    item.detail :
+                    item.gear_note}
+                </StyledTableCell>
+                <StyledTableCell>
+                  {(categories.filter(cat => (cat.id == item.category_id)))[0].category}
+                </StyledTableCell>
+                <StyledTableCell>
+                  {item.weight}
+                </StyledTableCell>
                 <StyledTableCell>
                   <Button
                     variant="contained"
@@ -140,15 +156,7 @@ export default function Inventory() {
                     Add to Pack
                   </Button>
                 </StyledTableCell>
-                <StyledTableCell>
-                  {item.name}
-                </StyledTableCell>
-                <StyledTableCell>
-                  {item.weight}
-                </StyledTableCell>
-                <StyledTableCell>
-                {(categories.filter(cat => (cat.id == item.category_id)))[0].category}
-                </StyledTableCell>
+                
               </StyledTableRow>
             })}
           </TableBody>
