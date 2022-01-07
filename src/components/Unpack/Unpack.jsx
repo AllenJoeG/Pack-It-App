@@ -4,7 +4,8 @@ import {useHistory} from 'react-router-dom';
 
 import EditUnpackModal from '../EditUnpackModal/EditUnpackModal';
 import EditGearModal from '../EditGearModal/EditGearModal';
-//MUI stuff
+
+///////MUI stuff
 import { styled } from '@mui/material/styles';
 import {Box, Container, Grid, Table, TableBody, TableFooter, TableCell, 
   tableCellClasses, TableContainer, TableHead, TableRow, Paper, Button,
@@ -13,6 +14,26 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import React from 'react';
 
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.primary.light,
+    color: theme.palette.common.black,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: theme.palette.action.hover,
+  },
+  // hide last border
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
+////////
 
 function GearRows({tripID}) {
   //Alias Reducers
@@ -38,8 +59,8 @@ function GearRows({tripID}) {
 
   return(
     <React.Fragment>
-      <TableRow key={filteredTrip[0].id} sx={{ '& > *': { borderBottom: 'unset' } }}>
-        <TableCell>
+      <StyledTableRow key={filteredTrip[0].id} sx={{ '& > *': { borderBottom: 'unset' } }}>
+        <StyledTableCell>
           <IconButton
             aria-label="expand row"
             size="small"
@@ -47,59 +68,59 @@ function GearRows({tripID}) {
           >
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
-        </TableCell>
-        <TableCell align="right">{filteredTrip[0].trip_name}</TableCell>
-        <TableCell align="right">{(filteredTrip[0].trip_date).slice(0,10)}</TableCell>
-        <TableCell align="right">
+        </StyledTableCell>
+        <StyledTableCell align="right">{filteredTrip[0].trip_name}</StyledTableCell>
+        <StyledTableCell align="right">{(filteredTrip[0].trip_date).slice(0,10)}</StyledTableCell>
+        <StyledTableCell align="right">
           {filteredTrip[0].trip_notes}
-        </TableCell>
-        <TableCell align="right">{calculatePackWeight()}</TableCell>
-        <TableCell align="right">
+        </StyledTableCell>
+        <StyledTableCell align="right">{calculatePackWeight()}</StyledTableCell>
+        <StyledTableCell align="right">
           <EditUnpackModal 
             tripID={filteredTrip[0].id}
             trip_Name={filteredTrip[0].trip_name}
             trip_Notes={filteredTrip[0].trip_notes}
           />
-        </TableCell>
+        </StyledTableCell>
         
-      </TableRow>
+      </StyledTableRow>
 
-      <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+      <StyledTableRow>
+        <StyledTableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
               <Table size="small" aria-label="purchases">
                 <TableHead>
-                  <TableRow>
-                    <TableCell align="right">Thing</TableCell>
-                    <TableCell align="right">Gear Notes</TableCell>
-                    <TableCell align="right">Pack Notes</TableCell>
-                    <TableCell align="right">Category</TableCell>
-                    <TableCell align="right">Weight (oz)</TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
+                  <StyledTableRow>
+                    <StyledTableCell align="right">Thing</StyledTableCell>
+                    <StyledTableCell align="right">Gear Notes</StyledTableCell>
+                    <StyledTableCell align="right">Pack Notes</StyledTableCell>
+                    <StyledTableCell align="right">Category</StyledTableCell>
+                    <StyledTableCell align="right">Weight (oz)</StyledTableCell>
+                    <StyledTableCell></StyledTableCell>
+                  </StyledTableRow>
                 </TableHead>
                 <TableBody>
                   {filteredGear.map((gear) => {
-                    return <TableRow key={gear.id}>
-                      <TableCell align="right">{gear.name}</TableCell>
-                      <TableCell align="right">{gear.gear_note}</TableCell>
-                      <TableCell align="right">{gear.pack_note}</TableCell>
-                      <TableCell align="right">
+                    return <StyledTableRow key={gear.id}>
+                      <StyledTableCell align="right">{gear.name}</StyledTableCell>
+                      <StyledTableCell align="right">{gear.gear_note}</StyledTableCell>
+                      <StyledTableCell align="right">{gear.pack_note}</StyledTableCell>
+                      <StyledTableCell align="right">
                         {(categories.filter(cat => (cat.id == gear.category_id)))[0].category}
-                      </TableCell>
-                      <TableCell align="right">{gear.weight}</TableCell>
-                      <TableCell align="right">
+                      </StyledTableCell>
+                      <StyledTableCell align="right">{gear.weight}</StyledTableCell>
+                      <StyledTableCell align="right">
                         <EditGearModal thingID={gear.id} thingWeight={gear.weight} thinGN={gear.gear_note} thinPN={gear.pack_note} />
-                      </TableCell>
-                    </TableRow>
+                      </StyledTableCell>
+                    </StyledTableRow>
                   })}
                 </TableBody>
               </Table>
             </Box>
           </Collapse>
-        </TableCell>
-      </TableRow>
+        </StyledTableCell>
+      </StyledTableRow>
     </React.Fragment>
   )
 };
@@ -121,14 +142,14 @@ export default function Unpack() {
       <TableContainer component={Paper}>
         <Table aria-label="collapsible table">
           <TableHead>
-            <TableRow>
-              <TableCell />
-              <TableCell align="right"> Trip Name </TableCell>
-              <TableCell align="right"> Trip Date </TableCell>
-              <TableCell align="right"> Trip Notes </TableCell>
-              <TableCell align="right"> Pack Weight </TableCell>
-              <TableCell align="right"> </TableCell>
-            </TableRow>
+            <StyledTableRow>
+              <StyledTableCell />
+              <StyledTableCell align="right"> Trip Name </StyledTableCell>
+              <StyledTableCell align="right"> Trip Date </StyledTableCell>
+              <StyledTableCell align="right"> Trip Notes </StyledTableCell>
+              <StyledTableCell align="right"> Pack Weight </StyledTableCell>
+              <StyledTableCell align="right"> </StyledTableCell>
+            </StyledTableRow>
           </TableHead>
           <TableBody>
             {userTrips.map((trip) => {

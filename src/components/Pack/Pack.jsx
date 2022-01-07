@@ -144,61 +144,45 @@ export default function Pack() {
 
   return(
     <Box>
+      <Box>
       <Grid 
-        container 
+        flex container 
         direction="row" 
-        justifyContent="space-evenly" 
+        justifyContent="space-between" 
         alignItems="center"
       >
-        <Grid item xs={6} sm={3}>
+        <Grid item xs={1} sm={2}></Grid>
+        <Grid item xs={4} sm={2}>
           <Button 
             variant="contained"
+            color="secondary"
             onClick={handleSavePack}
           >Save Pack</Button>
         </Grid>
-        <Grid item xs={6} sm={3}>
+        <Grid item xs={4} sm={2}>
           <LoadPackModal />
         </Grid>
-        <Grid item xs={6} sm={3}>
-          <Button variant="contained">Load Category</Button>
-        </Grid>
-        <Grid item xs={6} sm={3}>
+        <Grid item xs={4} sm={2}>
           <Button 
             variant="contained"
+            color="secondary"
+            >Categories</Button>
+        </Grid>
+        <Grid item xs={4} sm={2}>
+          <Button 
+            align="right"
+            variant="contained"
+            color="secondary"
             onClick={handleClearCurrentPack}
           >Clear Pack</Button>
         </Grid>
+        <Grid item xs={1} sm={2}></Grid>
       </Grid>
+      </Box>
 
       <TableContainer>
         <Table stickyHeader>
           <TableHead>
-            <TableRow>
-            <StyledTableCell sx = {{ ...cellStyling }} align="right">
-                <TextField
-                  select
-                  fullWidth
-                  variant="outlined"
-                  label="Select a Pack"
-                  formlabel="Select a Pack"
-                  size="small"
-                  value={chosenPack}
-                  onChange={handlePackChange}
-                >
-                  {packs.map((pack) => {
-                    return <MenuItem 
-                            key={pack.id} 
-                            value={pack}
-                          >
-                            {pack.pack_name}
-                          </MenuItem>
-                  })}
-                </TextField>
-              </StyledTableCell>
-              <StyledTableCell sx = {{ ...cellStyling }} align="right"> 
-                {chosenPack.capacity} Liters 
-              </StyledTableCell>
-            </TableRow>
 
             <TableRow>
               <StyledTableCell sx = {{ ...cellStyling }} align="right">
@@ -249,16 +233,40 @@ export default function Pack() {
           {/* TABLE FOOTER CONTAINS LINE ITEM ADD FUNCTIONALITY */}
           <TableFooter>
             <StyledTableRow>
-              <StyledTableCell>
-                <Typography align="right">Browse to Add</Typography>
+
+              <StyledTableCell sx = {{ ...cellStyling }} align="right">
+                <TextField
+                  select
+                  fullWidth
+                  variant="outlined"
+                  label="Select a Pack"
+                  formlabel="Select a Pack"
+                  size="small"
+                  value={chosenPack}
+                  onChange={handlePackChange}
+                >
+                  {packs.map((pack) => {
+                    return <MenuItem 
+                            key={pack.id} 
+                            value={pack}
+                          >
+                            {pack.pack_name}
+                          </MenuItem>
+                  })}
+                </TextField>
               </StyledTableCell>
+              <StyledTableCell sx = {{ ...cellStyling }} align="left"> 
+                {chosenPack.capacity} Liters 
+              </StyledTableCell>
+
               <StyledTableCell>
                 <TextField
                   select
                   fullWidth
                   variant="outlined"
                   formlabel="Select a Category"
-                  label="Select Category"
+                  label="Select a Category"
+                  size="small"
                   value={browseCategory}
                   onChange={handleBrowseCategorySelect}
                 >
@@ -273,12 +281,13 @@ export default function Pack() {
                 </TextField>
               </StyledTableCell>
               <StyledTableCell>
-              <TextField
+                <TextField
                   select
                   fullWidth
                   variant="outlined"
                   formlabel="Select an item"
                   label="Select Item"
+                  size="small"
                   value={browseToAdd}
                   onChange={handleBrowseToAddSelect}
                 >
@@ -306,7 +315,6 @@ export default function Pack() {
                   <p>Select Item</p>
                 }
               </StyledTableCell>
-              <StyledTableCell></StyledTableCell>
             </StyledTableRow>
           </TableFooter>
 

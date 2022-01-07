@@ -78,7 +78,7 @@ export default function EditUnpackModal({tripID, trip_Name, trip_Notes}) {
             <Button
               variant="contained" 
               size="small" 
-              color="error"
+              color="warning"
               onClick={(e) => setDeleteValue(!deleteValue)} 
             >Delete Pack?
             </Button>

@@ -92,32 +92,41 @@ export default function Inventory() {
   return(
     <Box>
       <Grid container>
-        <Grid item xs={6} sm={3}>
+        <Grid item xs={1} sm={2}></Grid>
+        <Grid item xs={5} sm={2}>
           <Button
+          width="145"
             variant="contained"
+            color="secondary"            
             onClick={handleShowUsercustom}
           >
-            Show My Stuff
+            Custom Gear
           </Button>
         </Grid>
-        <Grid item xs={3} sm={3}>
+        <Grid item xs={5} sm={2}>
           <Button 
             variant="contained"
+            color="secondary"                     
             onClick={handleShowGear}
           >
-            Show Gear</Button>
+            Default Gear</Button>
         </Grid>
-        <Grid item xs={3} sm={3}>
+        <Grid item xs={5} sm={2}>
           <Button
             variant="contained"
+            color="secondary"            
             onClick={handleShowConsumables}
           >
-            Show Consumables
+            Consumables
           </Button>
         </Grid>
-        <Grid item xs={3} sm={3}>
-          <Button variant="contained">Categories</Button>
+        <Grid item xs={5} sm={2}>
+          <Button 
+          variant="contained"
+            color="secondary"            
+          >Categories</Button>
         </Grid>
+        <Grid item xs={1} sm={2}></Grid>
       </Grid>
       
       <TableContainer sx={{ maxHeight: 750}}>

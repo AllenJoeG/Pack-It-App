@@ -62,6 +62,7 @@ export default function LoadPackModal() {
     <div>
       <Button 
           variant="contained"
+          color="secondary"
           onClick={handleOpen}
         >Load Pack
       </Button>

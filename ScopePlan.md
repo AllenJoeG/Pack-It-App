@@ -98,7 +98,14 @@
     [ 👍 ] display Category Name
 
 
-
+<!-- Styling! --> 
+  [ ] Pack
+  [ ] Unpack
+  [ ] Inventory
+  [ ] Nav
+  [ ] EditModal
+  [ ] LoadModal
+  [ ] UnpackModal
 
   <!--  -->
 [ ] Headout Functional Programming
