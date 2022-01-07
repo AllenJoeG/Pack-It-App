@@ -107,6 +107,14 @@
   [ ] LoadModal
   [ ] UnpackModal
 
+  [ ] Mobile Responsive Breakpoints
+
+<!-- Functional stuff -->
+[ ] Load Pack should load PACK
+[ ] Load Pack not loading duplicates
+[ ] Add To Pack clear inputs
+
+
   <!--  -->
 [ ] Headout Functional Programming
   [ ] squel.js Server-side
@@ -148,5 +156,5 @@ pack from "edit"
 [ 👍 ] LOAD to Pack Index state
     Modal is always behind.
 [ ] Save Pack with empty CP
-[ ] Blue Buttons layout
+[ ] Purple Buttons layout
 [ ] objectobject Pack Select

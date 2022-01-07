@@ -95,7 +95,6 @@ export default function Inventory() {
         <Grid item xs={1} sm={2}></Grid>
         <Grid item xs={5} sm={2}>
           <Button
-          width="145"
             variant="contained"
             color="secondary"            
             onClick={handleShowUsercustom}
