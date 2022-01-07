@@ -9,6 +9,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   const sqlQuery = `
     SELECT * FROM "user_custom"
       WHERE "user_id" = $1
+      ORDER BY "id" ASC;
     `;
   const sqlValues = [req.user.id]
 

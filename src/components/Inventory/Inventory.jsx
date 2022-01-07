@@ -148,8 +148,8 @@ export default function Inventory() {
                   {item.name}
                 </StyledTableCell>
                 <StyledTableCell sx = {{ ...cellStyling }} align="right">
-                  {item.detail ?
-                    item.detail :
+                  {item.details ?
+                    item.details :
                     item.gear_note}
                 </StyledTableCell>
                 <StyledTableCell sx = {{ ...cellStyling }} align="right">

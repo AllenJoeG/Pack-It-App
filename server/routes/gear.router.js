@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   // GET route code here
   pool
-  .query (`SELECT * FROM "gear";`) 
+  .query (`SELECT * FROM "gear" ORDER BY "id" ASC;`) 
   .then ((results) => res.send(results.rows))
   .catch ((error) => {
     console.log ('ERROR SELECTING FROM "ITEM"', error)
