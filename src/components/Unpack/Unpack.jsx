@@ -139,7 +139,7 @@ export default function Unpack() {
   return(
     <Box>
 
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} sx= {{ maxHeight: 650 }}>
         <Table aria-label="collapsible table">
           <TableHead>
             <StyledTableRow>
@@ -148,7 +148,7 @@ export default function Unpack() {
               <StyledTableCell align="right"> Trip Date </StyledTableCell>
               <StyledTableCell align="right"> Trip Notes </StyledTableCell>
               <StyledTableCell align="right"> Pack Weight </StyledTableCell>
-              <StyledTableCell align="right"> </StyledTableCell>
+              <StyledTableCell />
             </StyledTableRow>
           </TableHead>
           <TableBody>
