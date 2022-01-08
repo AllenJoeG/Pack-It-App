@@ -1,7 +1,7 @@
 import react, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 //MUI
-import {TextField, Box, Button, Typography, Modal} from '@mui/material';
+import {TextField, Box, Button, Typography, Modal, Grid, Paper} from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -55,52 +55,85 @@ export default function EditUnpackModal({tripID, trip_Name, trip_Notes}) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          
+          <Grid container style={{ Paper }}>
+
+            <Grid item xs={12} sm={12}
+              sx={{marginTop: 2, marginBottom: 2}} 
+            >
               <TextField 
+                fullWidth
                 label="Name Trip"
                 variant="outlined"
                 value={tripName}
                 onChange={e => setTripName(e.target.value)}
               >
-                Yes
               </TextField>
-          
-            <TextField 
+            </Grid>
+
+            <Grid item xs={12} sm={12}
+              sx={{marginTop: 2, marginBottom: 2}} 
+            >
+              <TextField
+                fullWidth
                 label = "Trip Notes"
                 variant="outlined"
                 value={tripNotes}
                 onChange={e => setTripNotes(e.target.value)}
               >
-                No
               </TextField>
-          <Button variant="contained" size="small" color="success" onClick={handleUpdate}>Update Pack!</Button>
-          <Box>
-            <Button
-              variant="contained" 
-              size="small" 
-              color="warning"
-              onClick={(e) => setDeleteValue(!deleteValue)} 
-            >Delete Pack?
-            </Button>
-            {deleteValue ?
+            </Grid>
+
+            <Grid item xs={12}
+              sx={{marginTop: 2, marginBottom: 2}} 
+            >
               <Button 
                 variant="contained" 
                 size="small" 
-                color="error" 
-                onClick={handleDelete}
-              >Yes, Delete This Pack!
+                color="success" 
+                onClick={handleUpdate}
+              >
+                Update Pack!
               </Button>
-              :
-              <Button 
-                disabled
+            </Grid>
+          
+            <Grid item xs={6}
+              sx={{marginTop: 2, marginBottom: 2}} 
+            >
+              <Button
                 variant="contained" 
                 size="small" 
-                color="error" 
-                onClick={handleDelete}
-              >Yes, Delete This Pack!
+                color="warning"
+                onClick={(e) => setDeleteValue(!deleteValue)} 
+              >
+                Delete Pack?
               </Button>
-            }
-          </Box>
+            </Grid>
+            
+            <Grid item xs={6}
+              sx={{marginTop: 2, marginBottom: 2}} 
+            >
+              {deleteValue ?
+                <Button 
+                  variant="contained" 
+                  size="small" 
+                  color="error" 
+                  onClick={handleDelete}
+                >
+                  Yes, Delete This Pack!
+                </Button>
+                :
+                <Button 
+                  disabled
+                  variant="contained" 
+                  size="small" 
+                  color="error" 
+                  onClick={handleDelete}
+                >Yes, Delete This Pack!
+                </Button>
+              }
+            </Grid>
+          </Grid>
+          
           
         </Box>
       </Modal>

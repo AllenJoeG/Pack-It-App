@@ -1,7 +1,7 @@
 import react, {useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 //MUI
-import {TextField, Box, Button, Modal} from '@mui/material';
+import {TextField, Box, Button, Modal, Grid, Paper} from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -49,30 +49,63 @@ export default function EditGearModal({thingID, thingWeight, thinGN, thinPN}) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+          <Grid container
+            style={{Paper}}
+            alignItems="flex-end"
+            
+            >
           
+            <Grid item xs={12}
+              sx={{marginTop: 2, marginBottom: 2}}
+            >
+              <TextField
+                  fullWidth
+                  label = "Gear Notes"
+                  variant="outlined"
+                  value={gearNote}
+                  onChange={e => setGearNote(e.target.value)}
+                />
+            </Grid>
+
+            <Grid item xs={12}
+              sx={{marginTop:2, marginBottom: 2}}
+            >
+              <TextField
+                  fullWidth
+                  label = "Pack Notes"
+                  variant="outlined"
+                  value={packNote}
+                  onChange={e => setPackNote(e.target.value)}
+              />
+            </Grid>
+
+            <Grid item xs={6}
+              sx={{marginTop: 2, marginBottom: 2}}
+            >
               <TextField 
                 label="Weight change?"
                 variant="outlined"
                 value={weight}
                 onChange={e => setWeight(e.target.value)}
               />
-          
-            <TextField 
-                label = "Gear Notes"
-                variant="outlined"
-                value={gearNote}
-                onChange={e => setGearNote(e.target.value)}
-              />
+            </Grid>
 
-            <TextField 
-                label = "Pack Notes"
-                variant="outlined"
-                value={packNote}
-                onChange={e => setPackNote(e.target.value)}
-              />
+            <Grid item xs={2}></Grid>
 
-          <Button variant="contained" size="small" color="success" onClick={handleUpdate}>Update Pack!</Button>
-          
+            <Grid item xs={4}
+              sx={{marginTop: 2, marginBottom: 2}}
+            >
+              <Button 
+                
+                variant="contained" 
+                size="small" 
+                color="success" 
+                onClick={handleUpdate}
+              >
+                Update Pack!
+              </Button>
+            </Grid>
+          </Grid>
         </Box>
       </Modal>
     </div>

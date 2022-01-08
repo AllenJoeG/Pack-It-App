@@ -139,7 +139,7 @@ export default function Inventory() {
             <TableRow>
               <StyledTableCell sx = {{ ...cellStyling }} align="right">Item Name</StyledTableCell>
               <StyledTableCell sx = {{ ...cellStyling }} align="right">Item Notes</StyledTableCell> 
-              <StyledTableCell sx = {{ ...cellStyling }} align="right">Category</StyledTableCell>
+              <StyledTableCell sx = {{ ...cellStyling }} align="right">Item Category</StyledTableCell>
               <StyledTableCell sx = {{ ...cellStyling }} align="right">Weight (oz) </StyledTableCell>
               <StyledTableCell sx = {{ ...cellStyling }} align="right">Add to Pack</StyledTableCell>
             </TableRow>

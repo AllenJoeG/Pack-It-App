@@ -107,9 +107,9 @@
   [ ] Unpack
   [ 👍 ] Inventory
   [ ] Nav
-  [ ] EditModal
+  [ 👍 ] EditModal
   [ ] LoadModal
-  [ ] UnpackModal
+  [ 👍 ] UnpackModal
 
   [ ] Mobile Responsive Breakpoints
 
