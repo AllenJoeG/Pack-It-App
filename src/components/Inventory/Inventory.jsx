@@ -4,7 +4,8 @@ import {useHistory} from 'react-router-dom';
 
 //MUI stuff
 import { styled } from '@mui/material/styles';
-import {Box, Container, Grid, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow, Paper, Button} from '@mui/material';
+import {Box, Container, Grid, Table, TableBody, TableCell, tableCellClasses, TableContainer, 
+  TableHead, TableRow, TableFooter, TextField, Paper, Button} from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -14,6 +15,10 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
   },
+  [`&.${tableCellClasses.footer}`]: {
+    backgroundColor: theme.palette.primary.light,
+    color: theme.palette.common.black,
+  }
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
@@ -128,7 +133,7 @@ export default function Inventory() {
         <Grid item xs={1} sm={2}></Grid>
       </Grid>
       
-      <TableContainer sx={{ maxHeight: 750}}>
+      <TableContainer sx={{ maxHeight: 650}}>
         <Table stickyHeader>
           <TableHead>
             <TableRow>
@@ -172,6 +177,103 @@ export default function Inventory() {
               </StyledTableRow>
             })}
           </TableBody>
+
+          <TableFooter style={{left: 0, bottom: 0, zIndex: 2, position: 'sticky'}}>
+            <StyledTableRow>
+
+              <StyledTableCell sx = {{ ...cellStyling }} align="right">
+                {/* <TextField
+                  select
+                  fullWidth
+                  variant="outlined"
+                  label="Select a Pack"
+                  formlabel="Select a Pack"
+                  size="small"
+                  value={chosenPack}
+                  onChange={handlePackChange}
+                >
+                  {packs.map((pack) => {
+                    return <MenuItem 
+                            key={pack.id} 
+                            value={pack}
+                          >
+                            {pack.pack_name}
+                          </MenuItem>
+                  })}
+                </TextField> */}
+              </StyledTableCell>
+              <StyledTableCell sx = {{ ...cellStyling }} align="left"> 
+                <Button
+                  variant="contained"
+                  size="small"
+                  color="secondary"
+                  >Create Custom Pack</Button>
+              </StyledTableCell>
+
+              <StyledTableCell>
+                {/* <TextField
+                  select
+                  fullWidth
+                  variant="outlined"
+                  formlabel="Select a Category"
+                  label="Select a Category"
+                  size="small"
+                  value={browseCategory}
+                  onChange={handleBrowseCategorySelect}
+                >
+                  {categories.map((category) => {
+                    return <MenuItem 
+                            key={category.id} 
+                            value={category.id}
+                          >
+                            {category.category}
+                          </MenuItem>
+                  })}
+                </TextField> */}
+              </StyledTableCell>
+
+              <StyledTableCell>
+                {/* <TextField
+                  select
+                  fullWidth
+                  variant="outlined"
+                  formlabel="Select an item"
+                  label="Select Item"
+                  size="small"
+                  value={browseToAdd}
+                  onChange={handleBrowseToAddSelect}
+                >
+                  {addToPackDropdown.map((item) => {
+                    return <MenuItem 
+                            key={item.id} 
+                            value={item.id}
+                          >
+                            {item.name}
+                          </MenuItem>
+                  })}
+                </TextField> */}
+                <Button
+                  variant="contained"
+                  size="small"
+                  color="secondary"
+                > Create Custom Item</Button>
+              </StyledTableCell>
+              <StyledTableCell>
+              {/* {browseToAdd ? 
+                  <Button 
+                    variant="contained"
+                    color="success"
+                    size="small"
+                    align="left"
+                    onClick={handleAddToCurrentPack}>
+                    Add to Pack
+                  </Button>
+                  : 
+                  <p>Select Item</p>
+                } */}
+              </StyledTableCell>
+            </StyledTableRow>
+          </TableFooter>
 
         </Table>
       </TableContainer>

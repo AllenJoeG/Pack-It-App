@@ -18,6 +18,10 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
   },
+  [`&.${tableCellClasses.footer}`]: {
+    backgroundColor: theme.palette.primary.light,
+    color: theme.palette.common.black,
+  }
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
@@ -180,7 +184,7 @@ export default function Pack() {
       </Grid>
       </Box>
 
-      <TableContainer>
+      <TableContainer sx= {{ maxHeight: 650 }}>
         <Table stickyHeader>
           <TableHead>
 
@@ -231,7 +235,7 @@ export default function Pack() {
             })}
           </TableBody>
           {/* TABLE FOOTER CONTAINS LINE ITEM ADD FUNCTIONALITY */}
-          <TableFooter>
+          <TableFooter style={{left: 0, bottom: 0, zIndex: 2, position: 'sticky'}}>
             <StyledTableRow>
 
               <StyledTableCell sx = {{ ...cellStyling }} align="right">

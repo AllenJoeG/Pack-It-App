@@ -44,6 +44,10 @@
       [ ] Conditional Render
   [ 👍 ] ADD to currentPack
     [ 👍 ] currently generating new ID to avoid duplication
+[ ] Create Footer Functions
+    [ ] Create Pack
+    [ ] Create Item
+
   [ ] MUI & layout
     [ ] Needs that stylin'
 
@@ -96,12 +100,12 @@
     [ 👍 ] Edit Trip info Modal
     [ 👍 ] Edit gear info Modal
     [ 👍 ] display Category Name
-
+  
 
 <!-- Styling! --> 
-  [ ] Pack
+  [ 👍 ] Pack
   [ ] Unpack
-  [ ] Inventory
+  [ 👍 ] Inventory
   [ ] Nav
   [ ] EditModal
   [ ] LoadModal
@@ -113,6 +117,10 @@
 [ ] Load Pack should load PACK
 [ ] Load Pack not loading duplicates
 [ ] Add To Pack clear inputs
+[ ] Add Custom Item / Pack
+  [ 👍 ] Buttons
+  [ ] Functionality
+
 
 
   <!--  -->
