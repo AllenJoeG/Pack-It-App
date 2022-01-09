@@ -50,10 +50,11 @@ router.post('/', rejectUnauthenticated, (req, res) => {
   // console.log(req.user)
   packToSave = req.body.currentPack //is Array of Objects
   chosenPack = req.body.chosenPack //is Object
+  packName = req.body.packName
   const d = new Date();
 
   //first post the user and chosenpack data to create user Trip
-  const sqlValues1 = [req.user.id, chosenPack.id, chosenPack.pack_name, d.toLocaleDateString()]
+  const sqlValues1 = [req.user.id, chosenPack.id, packName, d.toLocaleDateString()]
   // console.log(sqlValues1)
   const createTripQuery = `
     INSERT INTO "headouts" ("user_id", "pack_id", "trip_name", "trip_date")

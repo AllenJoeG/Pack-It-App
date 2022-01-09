@@ -1,7 +1,7 @@
 import react, {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 //MUI
-import {TextField, Box, Button, Modal, MenuItem} from '@mui/material';
+import {TextField, Box, Button, Modal, MenuItem, Grid, Paper} from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -73,33 +73,44 @@ export default function LoadPackModal() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <TextField
-            select
-            fullWidth
-            variant="outlined"
-            formlabel="Load a Pack"
-            label="Select a Pack to Load"
-            value={packLoad}
-            onChange={(e) => setPackLoad(e.target.value)}
-          >
-            {userPacks.map((pack) => {
-              return <MenuItem 
-                      key={pack.id} 
-                      value={pack.id}
-                    >
-                      {pack.trip_name} - {(pack.trip_date).slice(0,10)}
-                    </MenuItem>
-            })}
-          </TextField>
 
-          <Button 
-            variant="contained" 
-            size="small" 
-            color="success" 
-            onClick={() => handleLoadPack(packLoad)}
-          >Load Pack!</Button>
-          
+        <Box sx={style}>
+          <Grid container style={{ Paper }}>
+
+            <Grid item xs={12}
+              sx={{marginTop: 2, marginBottom: 2}} 
+            >
+              <TextField
+                select
+                fullWidth
+                variant="outlined"
+                formlabel="Load a Pack"
+                label="Select a Pack to Load"
+                value={packLoad}
+                onChange={(e) => setPackLoad(e.target.value)}
+              >
+                {userPacks.map((pack) => {
+                  return <MenuItem 
+                          key={pack.id} 
+                          value={pack.id}
+                        >
+                          {pack.trip_name} - {(pack.trip_date).slice(0,10)}
+                        </MenuItem>
+                })}
+              </TextField>
+            </Grid>
+
+            <Grid item xs={6}
+              sx={{marginTop: 2, marginBottom: 2}} 
+            >
+              <Button 
+                variant="contained" 
+                size="small" 
+                color="success" 
+                onClick={() => handleLoadPack(packLoad)}
+              >Load Pack!</Button>
+            </Grid>
+          </Grid>
         </Box>
       </Modal>
     </div>

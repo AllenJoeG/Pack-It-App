@@ -1,7 +1,7 @@
 import react, {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 //MUI
-import {TextField, Box, Button, Modal, MenuItem} from '@mui/material';
+import {TextField, Box, Button, Modal, MenuItem, Grid, Paper} from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -15,22 +15,20 @@ const style = {
   p: 4,
 };
 
-export default function LoadPackModal() {
-  // useEffect(() => {
-  //   dispatch({type: 'SET_CP_INDEX'})
-  // }, [])
+export default function SavePackModal() {
+
   //Modal Stuff
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   
   //REDUX Store
-  const userPacks = useSelector((store) => store.headoutTripReducer);
-  const cPackIndex = useSelector((store) => store.currentPackIndex);
-  const userGear = useSelector((store) => store.userCustomReducer);
+  const packs = useSelector((store) => store.packsReducer);
+  const currentPack = useSelector((store) => store.currentPackReducer);
 
   //Local State for user Select
-  const [packLoad, setPackLoad] = useState('');
+  const [packName, setPackName] = useState('');
+  const [chosenPack, setChosenPack] = useState('');
   
   const dispatch = useDispatch();
 
@@ -39,7 +37,8 @@ export default function LoadPackModal() {
       type: 'POST_CURRENT_PACK',
       payload: {
         currentPack,
-        chosenPack
+        chosenPack,
+        packName
       }
     })
   }
@@ -60,32 +59,61 @@ export default function LoadPackModal() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <TextField
-            select
-            fullWidth
-            variant="outlined"
-            formlabel="Load a Pack"
-            label="Select a Pack to Load"
-            value={packLoad}
-            onChange={(e) => setPackLoad(e.target.value)}
-          >
-            {userPacks.map((pack) => {
-              return <MenuItem 
-                      key={pack.id} 
-                      value={pack.id}
-                    >
-                      {pack.trip_name} - {(pack.trip_date).slice(0,10)}
-                    </MenuItem>
-            })}
-          </TextField>
 
-          <Button 
-            variant="contained" 
-            size="small" 
-            color="success" 
-            onClick={() => handleSavePack()}
-          >Save Pack!</Button>
+        <Box sx={style}>
+          <Grid container style={{ Paper }}>
+
+            <Grid item xs={12}
+              sx={{marginTop: 2, marginBottom: 2}} 
+            >
+              <TextField
+                select
+                fullWidth
+                variant="outlined"
+                label="Select a Pack"
+                formlabel="Select a Pack"
+                value={chosenPack}
+                onChange={(e) => setChosenPack(e.target.value)}
+              >
+                {packs.map((pack) => {
+                  return <MenuItem 
+                          key={pack.id} 
+                          value={pack}
+                        >
+                          {pack.pack_name} - {pack.capacity}L
+                        </MenuItem>
+                })}
+              </TextField>
+            </Grid>
+
+            <Grid item xs={12}
+              sx={{marginTop: 2, marginBottom: 2}} 
+            >
+              <TextField
+                fullWidth
+                variant="outlined"
+                label="Save As (name this pack)"
+                formlabel="Save As (name this pack)"
+                value={packName}
+                onChange={(e) => setPackName(e.target.value)}
+              />
+            </Grid>
+
+            <Grid item xs={6}
+              sx={{marginTop: 2, marginBottom: 2}} 
+            >
+              <Button 
+                variant="contained" 
+                size="small"
+                color="success" 
+                onClick={() => handleSavePack()}
+              >Save Pack!</Button>
+            </Grid>
+
+            <Grid item xs={6}>
+
+            </Grid>
+          </Grid>
           
         </Box>
       </Modal>
@@ -93,22 +121,3 @@ export default function LoadPackModal() {
   )
 };
 
-  // <TextField
-  //   select
-  //   fullWidth
-  //   variant="outlined"
-  //   label="Select a Pack"
-  //   formlabel="Select a Pack"
-  //   size="small"
-  //   value={chosenPack}
-  //   onChange={handlePackChange}
-  // >
-  //   {packs.map((pack) => {
-  //     return <MenuItem 
-  //             key={pack.id} 
-  //             value={pack}
-  //           >
-  //             {pack.pack_name}
-  //           </MenuItem>
-  //   })}
-  // </TextField>

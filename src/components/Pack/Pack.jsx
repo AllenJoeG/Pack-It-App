@@ -43,7 +43,6 @@ export default function Pack() {
   //REDUCERS
   const currentPack = useSelector((store) => store.currentPackReducer);
   const currentPackIndex = useSelector((store) => store.currentPackIndex);
-  const packs = useSelector((store) => store.packsReducer);
   const gear = useSelector((store) => store.gearReducer);
   const consumables = useSelector((store) => store.consumablesReducer);
   const categories = useSelector((store) => store.categoriesReducer);
@@ -58,10 +57,6 @@ export default function Pack() {
   useEffect(() => {
 
   }, [])
-
-  const handlePackChange = (e) => {
-    setChosenPack(e.target.value);
-  }
 
   const calculatePackWeight = () => {
     if (!currentPack) {

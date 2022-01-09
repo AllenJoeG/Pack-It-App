@@ -107,15 +107,18 @@
   [ 👍 ] Inventory
   [ ] Nav
   [ 👍 ] EditModal
-  [ ] LoadModal
+  [ 👍 ] LoadModal
   [ 👍 ] UnpackModal
+  [ 👍] Save Pack Modal
+  [ ] Add Custom Pack Modal
+
 
   [ ] Mobile Responsive Breakpoints
 
 <!-- Functional stuff -->
-[ ] Load Pack should load PACK
 [ 👍 ] Load Pack not loading duplicates
 [ 👍 ] Add To Pack clear inputs
+
 [ 👍 ] Add Custom Item
   [ 👍 ] Buttons
   [ 👍 ] Modal Form
@@ -131,8 +134,17 @@
   [ ] Server Route
   [ ] Functionality
 
-[ ] Save Pack Modal
+[ 👍] Save Pack Modal
+  [ 👍] Button
+  [ 👍] Modal Form
+  [ 👍] Saga
+  [ 👍] Server Route
+  [ 👍] Functionality
 
+[ ] Solo add in Pack
+  Should ref custom items also
+
+[ ] Refactor and Modularize Code
 
   <!--  -->
 [ ] Headout Functional Programming
@@ -144,7 +156,7 @@
 [ ] Account/User View
   [ ] MUI & Layout
 
-[ ] Refactor and Modularize Code
+
 
 ## Stretch Goals
 [ ] Unpack Modal Views of gear
@@ -177,6 +189,4 @@ pack from "edit"
     CurrentPack gets wonky
 [ 👍 ] LOAD to Pack Index state
     Modal is always behind.
-[ ] Save Pack with empty CP
 [ ] Purple Buttons layout
-[ ] objectobject Pack Select
