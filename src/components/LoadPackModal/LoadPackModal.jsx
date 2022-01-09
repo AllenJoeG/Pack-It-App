@@ -39,7 +39,7 @@ export default function LoadPackModal() {
     //better to dispatch once with full object?
     //or loop through and dispatch once per item to ADD_CURRENTPACK
       //this would allow it to load on top of stuff. Might be preferable.
-    for (let i = 0; i < tripFilteredGear.length - 1; i++) {
+    for (let i = 0; i < tripFilteredGear.length; i++) {
       dispatch({
         type: 'ADD_CURRENTPACK',
         payload: {

@@ -129,6 +129,9 @@ export default function Pack() {
         type: 'INCR_CP_INDEX'
       })
     }
+    //Clear Inputs
+    setBrowseCategory('');
+    setBrowseToAdd('');
     
   }
 
@@ -199,7 +202,7 @@ export default function Pack() {
                 Item Category 
               </StyledTableCell>
               <StyledTableCell sx = {{ ...cellStyling }} align="right">
-                Weight: {calculatePackWeight()}
+                {calculatePackWeight()}
               </StyledTableCell>
               <StyledTableCell sx = {{ ...cellStyling }} align="right">
                 Remove Item 

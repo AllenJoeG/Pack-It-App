@@ -115,14 +115,15 @@
 
 <!-- Functional stuff -->
 [ ] Load Pack should load PACK
-[ ] Load Pack not loading duplicates
-[ ] Add To Pack clear inputs
+[ 👍 ] Load Pack not loading duplicates
+[ 👍 ] Add To Pack clear inputs
 [ 👍 ] Add Custom Item
   [ 👍 ] Buttons
   [ 👍 ] Modal Form
   [ 👍 ] Saga
   [ 👍 ] Server Route
   [ 👍 ] Functionality
+  [ ] Form Controls
 
 [ ] Add Custom Pack
   [ 👍 ] Buttons

@@ -97,7 +97,6 @@ export default function AddCustomGearModal() {
               <TextField
                 required
                 fullWidth
-                number
                 variant="outlined"
                 formlabel="Item Weight (oz)"
                 label="Item Weight (oz)"
