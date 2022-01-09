@@ -1,7 +1,7 @@
 import react, {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 //MUI
-import {TextField, Box, Button, Modal, MenuItem} from '@mui/material';
+import {TextField, Box, Button, Modal, MenuItem, Grid, Paper} from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -72,6 +72,7 @@ export default function AddCustomGearModal() {
               sx={{marginTop: 2, marginBottom: 2}}
             >
               <TextField
+                required
                 fullWidth
                 variant="outlined"
                 formlabel="Item Name"
@@ -84,72 +85,106 @@ export default function AddCustomGearModal() {
             <Grid item xs={6}
               sx={{marginTop: 2, marginBottom: 2}}
             >
-
+              <TextField
+                fullWidth
+                number
+                variant="outlined"
+                formlabel="Item Weight (oz)"
+                label="Item Weight (oz)"
+                value={weight}
+                onChange={(e) => setWeight(e.target.value)}
+              ></TextField>
             </Grid>
 
-          </Grid>
-          <p>new item add</p>
-
-          
-
-          <TextField
-            fullWidth
-            number
-            variant="outlined"
-            formlabel="Item Weight (oz)"
-            label="Item Weight (oz)"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
-          ></TextField>
-
-          <TextField
-            select
-            fullWidth
-            variant="outlined"
-            formlabel="Required Item?"
-            label="Required Item?"
-            value={required}
-            onChange={(e) => setRequired(e.target.value)}
+            <Grid item xs={12}
+              sx={{marginTop: 2, marginBottom: 2}}
             >
-            <MenuItem
-              key={0}
-              value={false}
-            > False 
-            </MenuItem>
+              <TextField
+                fullWidth
+                variant="outlined"
+                formlabel="Gear Notes"
+                label="Gear Notes"
+                value={gear_note}
+                onChange={(e) => setGear_note(e.target.value)}
+              ></TextField>
+            </Grid>
 
-            <MenuItem
-              key={1}
-              value={true}
-            > True
-            </MenuItem>
-          </TextField>
-          
-          <TextField
-            select
-            fullWidth
-            variant="outlined"
-            formlabel="Category"
-            label="Select Category"
-            value={category_id}
-            onChange={(e) => setPackLoad(e.target.value)}
-          >
-            {categories.map((category) => {
-              return <MenuItem 
-                      key={category.id} 
-                      value={category.id}
-                    >
-                      {category.category}
-                    </MenuItem>
-            })}
-          </TextField>
+            <Grid item xs={12}
+              sx={{marginTop: 2, marginBottom: 2}}
+            >
+              <TextField
+                fullWidth
+                variant="outlined"
+                formlabel="Pack Notes"
+                label="Pack Notes"
+                value={pack_note}
+                onChange={(e) => setPack_note(e.target.value)}
+              ></TextField>
+            </Grid>
 
-          <Button 
-            variant="contained" 
-            size="small" 
-            color="success" 
-            onClick={handleAddGear}
-          >Add Custom Gear</Button>
-          
+            <Grid item xs={6}
+              sx={{marginTop: 2, marginBottom: 2}}
+            >
+              <TextField
+                select
+                fullWidth
+                variant="outlined"
+                formlabel="Required Item?"
+                label="Required Item?"
+                value={required}
+                onChange={(e) => setRequired(e.target.value)}
+                >
+                <MenuItem
+                  key={0}
+                  value={false}
+                > False 
+                </MenuItem>
+
+                <MenuItem
+                  key={1}
+                  value={true}
+                > True
+                </MenuItem>
+              </TextField>
+            </Grid>
+
+            <Grid item xs={6}
+              sx={{marginTop: 2, marginBottom: 2}}
+            >
+              <TextField
+                select
+                required
+                fullWidth
+                variant="outlined"
+                formlabel="Category"
+                label="Select Category"
+                value={category_id}
+                onChange={(e) => setPackLoad(e.target.value)}
+              >
+                {categories.map((category) => {
+                  return <MenuItem 
+                          key={category.id} 
+                          value={category.id}
+                        >
+                          {category.category}
+                        </MenuItem>
+                })}
+              </TextField>
+            </Grid>
+
+            <Grid item xs={12}
+              sx={{marginTop: 2, marginBottom: 2}}
+            >
+              <Button 
+                variant="contained" 
+                size="small" 
+                color="success" 
+                onClick={handleAddGear}
+              >Add Custom Gear
+              </Button>
+            </Grid>
+
+          </Grid> 
         </Box>
       </Modal>
     </div>

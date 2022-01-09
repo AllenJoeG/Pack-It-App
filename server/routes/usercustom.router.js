@@ -24,13 +24,16 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 })
 
 //POST single user custom item
-router.post('/:id,', rejectUnauthenticated, (req, res) => {
+router.post('/add,', rejectUnauthenticated, (req, res) => {
   const customPackQuery = `
   INSERT INTO "user_custom" 
     ("user_id", "required", "weight", "pack_note", "gear_note", "name", "category_id")
   VALUES ($1, $2, $3, $4, $5, $6, $7)
 `;
-const sqlValues = [req.user.id];
+const sqlValues = [
+  req.user.id, req.body.required, req.body.weight, req.body.pack_note, 
+  req.body.gear_note, req.body.name, req.body.category_id
+  ];
 
 })
 
