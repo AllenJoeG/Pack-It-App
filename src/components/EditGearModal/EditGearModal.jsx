@@ -36,6 +36,7 @@ export default function EditGearModal({thingID, thingWeight, thinGN, thinPN}) {
         pack_note: packNote
       }
     })
+    handleClose();
   }
 
 

@@ -1,7 +1,8 @@
 import react, {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+
 //MUI
-import {TextField, Box, Button, Modal, MenuItem, Grid, Paper} from '@mui/material';
+import {TextField, Box, Button, Modal, MenuItem, Grid, Paper, Typography} from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -14,6 +15,7 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+////// 
 
 export default function SavePackModal() {
 
@@ -29,6 +31,7 @@ export default function SavePackModal() {
   //Local State for user Select
   const [packName, setPackName] = useState('');
   const [chosenPack, setChosenPack] = useState('');
+  const [saved, setSaved] = useState(false);
   
   const dispatch = useDispatch();
 
@@ -41,6 +44,10 @@ export default function SavePackModal() {
         packName
       }
     })
+    setSaved(true);
+    setChosenPack('');
+    setPackName('');
+    
   }
 
 
@@ -111,7 +118,15 @@ export default function SavePackModal() {
             </Grid>
 
             <Grid item xs={6}>
-
+              
+              {saved ?
+                <Typography>
+                  Pack saved! 
+                </Typography>
+              :
+                <Typography>Save your work?</Typography>
+              }
+              
             </Grid>
           </Grid>
           

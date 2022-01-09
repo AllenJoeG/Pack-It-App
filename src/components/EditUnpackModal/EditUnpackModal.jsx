@@ -35,6 +35,7 @@ export default function EditUnpackModal({tripID, trip_Name, trip_Notes}) {
         trip_notes: tripNotes
       }
     })
+    handleClose();
   }
 
   const handleDelete = () => {
@@ -42,6 +43,7 @@ export default function EditUnpackModal({tripID, trip_Name, trip_Notes}) {
       type: 'DELETE_TRIP_ID_AND_GEAR',
       payload: tripID
     })
+    handleClose();
   }
 
 

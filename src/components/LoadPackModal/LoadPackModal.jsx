@@ -16,9 +16,6 @@ const style = {
 };
 
 export default function LoadPackModal() {
-  // useEffect(() => {
-  //   dispatch({type: 'SET_CP_INDEX'})
-  // }, [])
   //Modal Stuff
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -55,6 +52,9 @@ export default function LoadPackModal() {
       })
       dispatch({type: 'INCR_CP_INDEX'});
     }
+    //clear input and close
+    setPackLoad('');
+    handleClose();
   }
 
 
