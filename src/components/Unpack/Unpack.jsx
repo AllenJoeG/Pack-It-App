@@ -60,6 +60,7 @@ function GearRows({tripID}) {
   return(
     <React.Fragment>
       <StyledTableRow key={filteredTrip[0].id} sx={{ '& > *': { borderBottom: 'unset' } }}>
+        
         <StyledTableCell>
           <IconButton
             aria-label="expand row"
@@ -69,12 +70,23 @@ function GearRows({tripID}) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </StyledTableCell>
-        <StyledTableCell align="right">{filteredTrip[0].trip_name}</StyledTableCell>
-        <StyledTableCell align="right">{(filteredTrip[0].trip_date).slice(0,10)}</StyledTableCell>
+        
+        <StyledTableCell align="right">
+          {filteredTrip[0].trip_name}
+        </StyledTableCell>
+        
+        <StyledTableCell align="right">
+          {(filteredTrip[0].trip_date).slice(0,10)}
+        </StyledTableCell>
+        
         <StyledTableCell align="right">
           {filteredTrip[0].trip_notes}
         </StyledTableCell>
-        <StyledTableCell align="right">{calculatePackWeight()}</StyledTableCell>
+        
+        <StyledTableCell align="right">
+          {calculatePackWeight()}
+        </StyledTableCell>
+        
         <StyledTableCell align="right">
           <EditUnpackModal 
             tripID={filteredTrip[0].id}

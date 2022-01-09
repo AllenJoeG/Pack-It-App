@@ -117,10 +117,21 @@
 [ ] Load Pack should load PACK
 [ ] Load Pack not loading duplicates
 [ ] Add To Pack clear inputs
-[ ] Add Custom Item / Pack
+[ ] Add Custom Item
   [ 👍 ] Buttons
+  [ ] Modal Form
+  [ ] Saga
+  [ ] Server Route
   [ ] Functionality
 
+[ ] Add Custom Pack
+  [ 👍 ] Buttons
+  [ ] Modal Form
+  [ ] Saga
+  [ ] Server Route
+  [ ] Functionality
+
+[ ] Save Pack Modal
 
 
   <!--  -->
@@ -133,10 +144,13 @@
 [ ] Account/User View
   [ ] MUI & Layout
 
+[ ] Refactor and Modularize Code
+
 ## Stretch Goals
 [ ] Unpack Modal Views of gear
   [ ] Charts.JS graph of weight/category
 [ ] Custom Headout Functionality
+[ ] Custom Categories
 [ ] Wolfram API for weight/caloric ratios
 [ ] MUI Accessibility
 [ ] Inventory API Exploration

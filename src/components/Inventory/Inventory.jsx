@@ -2,6 +2,8 @@ import react, {useEffect, useState } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
+import AddCustomGearModal from '../AddCustomGearModal/AddCustomGearModal';
+
 //MUI stuff
 import { styled } from '@mui/material/styles';
 import {Box, Container, Grid, Table, TableBody, TableCell, tableCellClasses, TableContainer, 
@@ -233,30 +235,7 @@ export default function Inventory() {
               </StyledTableCell>
 
               <StyledTableCell>
-                {/* <TextField
-                  select
-                  fullWidth
-                  variant="outlined"
-                  formlabel="Select an item"
-                  label="Select Item"
-                  size="small"
-                  value={browseToAdd}
-                  onChange={handleBrowseToAddSelect}
-                >
-                  {addToPackDropdown.map((item) => {
-                    return <MenuItem 
-                            key={item.id} 
-                            value={item.id}
-                          >
-                            {item.name}
-                          </MenuItem>
-                  })}
-                </TextField> */}
-                <Button
-                  variant="contained"
-                  size="small"
-                  color="secondary"
-                > Create Custom Item</Button>
+                <AddCustomGearModal/>
               </StyledTableCell>
               <StyledTableCell>
               {/* {browseToAdd ? 
