@@ -34,27 +34,14 @@ export default function LoadPackModal() {
   
   const dispatch = useDispatch();
 
-  const handleLoadPack = (tripID) => {
-    const tripFilteredGear = userGear.filter(item => (item.trip_id == tripID))
-    //better to dispatch once with full object?
-    //or loop through and dispatch once per item to ADD_CURRENTPACK
-      //this would allow it to load on top of stuff. Might be preferable.
-    for (let i = 0; i < tripFilteredGear.length; i++) {
-      dispatch({
-        type: 'ADD_CURRENTPACK',
-        payload: {
-          id: (i + cPackIndex),
-          category_id: Number(tripFilteredGear[i].category_id),
-          details: tripFilteredGear[i].gear_note,
-          name: tripFilteredGear[i].name,
-          weight: tripFilteredGear[i].weight,
-          gear_id: tripFilteredGear[i].gear_id,
-          consumable_id: tripFilteredGear[i].consumable_id,
-          pack_note: tripFilteredGear[i].pack_note          
-        }
-      })
-      dispatch({type: 'INCR_CP_INDEX'});
-    }
+  const handleSavePack = () => {
+    dispatch({
+      type: 'POST_CURRENT_PACK',
+      payload: {
+        currentPack,
+        chosenPack
+      }
+    })
   }
 
 
@@ -65,7 +52,7 @@ export default function LoadPackModal() {
           color="secondary"
           size="small"
           onClick={handleOpen}
-        >Load Pack
+        >Save Pack
       </Button>
       <Modal
         open={open}
@@ -97,11 +84,31 @@ export default function LoadPackModal() {
             variant="contained" 
             size="small" 
             color="success" 
-            onClick={() => handleLoadPack(packLoad)}
-          >Load Pack!</Button>
+            onClick={() => handleSavePack()}
+          >Save Pack!</Button>
           
         </Box>
       </Modal>
     </div>
   )
 };
+
+  // <TextField
+  //   select
+  //   fullWidth
+  //   variant="outlined"
+  //   label="Select a Pack"
+  //   formlabel="Select a Pack"
+  //   size="small"
+  //   value={chosenPack}
+  //   onChange={handlePackChange}
+  // >
+  //   {packs.map((pack) => {
+  //     return <MenuItem 
+  //             key={pack.id} 
+  //             value={pack}
+  //           >
+  //             {pack.pack_name}
+  //           </MenuItem>
+  //   })}
+  // </TextField>

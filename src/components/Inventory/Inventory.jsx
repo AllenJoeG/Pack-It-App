@@ -184,73 +184,29 @@ export default function Inventory() {
             <StyledTableRow>
 
               <StyledTableCell sx = {{ ...cellStyling }} align="right">
-                {/* <TextField
-                  select
-                  fullWidth
-                  variant="outlined"
-                  label="Select a Pack"
-                  formlabel="Select a Pack"
-                  size="small"
-                  value={chosenPack}
-                  onChange={handlePackChange}
-                >
-                  {packs.map((pack) => {
-                    return <MenuItem 
-                            key={pack.id} 
-                            value={pack}
-                          >
-                            {pack.pack_name}
-                          </MenuItem>
-                  })}
-                </TextField> */}
+              
               </StyledTableCell>
+              
               <StyledTableCell sx = {{ ...cellStyling }} align="left"> 
                 <Button
                   variant="contained"
                   size="small"
                   color="secondary"
-                  >Create Custom Pack</Button>
+                  >Add Custom Pack</Button>
               </StyledTableCell>
 
               <StyledTableCell>
-                {/* <TextField
-                  select
-                  fullWidth
-                  variant="outlined"
-                  formlabel="Select a Category"
-                  label="Select a Category"
-                  size="small"
-                  value={browseCategory}
-                  onChange={handleBrowseCategorySelect}
-                >
-                  {categories.map((category) => {
-                    return <MenuItem 
-                            key={category.id} 
-                            value={category.id}
-                          >
-                            {category.category}
-                          </MenuItem>
-                  })}
-                </TextField> */}
+                
               </StyledTableCell>
 
               <StyledTableCell>
                 <AddCustomGearModal/>
               </StyledTableCell>
+
               <StyledTableCell>
-              {/* {browseToAdd ? 
-                  <Button 
-                    variant="contained"
-                    color="success"
-                    size="small"
-                    align="left"
-                    onClick={handleAddToCurrentPack}>
-                    Add to Pack
-                  </Button>
-                  : 
-                  <p>Select Item</p>
-                } */}
+              
               </StyledTableCell>
+
             </StyledTableRow>
           </TableFooter>
 

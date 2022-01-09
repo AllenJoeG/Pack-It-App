@@ -3,6 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
 import LoadPackModal from '../LoadPackModal/LoadPackModal';
+import SavePackModal from '../SavePackModal/SavePackModal';
 
 ////////// MUI stuff
 import { styled } from '@mui/material/styles';
@@ -84,15 +85,7 @@ export default function Pack() {
     })
   }
 
-  const handleSavePack = () => {
-    dispatch({
-      type: 'POST_CURRENT_PACK',
-      payload: {
-        currentPack,
-        chosenPack
-      }
-    })
-  }
+
 
   const handleClearCurrentPack = () => {
     dispatch({
@@ -160,28 +153,29 @@ export default function Pack() {
       >
         <Grid item xs={1} sm={2}></Grid>
         <Grid item xs={4} sm={2}>
-          <Button 
+          {/* <Button 
             variant="contained"
             color="secondary"
+            size="small"
             onClick={handleSavePack}
-          >Save Pack</Button>
+          >Save Pack</Button> */}
         </Grid>
         <Grid item xs={4} sm={2}>
-          <LoadPackModal />
+          {/* <LoadPackModal /> */}
         </Grid>
         <Grid item xs={4} sm={2}>
-          <Button 
+          {/* <Button 
             variant="contained"
             color="secondary"
-            >Categories</Button>
+            >Categories</Button> */}
         </Grid>
         <Grid item xs={4} sm={2}>
-          <Button 
+          {/* <Button 
             align="right"
             variant="contained"
             color="secondary"
             onClick={handleClearCurrentPack}
-          >Clear Pack</Button>
+          >Clear Pack</Button> */}
         </Grid>
         <Grid item xs={1} sm={2}></Grid>
       </Grid>
@@ -199,13 +193,25 @@ export default function Pack() {
                 Item Notes
               </StyledTableCell>
               <StyledTableCell sx = {{ ...cellStyling }} align="right">
-                Item Category 
+                <Button 
+                  variant="contained"
+                  color="secondary"
+                  size="small"
+                >
+                  Categories
+                </Button>
               </StyledTableCell>
               <StyledTableCell sx = {{ ...cellStyling }} align="right">
                 {calculatePackWeight()}
               </StyledTableCell>
               <StyledTableCell sx = {{ ...cellStyling }} align="right">
-                Remove Item 
+                <Button 
+                  align="right"
+                  variant="contained"
+                  color="secondary"
+                  size="small"
+                  onClick={handleClearCurrentPack}
+                >Clear Pack</Button>
               </StyledTableCell>
             </TableRow>
           </TableHead>
@@ -242,28 +248,11 @@ export default function Pack() {
             <StyledTableRow>
 
               <StyledTableCell sx = {{ ...cellStyling }} align="right">
-                <TextField
-                  select
-                  fullWidth
-                  variant="outlined"
-                  label="Select a Pack"
-                  formlabel="Select a Pack"
-                  size="small"
-                  value={chosenPack}
-                  onChange={handlePackChange}
-                >
-                  {packs.map((pack) => {
-                    return <MenuItem 
-                            key={pack.id} 
-                            value={pack}
-                          >
-                            {pack.pack_name}
-                          </MenuItem>
-                  })}
-                </TextField>
+                <SavePackModal />
               </StyledTableCell>
+
               <StyledTableCell sx = {{ ...cellStyling }} align="left"> 
-                {chosenPack.capacity} Liters 
+                <LoadPackModal />
               </StyledTableCell>
 
               <StyledTableCell>

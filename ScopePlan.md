@@ -69,7 +69,6 @@
     [ ] Styled
   [ ] Functionality
     [ 👍 ] Pack Dropdown
-      [ ] FIX COLOR
     [ 👍 ] Pack Capacity
     [ 👍 ] Cumulative Weight
     [ 👍 ] Category Dropdown
