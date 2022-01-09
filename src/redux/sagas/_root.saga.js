@@ -13,6 +13,7 @@ import tripPUT from './tripPUT.saga';
 import gearPUT from './gearPUT.saga';
 import tripDELETE from './tripDELETE.saga';
 import customGearDELETE from './userCustomDELETE.saga';
+import addCustomGearPOST from './userCustomPOST.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -37,5 +38,6 @@ export default function* rootSaga() {
     gearPUT(),
     tripDELETE(),
     customGearDELETE(),
+    addCustomGearPOST(),
   ]);
 }

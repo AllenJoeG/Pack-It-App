@@ -117,12 +117,12 @@
 [ ] Load Pack should load PACK
 [ ] Load Pack not loading duplicates
 [ ] Add To Pack clear inputs
-[ ] Add Custom Item
+[ 👍 ] Add Custom Item
   [ 👍 ] Buttons
-  [ ] Modal Form
-  [ ] Saga
-  [ ] Server Route
-  [ ] Functionality
+  [ 👍 ] Modal Form
+  [ 👍 ] Saga
+  [ 👍 ] Server Route
+  [ 👍 ] Functionality
 
 [ ] Add Custom Pack
   [ 👍 ] Buttons
@@ -151,13 +151,13 @@
   [ ] Charts.JS graph of weight/category
 [ ] Custom Headout Functionality
 [ ] Custom Categories
-[ ] Wolfram API for weight/caloric ratios
 [ ] MUI Accessibility
+[ ] Wolfram API for weight/caloric ratios
+[ ] Export .csv of pack
 [ ] Inventory API Exploration
 [ ] Weather API Exploration
 [ ] Google Authentication
 [ ] Emergency Contact SMS 
-[ ] Export .csv of pack
 [ ] redux-Persist for     currentPack
 [ ] Sort Tables by Column
 [ ]

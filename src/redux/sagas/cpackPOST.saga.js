@@ -9,7 +9,8 @@ function* currentPackAxiosPost(action) {
       method: 'POST',
       url: '/api/usercustom',
       data: action.payload
-    })
+    });
+    yield put({type: 'GET_USER_CUSTOM' });
   } catch(error){
     console.log('error POSTing current pack to DB', error);
   }

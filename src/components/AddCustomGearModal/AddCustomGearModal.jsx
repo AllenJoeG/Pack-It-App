@@ -1,7 +1,7 @@
 import react, {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 //MUI
-import {TextField, Box, Button, Modal, MenuItem, Grid, Paper} from '@mui/material';
+import {TextField, Box, Button, Modal, MenuItem, Grid, Paper, Typography} from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -29,13 +29,14 @@ export default function AddCustomGearModal() {
   const [pack_note, setPack_note] = useState('');
   const [gear_note, setGear_note] = useState('');
   const [name, setName] = useState('');
-  const [category_id, setCategory_id] = useState(0);
+  const [category_id, setCategory_id] = useState(1);
+  const [itemAdded, setItemAdded] = useState(false);
   // ("user_id", "required", "weight", "pack_note", "gear_note", "name", "category_id")
   const dispatch = useDispatch();
 
   const handleAddGear = () => {
     dispatch({
-      type: 'ADD_CUSTOM_ITEM',
+      type: 'POST_CUSTOM_ITEM',
       payload: {
         required,
         weight,
@@ -45,6 +46,14 @@ export default function AddCustomGearModal() {
         category_id
       }
     })
+    // Clear inputs, and toggle for confirmation render
+    // setItemAdded(!itemAdded);
+    setRequired(false);
+    setWeight(0);
+    setPack_note('');
+    setGear_note('');
+    setName('');
+    setCategory_id(1);
   }
   
 
@@ -86,6 +95,7 @@ export default function AddCustomGearModal() {
               sx={{marginTop: 2, marginBottom: 2}}
             >
               <TextField
+                required
                 fullWidth
                 number
                 variant="outlined"
@@ -159,7 +169,7 @@ export default function AddCustomGearModal() {
                 formlabel="Category"
                 label="Select Category"
                 value={category_id}
-                onChange={(e) => setPackLoad(e.target.value)}
+                onChange={(e) => setCategory_id(e.target.value)}
               >
                 {categories.map((category) => {
                   return <MenuItem 
@@ -172,7 +182,7 @@ export default function AddCustomGearModal() {
               </TextField>
             </Grid>
 
-            <Grid item xs={12}
+            <Grid item xs={6}
               sx={{marginTop: 2, marginBottom: 2}}
             >
               <Button 
@@ -183,6 +193,14 @@ export default function AddCustomGearModal() {
               >Add Custom Gear
               </Button>
             </Grid>
+
+            {/* <Grid item xs={6}>
+              {itemAdded ? 
+              <Typography>**Item Added**</Typography> :
+              <Typography>Submit When Ready</Typography>
+              }
+              
+            </Grid> */}
 
           </Grid> 
         </Box>

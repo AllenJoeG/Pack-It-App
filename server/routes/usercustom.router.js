@@ -24,17 +24,24 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 })
 
 //POST single user custom item
-router.post('/add,', rejectUnauthenticated, (req, res) => {
-  const customPackQuery = `
+router.post('/add', rejectUnauthenticated, (req, res) => {
+  console.log(req.body);
+  const customItemQuery = `
   INSERT INTO "user_custom" 
     ("user_id", "required", "weight", "pack_note", "gear_note", "name", "category_id")
   VALUES ($1, $2, $3, $4, $5, $6, $7)
 `;
-const sqlValues = [
-  req.user.id, req.body.required, req.body.weight, req.body.pack_note, 
+  const sqlValues = [
+  req.user.id, req.body.required, Number(req.body.weight), req.body.pack_note, 
   req.body.gear_note, req.body.name, req.body.category_id
   ];
 
+  pool.query(customItemQuery, sqlValues)
+  .then((result) => res.sendStatus(201))
+  .catch((error) => {
+    console.log('error adding new custom item', error)
+    res.sendStatus(500);
+  })
 })
 
 //POST
