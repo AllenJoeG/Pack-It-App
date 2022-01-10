@@ -49,7 +49,8 @@ export default function Inventory() {
   const currentPack = useSelector((store) => store.currentPackReducer)
   const currentPackIndex = useSelector((store) => store.currentPackIndex);
   const usercustom = useSelector((store) => store.userCustomReducer)
-  //Local State?
+
+  //Local State toggles between reducers to display on table.
   const [inventory, setInventory] = useState([]);
   
 
@@ -64,9 +65,9 @@ export default function Inventory() {
     setInventory(consumables)
   }
   const handleAddToCurrentPack = (item) => {
-    //checks if item is from 'my stuff' 
     
-    if (item.trip_id) {
+    
+    if (!item.gear_id && !item.consumable_id) { //Catches 'Add Custom Gear' that has no trip ID
       let addItem = {...item, id: currentPackIndex}
       dispatch({
         type: 'ADD_CURRENTPACK',
@@ -75,7 +76,16 @@ export default function Inventory() {
       dispatch({
         type: 'INCR_CP_INDEX'
       })
-    } else if (item.category_id < 10) {
+    } else if (item.trip_id) { //Catches 'Custom Gear' that has a trip ID
+      let addItem = {...item, id: currentPackIndex}
+      dispatch({
+        type: 'ADD_CURRENTPACK',
+        payload: addItem
+      })
+      dispatch({
+        type: 'INCR_CP_INDEX'
+      })
+    } else if (item.category_id < 10) { //Catches Gear from static table
       let addItem = {...item, id: currentPackIndex, gear_id: item.id}
       dispatch({
         type: 'ADD_CURRENTPACK',
@@ -84,7 +94,7 @@ export default function Inventory() {
       dispatch({
         type: 'INCR_CP_INDEX'
       })
-    } else if (item.category_id < 13) {
+    } else if (item.category_id < 13) { //Catches Consumables from static table
       let addItem = {...item, id: currentPackIndex, consumable_id: item.id}
       dispatch({
         type: 'ADD_CURRENTPACK',
@@ -186,7 +196,7 @@ export default function Inventory() {
               <StyledTableCell sx = {{ ...cellStyling }} align="right">
               
               </StyledTableCell>
-              
+
               <StyledTableCell sx = {{ ...cellStyling }} align="left"> 
                 <Button
                   variant="contained"

@@ -110,6 +110,7 @@
   [ 👍 ] LoadModal
   [ 👍 ] UnpackModal
   [ 👍] Save Pack Modal
+  [ 👍 ] Add Custom Gear Modal
   [ ] Add Custom Pack Modal
 
 
@@ -141,7 +142,7 @@
   [ 👍] Server Route
   [ 👍] Functionality
 
-[ ] Solo add in Pack
+[  ] Solo add in Pack
   Should ref custom items also
 
 [ ] Refactor and Modularize Code
