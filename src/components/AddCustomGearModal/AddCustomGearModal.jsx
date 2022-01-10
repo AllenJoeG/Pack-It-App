@@ -62,6 +62,7 @@ export default function AddCustomGearModal() {
       <Button 
           variant="contained"
           color="secondary"
+          size="small"
           onClick={handleOpen}
         >Add Custom Gear
       </Button>

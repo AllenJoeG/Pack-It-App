@@ -24,6 +24,7 @@ import HeadOut from '../HeadOut/HeadOut.jsx';
 import Inventory from '../Inventory/Inventory.jsx';
 import Pack from '../Pack/Pack.jsx';
 import Unpack from '../Unpack/Unpack.jsx';
+import NavAppBar from '../NavAppBar/NavAppBar.jsx';
 
 import './App.css';
 
@@ -46,7 +47,10 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        
+        {/* <Nav /> */}
+        <NavAppBar />
+
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />

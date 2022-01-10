@@ -109,7 +109,7 @@
   [ 👍 ] EditModal
   [ 👍 ] LoadModal
   [ 👍 ] UnpackModal
-  [ 👍] Save Pack Modal
+  [ 👍 ] Save Pack Modal
   [ 👍 ] Add Custom Gear Modal
   [ ] Add Custom Pack Modal
 

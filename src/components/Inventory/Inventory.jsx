@@ -149,11 +149,35 @@ export default function Inventory() {
         <Table stickyHeader>
           <TableHead>
             <TableRow>
-              <StyledTableCell sx = {{ ...cellStyling }} align="right">Item Name</StyledTableCell>
-              <StyledTableCell sx = {{ ...cellStyling }} align="right">Item Notes</StyledTableCell> 
-              <StyledTableCell sx = {{ ...cellStyling }} align="right">Item Category</StyledTableCell>
-              <StyledTableCell sx = {{ ...cellStyling }} align="right">Weight (oz) </StyledTableCell>
-              <StyledTableCell sx = {{ ...cellStyling }} align="right">Add to Pack</StyledTableCell>
+              <StyledTableCell align="right"
+                sx = {{ ...cellStyling }}
+              >
+                Item Name
+              </StyledTableCell>
+
+              <StyledTableCell align="right"
+                sx = {{ ...cellStyling }}
+              >
+                Item Notes
+              </StyledTableCell> 
+
+              <StyledTableCell align="right"
+                sx = {{ ...cellStyling }}
+              >
+                Item Category
+              </StyledTableCell>
+
+              <StyledTableCell align="right"
+                sx = {{ ...cellStyling }}
+              >
+                Weight (oz)
+              </StyledTableCell>
+              
+              <StyledTableCell align="right"
+                sx = {{ ...cellStyling }}
+              >
+                Add to Pack
+              </StyledTableCell>
             </TableRow>
           </TableHead>
           
