@@ -182,7 +182,13 @@
 Think through how to track/save/load a
 pack from "edit"
 
+
 <!-- Known Bugs -->
+
+[ ] Purple Buttons layout
+
+
+<!-- Cleared Bugs -->
 [ 👍 ] DELETE needs to clear items
     THEN clear headouts
     chain the queries
@@ -190,4 +196,3 @@ pack from "edit"
     CurrentPack gets wonky
 [ 👍 ] LOAD to Pack Index state
     Modal is always behind.
-[ ] Purple Buttons layout

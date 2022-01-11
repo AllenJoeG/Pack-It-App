@@ -111,36 +111,37 @@ export default function Inventory() {
       <Grid container>
         <Grid item xs={1} sm={2}></Grid>
         <Grid item xs={5} sm={2}>
-          <Button
+          {/* <Button
             variant="contained"
             color="secondary"            
             onClick={handleShowUsercustom}
           >
             Custom Gear
-          </Button>
+          </Button> */}
         </Grid>
         <Grid item xs={5} sm={2}>
-          <Button 
+          {/* <Button 
             variant="contained"
             color="secondary"                     
             onClick={handleShowGear}
           >
-            Default Gear</Button>
+            Default Gear
+          </Button> */}
         </Grid>
         <Grid item xs={5} sm={2}>
-          <Button
+          {/* <Button
             variant="contained"
             color="secondary"            
             onClick={handleShowConsumables}
           >
             Consumables
-          </Button>
+          </Button> */}
         </Grid>
         <Grid item xs={5} sm={2}>
-          <Button 
+          {/* <Button 
           variant="contained"
             color="secondary"            
-          >Categories</Button>
+          >Categories</Button> */}
         </Grid>
         <Grid item xs={1} sm={2}></Grid>
       </Grid>
@@ -164,7 +165,13 @@ export default function Inventory() {
               <StyledTableCell align="right"
                 sx = {{ ...cellStyling }}
               >
-                Item Category
+                <Button 
+                  variant="contained"
+                  color="secondary"   
+                  size="small"
+                >
+                  Categories
+                </Button>
               </StyledTableCell>
 
               <StyledTableCell align="right"
@@ -172,7 +179,7 @@ export default function Inventory() {
               >
                 Weight (oz)
               </StyledTableCell>
-              
+
               <StyledTableCell align="right"
                 sx = {{ ...cellStyling }}
               >
@@ -218,7 +225,7 @@ export default function Inventory() {
             <StyledTableRow>
 
               <StyledTableCell sx = {{ ...cellStyling }} align="right">
-              
+                <AddCustomGearModal/>
               </StyledTableCell>
 
               <StyledTableCell sx = {{ ...cellStyling }} align="left"> 
@@ -229,16 +236,37 @@ export default function Inventory() {
                   >Add Custom Pack</Button>
               </StyledTableCell>
 
-              <StyledTableCell>
-                
+              <StyledTableCell sx = {{ ...cellStyling }} align="right">
+                <Button
+                  variant="contained"
+                  size="small"
+                  color="secondary"            
+                  onClick={handleShowUsercustom}
+                >
+                  Custom Gear
+                </Button>
               </StyledTableCell>
 
-              <StyledTableCell>
-                <AddCustomGearModal/>
+              <StyledTableCell sx = {{ ...cellStyling }} align="center">
+                <Button
+                  variant="contained"
+                  size="small"
+                  color="secondary"            
+                  onClick={handleShowConsumables}
+                >
+                  Consumables
+                </Button>
               </StyledTableCell>
 
-              <StyledTableCell>
-              
+              <StyledTableCell sx = {{ ...cellStyling }} align="left">
+                <Button 
+                  variant="contained"
+                  size="small"
+                  color="secondary"                     
+                  onClick={handleShowGear}
+                >
+                  Default Gear
+                </Button>
               </StyledTableCell>
 
             </StyledTableRow>

@@ -1,21 +1,26 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 
 import { Link } from 'react-router-dom';
 
+import LogOutButton from '../LogOutButton/LogOutButton';
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+// MUI Stuff
+import { Stack, AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, Button, Tooltip, MenuItem } from '@mui/material';
+// import AppBar from '@mui/material/AppBar';
+// import Box from '@mui/material/Box';
+// import Toolbar from '@mui/material/Toolbar';
+// import IconButton from '@mui/material/IconButton';
+// import Typography from '@mui/material/Typography';
+// import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+// import Container from '@mui/material/Container';
+// import Avatar from '@mui/material/Avatar';
+// import Button from '@mui/material/Button';
+// import Tooltip from '@mui/material/Tooltip';
+// import MenuItem from '@mui/material/MenuItem';
+import BackpackIcon from '@mui/icons-material/Backpack';
+
+///////////
 
 export default function NavAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -83,23 +88,23 @@ export default function NavAppBar() {
             >
               <MenuItem key={0} onClick={handleCloseNavMenu}>
                 <Link to="/pack">
-                  <Typography textAlign="center">Pack</Typography>
+                  <Typography textAlign="center"><BackpackIcon/>Pack</Typography>
                 </Link>
               </MenuItem>
 
-              <MenuItem key={0} onClick={handleCloseNavMenu}>
+              <MenuItem key={1} onClick={handleCloseNavMenu}>
                 <Link to="/inventory">
                   <Typography textAlign="center">Items</Typography>
                 </Link>
               </MenuItem>
 
-              <MenuItem key={0} onClick={handleCloseNavMenu}>
+              <MenuItem key={2} onClick={handleCloseNavMenu}>
                 <Link to="/unpack">
                   <Typography textAlign="center">Unpack</Typography>
                 </Link>
               </MenuItem>
 
-              <MenuItem key={0} onClick={handleCloseNavMenu}>
+              <MenuItem key={3} onClick={handleCloseNavMenu}>
                 <Link to="/headout">
                   <Typography textAlign="center">Head Out!</Typography>
                 </Link>
@@ -119,13 +124,17 @@ export default function NavAppBar() {
           </Typography>
 
 {/* Med and up Nav Links */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}
+            justifyContent="space-around"
+          >
+
             <Link to="/pack">
               <Button
+              fullWidth
               variant="contained"
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: 'white', display: 'block' }}
+              startIcon={<BackpackIcon/>}
               >
                 Pack
               </Button>
@@ -153,6 +162,7 @@ export default function NavAppBar() {
 
             <Link to="/headout">
               <Button
+              disabled
               variant="contained"
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: 'white', display: 'block' }}
@@ -160,12 +170,13 @@ export default function NavAppBar() {
                 Head Out!
               </Button>
             </Link>
+            
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar />
               </IconButton>
             </Tooltip>
             <Menu
@@ -184,11 +195,18 @@ export default function NavAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                <MenuItem key={0} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center"> Profile </Typography>
                 </MenuItem>
-              ))}
+
+                <MenuItem key={1} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center"> About </Typography>
+                </MenuItem>
+
+                <MenuItem key={2} onClick={handleCloseNavMenu}>
+                  <LogOutButton />
+                </MenuItem>
+
             </Menu>
           </Box>
 
