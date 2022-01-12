@@ -189,6 +189,7 @@ export default function Pack() {
               </StyledTableCell>
               <StyledTableCell sx = {{ ...cellStyling }} align="right">
                 <Button 
+                  disabled
                   variant="contained"
                   color="secondary"
                   size="small"

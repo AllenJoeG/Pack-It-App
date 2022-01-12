@@ -103,7 +103,7 @@
 
 <!-- Styling! --> 
   [ 👍 ] Pack
-  [ ] Unpack
+  [ 👍 ] Unpack
   [ 👍 ] Inventory
   [ ] Nav
   [ 👍 ] EditModal
@@ -147,17 +147,22 @@
 
 [ ] Refactor and Modularize Code
 
-  <!--  -->
+[ ] Login Form
+  [ ] MUI & Layout
+
+[ 👍 ] Basic style shell for UI/UX tertiary pages
+[ ] AboutPage View
+  [ ] MUI & Layout
+[ ] Account/User View
+  [ ] MUI & Layout
+
+<!--  -->
 [ ] Headout Functional Programming
   [ ] squel.js Server-side
 [ ] Headout View
   [ ] Reducers & Sagas
   [ ] Server-side Axios
   [ ] MUI & layout
-[ ] Account/User View
-  [ ] MUI & Layout
-
-
 
 ## Stretch Goals
 [ ] Unpack Modal Views of gear

@@ -43,7 +43,7 @@ function Nav() {
             </Link>
 
             <Link className="navLink" to="/user">
-              Account
+              Profile
             </Link>
 
             <LogOutButton className="navLink" />

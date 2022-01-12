@@ -166,6 +166,7 @@ export default function Inventory() {
                 sx = {{ ...cellStyling }}
               >
                 <Button 
+                  disabled
                   variant="contained"
                   color="secondary"   
                   size="small"
