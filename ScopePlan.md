@@ -150,11 +150,18 @@
 [ ] Login Form
   [ ] MUI & Layout
 
-[ 👍 ] Basic style shell for UI/UX tertiary pages
-[ ] AboutPage View
-  [ ] MUI & Layout
-[ ] Account/User View
-  [ ] MUI & Layout
+[ 👍 ] Basic style shell for UI/UX
+  tertiary pages
+  [ 👍 ] RegisterPage
+  [ 👍 ] LoginPage
+  [ 👍 ] AboutPage
+  [ 👍 ] UserPage
+  [ 👍 ] InfoPage
+  [ ] LandingPage (special)
+[ ] Style Forms
+  [ ] RegisterForm
+  [ ] LoginForm
+
 
 <!--  -->
 [ ] Headout Functional Programming

@@ -1,15 +1,29 @@
 import React from 'react';
 
-// This is one of our simplest components
-// It doesn't have local state
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is
+//MUI stuff
+import { Box, Container, Paper, Grid, } from '@mui/material';
 
 function InfoPage() {
   return (
-    <div className="container">
-      <p>Info Page</p>
-    </div>
+    <Box container display='flex' alignItems="center" justifyContent='center' >
+      <Box sx={{flexGrow: 1, display: 'flex', backgroundColor: 'primary.main'}}>
+        <Grid container>
+          <Grid item xs={1} sm={1} med={2}/>
+
+          <Grid item xs={10} sm={10} med={8}>
+            <Paper elevation={3} variant="outlined"
+              sx={{backgroundColor: "primary.light" }}  
+            >
+            
+              <p>Info Page</p>
+
+            </Paper>
+          </Grid>
+
+          <Grid item xs={1} sm={1} med={2}/>
+        </Grid>      
+      </Box>
+    </Box>
   );
 }
 
