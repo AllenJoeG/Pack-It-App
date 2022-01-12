@@ -63,38 +63,45 @@ function App() {
           >
             <AboutPage />
           </Route>
-          
+
           <Route
+            exact
+            path="/info"
+          >
+            <InfoPage />
+          </Route>
+          
+          <ProtectedRoute
             // shows AboutPage at all times (logged in or not)
             exact
             path="/headout"
           >
             <HeadOut />
-          </Route>
+          </ProtectedRoute>
 
-          <Route
+          <ProtectedRoute
             // shows AboutPage at all times (logged in or not)
             exact
             path="/pack"
           >
             <Pack />
-          </Route>
+          </ProtectedRoute>
 
-          <Route
+          <ProtectedRoute
             // shows AboutPage at all times (logged in or not)
             exact
             path="/inventory"
           >
             <Inventory />
-          </Route>
+          </ProtectedRoute>
 
-          <Route
+          <ProtectedRoute
             // shows AboutPage at all times (logged in or not)
             exact
             path="/unpack"
           >
             <Unpack />
-          </Route>
+          </ProtectedRoute>
 
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
@@ -106,14 +113,6 @@ function App() {
             path="/user"
           >
             <UserPage />
-          </ProtectedRoute>
-
-          <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
-            exact
-            path="/info"
-          >
-            <InfoPage />
           </ProtectedRoute>
 
           <Route

@@ -42,6 +42,7 @@ export default function Inventory() {
   const dispatch = useDispatch();
   const history = useHistory();
   //alias Reducers
+  const user = useSelector(store => store.user);
   const packs = useSelector((store) => store.packsReducer);
   const gear = useSelector((store) => store.gearReducer);
   const consumables = useSelector((store) => store.consumablesReducer);
@@ -56,8 +57,9 @@ export default function Inventory() {
 
 
   const handleShowUsercustom = () => {
-    setInventory(usercustom)
+      setInventory(usercustom)
   }
+
   const handleShowGear = () => {
     setInventory(gear)
   }
