@@ -186,14 +186,24 @@ export default function NavAppBar() {
               onClose={handleCloseUserMenu}
             >
                 <MenuItem key={0} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"> Profile </Typography>
+                  <Link to='/user'>
+                    <Typography textAlign="center"> Profile </Typography>
+                  </Link>
                 </MenuItem>
 
                 <MenuItem key={1} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"> About </Typography>
+                  <Link to='/about'>
+                    <Typography textAlign="center"> About </Typography>
+                  </Link>
                 </MenuItem>
 
                 <MenuItem key={2} onClick={handleCloseNavMenu}>
+                  <Link to='/info'>
+                    <Typography textAlign="center"> Help </Typography>
+                  </Link>
+                </MenuItem>
+
+                <MenuItem key={3} onClick={handleCloseNavMenu}>
                   <LogOutButton />
                 </MenuItem>
 

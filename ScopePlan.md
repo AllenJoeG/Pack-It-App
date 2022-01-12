@@ -157,11 +157,19 @@
   [ 👍 ] AboutPage
   [ 👍 ] UserPage
   [ 👍 ] InfoPage
-  [ ] LandingPage (special)
+  [ 👍 ] LandingPage (special)
 [ ] Style Forms
   [ ] RegisterForm
   [ ] LoginForm
 
+[ ]InfoPage
+  [ ] How to Use PackItApp
+
+[ ] AboutPage
+  [ ] Elevator Pitch
+  [ ] Tech Info
+
+[ ] LandingPage splash
 
 <!--  -->
 [ ] Headout Functional Programming
@@ -197,7 +205,6 @@ pack from "edit"
 
 <!-- Known Bugs -->
 
-[ ] Purple Buttons layout
 
 
 <!-- Cleared Bugs -->
