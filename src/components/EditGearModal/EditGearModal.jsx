@@ -53,7 +53,6 @@ export default function EditGearModal({thingID, thingWeight, thinGN, thinPN}) {
           <Grid container
             style={{Paper}}
             alignItems="flex-end"
-            
             >
           
             <Grid item xs={12}

@@ -171,6 +171,7 @@
   [ ] Tech Info
 
 [ ] LandingPage splash
+  [ ] Register and Log-in Buttons
 
 [ ] update database.sql file with newest table structures
 
