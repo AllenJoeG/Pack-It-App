@@ -82,7 +82,8 @@ export default function NavAppBar() {
               <MenuItem key={0} onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
                   <Link to="/pack" underline="hover">
-                    <BackpackIcon/>Pack
+                    <BackpackIcon color="inherit"/>
+                    Pack
                   </Link>
                 </Typography>
                 
@@ -91,7 +92,8 @@ export default function NavAppBar() {
               <MenuItem key={1} onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
                   <Link to="/inventory" underline="hover">
-                    <CategoryIcon/>Items
+                    <CategoryIcon color="inherit"/>
+                    Items
                   </Link>
                 </Typography>
               </MenuItem>
@@ -99,7 +101,7 @@ export default function NavAppBar() {
               <MenuItem key={2} onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
                   <Link to="/unpack" underline="hover">
-                    <HistoryIcon/>
+                    <HistoryIcon color="inherit"/>
                     Unpack
                   </Link>
                 </Typography>
@@ -108,7 +110,7 @@ export default function NavAppBar() {
               <MenuItem key={3} onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
                   <Link to="/headout" underline="hover">
-                    <HikingIcon/>
+                    <HikingIcon color="inherit"/>
                     Head Out!
                   </Link>
                 </Typography>
@@ -139,7 +141,8 @@ export default function NavAppBar() {
                 sx={{ my: 1, color: 'white', display: 'inline' }}
                 
               >
-                <BackpackIcon fontSize="small"/>Pack
+                <BackpackIcon fontSize="small" color="inherit"/>
+                Pack
               </Button>
             
               <Button
@@ -149,7 +152,8 @@ export default function NavAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 1, color: 'white', display: 'block' }}
               >
-                <CategoryIcon fontSize="small"/>Items
+                <CategoryIcon fontSize="small" color="inherit"/>
+                Items
               </Button>
 
               <Button
@@ -159,7 +163,8 @@ export default function NavAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 1, color: 'white', display: 'block' }}
               >
-                <HistoryIcon fontSize="small"/>Unpack
+                <HistoryIcon fontSize="small" color="inherit"/>
+                Unpack
               </Button>
 
               <Button
@@ -170,7 +175,8 @@ export default function NavAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 1, color: 'white', display: 'block' }}
               >
-                <HikingIcon fontSize="small"/>Head Out!
+                <HikingIcon fontSize="small" color="inherit"/>
+                Head Out!
               </Button>
             
           </Box>

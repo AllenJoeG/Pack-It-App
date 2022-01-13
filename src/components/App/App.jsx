@@ -8,9 +8,6 @@ import {
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import Nav from '../Nav/Nav';
-import Footer from '../Footer/Footer';
-
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
@@ -25,6 +22,7 @@ import Inventory from '../Inventory/Inventory.jsx';
 import Pack from '../Pack/Pack.jsx';
 import Unpack from '../Unpack/Unpack.jsx';
 import NavAppBar from '../NavAppBar/NavAppBar.jsx';
+import NavBarBOT from '../NavBarBOT/NavBarBOT.jsx';
 
 import './App.css';
 
@@ -162,7 +160,8 @@ function App() {
             <h1>404</h1>
           </Route>
         </Switch>
-        <Footer />
+
+        <NavBarBOT/>
       </div>
     </Router>
   );

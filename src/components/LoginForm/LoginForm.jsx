@@ -40,6 +40,7 @@ function LoginForm() {
           Username:
           <TextField
             fullWidth
+            color="secondary"
             variant="outlined"
             type="text"
             name="username"
@@ -55,6 +56,7 @@ function LoginForm() {
           <TextField
             fullWidth
             variant="outlined"
+            color="secondary"
             type="password"
             name="password"
             required
