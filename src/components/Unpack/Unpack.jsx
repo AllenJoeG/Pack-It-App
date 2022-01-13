@@ -142,11 +142,7 @@ export default function Unpack() {
 
   //Updates in case of nav after pack save
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch({type: 'GET_USER_TRIPS'})
-    dispatch({type: 'GET_USER_CUSTOM'})
-    dispatch({type: 'GET_CATEGORIES'})
-  }, []);
+  
 
   return(
     <Box>

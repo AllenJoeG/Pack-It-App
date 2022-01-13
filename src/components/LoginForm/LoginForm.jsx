@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
 
 //MUI stuff
-import { Box, Container, Paper, Grid, } from '@mui/material';
+import { Box, Container, Paper, Grid, TextField, Button, } from '@mui/material';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -28,7 +28,7 @@ function LoginForm() {
   }; // end login
 
   return (
-    <form className="formPanel" onSubmit={login}>
+    <Box component="form" className="formPanel" onSubmit={login}>
       <h2>Login</h2>
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
@@ -38,7 +38,9 @@ function LoginForm() {
       <div>
         <label htmlFor="username">
           Username:
-          <input
+          <TextField
+            fullWidth
+            variant="outlined"
             type="text"
             name="username"
             required
@@ -50,7 +52,9 @@ function LoginForm() {
       <div>
         <label htmlFor="password">
           Password:
-          <input
+          <TextField
+            fullWidth
+            variant="outlined"
             type="password"
             name="password"
             required
@@ -60,9 +64,17 @@ function LoginForm() {
         </label>
       </div>
       <div>
-        <input className="btn" type="submit" name="submit" value="Log In" />
+        <Button
+          type="submit" 
+          name="submit" 
+          value="Log In"
+          variant="contained"
+          color="success"
+
+        > Log In </Button>
+        {/* <input className="btn" type="submit" name="submit" value="Log In" /> */}
       </div>
-    </form>
+    </Box>
   );
 }
 

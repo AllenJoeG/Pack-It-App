@@ -158,11 +158,12 @@
   [ 👍 ] UserPage
   [ 👍 ] InfoPage
   [ 👍 ] LandingPage (special)
+
 [ ] Style Forms
   [ ] RegisterForm
   [ ] LoginForm
 
-[ ]InfoPage
+[ ] InfoPage
   [ ] How to Use PackItApp
 
 [ ] AboutPage
@@ -170,6 +171,8 @@
   [ ] Tech Info
 
 [ ] LandingPage splash
+
+[ ] update database.sql file with newest table structures
 
 <!--  -->
 [ ] Headout Functional Programming
@@ -204,7 +207,7 @@ pack from "edit"
 
 
 <!-- Known Bugs -->
-
+[ ] Infinite dispatching on main three, wat?!
 
 
 <!-- Cleared Bugs -->

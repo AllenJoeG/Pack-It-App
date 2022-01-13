@@ -9,6 +9,9 @@ import { Stack, AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, A
 
 import MenuIcon from '@mui/icons-material/Menu';
 import BackpackIcon from '@mui/icons-material/Backpack';
+import HikingIcon from '@mui/icons-material/Hiking';
+import HistoryIcon from '@mui/icons-material/History';
+import CategoryIcon from '@mui/icons-material/Category';
 
 ///////////
 
@@ -77,27 +80,38 @@ export default function NavAppBar() {
               }}
             >
               <MenuItem key={0} onClick={handleCloseNavMenu}>
-                <Link to="/pack">
-                  <Typography textAlign="center"><BackpackIcon/>Pack</Typography>
-                </Link>
+                <Typography textAlign="center">
+                  <Link to="/pack" underline="hover">
+                    <BackpackIcon/>Pack
+                  </Link>
+                </Typography>
+                
               </MenuItem>
 
               <MenuItem key={1} onClick={handleCloseNavMenu}>
-                <Link to="/inventory">
-                  <Typography textAlign="center">Items</Typography>
-                </Link>
+                <Typography textAlign="center">
+                  <Link to="/inventory" underline="hover">
+                    <CategoryIcon/>Items
+                  </Link>
+                </Typography>
               </MenuItem>
 
               <MenuItem key={2} onClick={handleCloseNavMenu}>
-                <Link to="/unpack">
-                  <Typography textAlign="center">Unpack</Typography>
-                </Link>
+                <Typography textAlign="center">
+                  <Link to="/unpack" underline="hover">
+                    <HistoryIcon/>
+                    Unpack
+                  </Link>
+                </Typography>
               </MenuItem>
 
               <MenuItem key={3} onClick={handleCloseNavMenu}>
-                <Link to="/headout">
-                  <Typography textAlign="center">Head Out!</Typography>
-                </Link>
+                <Typography textAlign="center">
+                  <Link to="/headout" underline="hover">
+                    <HikingIcon/>
+                    Head Out!
+                  </Link>
+                </Typography>
               </MenuItem>
 
             </Menu>
@@ -117,49 +131,47 @@ export default function NavAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}
             justifyContent="space-around"
           >
-
-            <Link to="/pack">
               <Button
-              fullWidth
-              variant="contained"
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: 'white', display: 'block' }}
+                to="/pack"
+                component={ Link }
+                variant="contained"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 1, color: 'white', display: 'inline' }}
+                
               >
-                Pack
+                <BackpackIcon fontSize="small"/>Pack
               </Button>
-              </Link>
             
-            
-            <Link to="/inventory">
               <Button
-              variant="contained"
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: 'white', display: 'block' }}
+                to="/inventory"
+                component={ Link }
+                variant="contained"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 1, color: 'white', display: 'block' }}
               >
-                Items
+                <CategoryIcon fontSize="small"/>Items
               </Button>
-            </Link>
 
-            <Link to="/unpack">
               <Button
-              variant="contained"
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: 'white', display: 'block' }}
+                to="/unpack"
+                component={ Link }
+                variant="contained"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 1, color: 'white', display: 'block' }}
               >
-                Unpack
+                <HistoryIcon fontSize="small"/>Unpack
               </Button>
-            </Link>
 
-            <Link to="/headout">
               <Button
-              disabled
-              variant="contained"
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: 'white', display: 'block' }}
+                to="/unpack"
+                component={ Link }
+                disabled
+                variant="contained"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 1, color: 'white', display: 'block' }}
               >
-                Head Out!
+                <HikingIcon fontSize="small"/>Head Out!
               </Button>
-            </Link>
             
           </Box>
 
@@ -172,6 +184,7 @@ export default function NavAppBar() {
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
+              backgroundColor="secondary"
               anchorEl={anchorElUser}
               anchorOrigin={{
                 vertical: 'top',
@@ -186,19 +199,19 @@ export default function NavAppBar() {
               onClose={handleCloseUserMenu}
             >
                 <MenuItem key={0} onClick={handleCloseNavMenu}>
-                  <Link to='/user'>
+                  <Link to='/user' underline="hover">
                     <Typography textAlign="center"> Profile </Typography>
                   </Link>
                 </MenuItem>
 
                 <MenuItem key={1} onClick={handleCloseNavMenu}>
-                  <Link to='/about'>
+                  <Link to='/about' underline="hover">
                     <Typography textAlign="center"> About </Typography>
                   </Link>
                 </MenuItem>
 
                 <MenuItem key={2} onClick={handleCloseNavMenu}>
-                  <Link to='/info'>
+                  <Link to='/info' underline="hover">
                     <Typography textAlign="center"> Help </Typography>
                   </Link>
                 </MenuItem>

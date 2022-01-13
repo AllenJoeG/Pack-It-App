@@ -42,7 +42,7 @@ function App() {
     dispatch({type: 'SET_CP_INDEX'})
     dispatch({type: 'GET_USER_TRIPS'})
     dispatch({type: 'GET_USER_CUSTOM'})
-  }, [dispatch]);
+  }, []);
 
   return (
     <Router>

@@ -53,11 +53,6 @@ export default function Pack() {
   const [browseToAdd, setBrowseToAdd] = useState('');
   
 
-  //UnUSEd effect, lol
-  useEffect(() => {
-
-  }, [])
-
   const calculatePackWeight = () => {
     if (!currentPack) {
       return 0;
@@ -139,42 +134,6 @@ export default function Pack() {
 
   return(
     <Box>
-      <Box>
-      <Grid 
-        flex container 
-        direction="row" 
-        justifyContent="space-between" 
-        alignItems="center"
-      >
-        <Grid item xs={1} sm={2}></Grid>
-        <Grid item xs={4} sm={2}>
-          {/* <Button 
-            variant="contained"
-            color="secondary"
-            size="small"
-            onClick={handleSavePack}
-          >Save Pack</Button> */}
-        </Grid>
-        <Grid item xs={4} sm={2}>
-          {/* <LoadPackModal /> */}
-        </Grid>
-        <Grid item xs={4} sm={2}>
-          {/* <Button 
-            variant="contained"
-            color="secondary"
-            >Categories</Button> */}
-        </Grid>
-        <Grid item xs={4} sm={2}>
-          {/* <Button 
-            align="right"
-            variant="contained"
-            color="secondary"
-            onClick={handleClearCurrentPack}
-          >Clear Pack</Button> */}
-        </Grid>
-        <Grid item xs={1} sm={2}></Grid>
-      </Grid>
-      </Box>
 
       <TableContainer sx= {{ maxHeight: 650 }}>
         <Table stickyHeader>

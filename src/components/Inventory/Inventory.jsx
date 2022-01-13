@@ -54,7 +54,7 @@ export default function Inventory() {
   //Local State toggles between reducers to display on table.
   const [inventory, setInventory] = useState([]);
   
-
+  
 
   const handleShowUsercustom = () => {
       setInventory(usercustom)
