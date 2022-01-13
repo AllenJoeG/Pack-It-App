@@ -18,7 +18,7 @@ function LandingPage() {
 
   return (
     <Box container display='flex' alignItems="center" justifyContent='center' >
-      <Box sx={{flexGrow: 1, display: 'flex', backgroundColor: 'primary.main'}}>
+      <Box sx={{flexGrow: 1, display: 'flex', backgroundColor: 'primary.main', height: '85vh'}}>
         <Grid container>
           
             <Grid item xs={1} sm={1} med={2}>
@@ -26,7 +26,7 @@ function LandingPage() {
 
             <Grid item xs={6} sm={6} med={5}>
             <Paper elevation={3} variant="outlined"
-            sx={{backgroundColor: "primary.light" }}  
+            sx={{backgroundColor: "primary.light", height: '100%'  }}  
           >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur

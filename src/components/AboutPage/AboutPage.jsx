@@ -6,7 +6,7 @@ import { Box, Container, Paper, Grid, } from '@mui/material';
 function AboutPage() {
   return (
     <Box container display='flex' alignItems="center" justifyContent='center' >
-      <Box sx={{flexGrow: 1, display: 'flex', backgroundColor: 'primary.main'}}>
+      <Box sx={{flexGrow: 1, display: 'flex', backgroundColor: 'primary.main', height: '85vh'}}>
         <Grid container>
           <Grid item xs={1} sm={1} med={2}>
           </Grid>
@@ -14,7 +14,7 @@ function AboutPage() {
           <Grid item xs={10} sm={10} med={8}>
 
             <Paper elevation={3} variant="outlined"
-              sx={{backgroundColor: "primary.light" }}  
+              sx={{backgroundColor: "primary.light", height: '100%'  }}  
             >
               
               <h2>About PackItApp</h2>
