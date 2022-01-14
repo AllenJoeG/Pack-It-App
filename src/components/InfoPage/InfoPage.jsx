@@ -15,7 +15,7 @@ function InfoPage() {
               sx={{backgroundColor: "primary.light", height: '100%' }}  
             >
             
-              <p>How to use PackItApp</p>
+              <h2>How to use PackItApp</h2>
 
             </Paper>
           </Grid>

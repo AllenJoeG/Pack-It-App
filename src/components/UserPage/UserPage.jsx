@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import {useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 //MUI stuff
-import { Box, Container, Paper, Grid, } from '@mui/material';
+import { Box, Container, Paper, Grid, Avatar } from '@mui/material';
 
 function UserPage() {
-  // this component doesn't do much to start, just renders some user reducer info to the DOM
-  const user = useSelector((store) => store.user);
+    //Alias Reducers
+    const user = useSelector((store) => store.user);
+    const userGear = useSelector((store) => store.userCustomReducer);
+    const userTrips = useSelector((store) => store.headoutTripReducer);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({type: 'GET_USER_TRIPS'})
+    dispatch({type: 'GET_USER_CUSTOM'})
+  }, []);
 
   return (
     <Box container display='flex' alignItems="center" justifyContent='center' >
@@ -21,10 +30,27 @@ function UserPage() {
             <Paper elevation={3} 
               sx={{backgroundColor: "primary.light", height: '100%'  }}  
             >
-              
-              <h2>Welcome, {user.username}!</h2>
-              <p>Your ID is: {user.id}</p>
+              <Grid container>
+                <Grid item xs={1} sm={1} med={2}>
+                </Grid>
 
+                <Grid item xs={10} sm={10} med={8}
+                  sx={{ paddingTop: 7}}
+                >
+                  <Avatar
+                    alt={user.username}
+                    // src="/static/images/avatar/1.jpg"
+                    sx={{ width: 175, height: 175 }}
+                  />
+                    <h2>Welcome back, {user.username}!</h2>
+                    <h4>You currently have {userTrips.length} packs saved!</h4>
+                    <h4> Currently tracking {userGear.length} custom item entries!</h4>
+                </Grid>
+
+                <Grid item xs={1} sm={1} med={2}>
+                </Grid>
+              </Grid>
+              
             </Paper>
           </Grid>
 

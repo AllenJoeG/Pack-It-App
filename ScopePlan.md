@@ -167,12 +167,19 @@
   [ ] Elevator Pitch
   [ ] Tech Info
 
+[ ] UserPage
+  [ ] Picture
+  [ ] Pack Count
+  [ ] Weight
+  [ ] Customization
+
 [ ] LandingPage splash
   [ ] Register and Log-in Buttons
 
 [ ] update database.sql file with newest table structures
 
-[ ] Iron out useEffect dispatches to fill reducers. Auth ones after log-in
+[ ] Iron out useEffect dispatches to fill reducers. 
+[ 👍 ] Filling user reducers on login
 
 [ ] Unpack not populating after save pack or refreshing on delete
 
