@@ -43,6 +43,9 @@ export default function EditUnpackModal({tripID, trip_Name, trip_Notes}) {
       type: 'DELETE_TRIP_ID_AND_GEAR',
       payload: tripID
     })
+    dispatch({
+      type: 'GET_USER_TRIPS'
+    })
     handleClose();
   }
 

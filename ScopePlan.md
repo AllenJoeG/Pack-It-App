@@ -147,9 +147,6 @@
 
 [ ] Refactor and Modularize Code
 
-[ ] Login Form
-  [ ] MUI & Layout
-
 [ 👍 ] Basic style shell for UI/UX
   tertiary pages
   [ 👍 ] RegisterPage
@@ -159,9 +156,9 @@
   [ 👍 ] InfoPage
   [ 👍 ] LandingPage (special)
 
-[ ] Style Forms
-  [ ] RegisterForm
-  [ ] LoginForm
+[ 👍 ] Style Forms
+  [ 👍 ] RegisterForm
+  [ 👍 ] LoginForm
 
 [ ] InfoPage
   [ ] How to Use PackItApp
@@ -175,6 +172,11 @@
 
 [ ] update database.sql file with newest table structures
 
+[ ] Iron out useEffect dispatches to fill reducers. Auth ones after log-in
+
+[ ] Unpack not populating after save pack or refreshing on delete
+
+[ ] Custom Color ThemeProvider
 <!--  -->
 [ ] Headout Functional Programming
   [ ] squel.js Server-side

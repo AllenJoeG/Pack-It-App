@@ -47,7 +47,9 @@ export default function SavePackModal() {
     setSaved(true);
     setChosenPack('');
     setPackName('');
-    
+    dispatch({
+      type: 'GET_USER_TRIPS'
+    })
   }
 
 

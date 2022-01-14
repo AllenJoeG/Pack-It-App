@@ -15,7 +15,7 @@ function LoginPage() {
           <Grid item xs={1} sm={1} med={2}/>
 
           <Grid item xs={10} sm={10} med={8}>
-            <Paper elevation={3} variant="outlined"
+            <Paper elevation={3}
               sx={{backgroundColor: "primary.light", height: '100%'  }}  
             >
               

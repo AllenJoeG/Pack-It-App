@@ -190,7 +190,6 @@ export default function NavAppBar() {
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
-              backgroundColor="secondary"
               anchorEl={anchorElUser}
               anchorOrigin={{
                 vertical: 'top',

@@ -18,7 +18,7 @@ function UserPage() {
 
           <Grid item xs={10} sm={10} med={8}>
 
-            <Paper elevation={3} variant="outlined"
+            <Paper elevation={3} 
               sx={{backgroundColor: "primary.light", height: '100%'  }}  
             >
               

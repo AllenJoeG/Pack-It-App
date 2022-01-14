@@ -25,7 +25,7 @@ function LandingPage() {
             </Grid>
 
             <Grid item xs={6} sm={6} med={5}>
-            <Paper elevation={3} variant="outlined"
+            <Paper elevation={3}
             sx={{backgroundColor: "primary.light", height: '100%'  }}  
           >
               <p>
@@ -55,7 +55,7 @@ function LandingPage() {
             </Grid>
 
             <Grid item xs={4} sm={4} med={3}>
-            <Paper elevation={3} variant="outlined"
+            <Paper elevation={3}
             sx={{backgroundColor: "primary.light" }}  
           >
               <RegisterForm />
