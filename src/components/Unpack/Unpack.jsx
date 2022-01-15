@@ -138,6 +138,12 @@ function GearRows({tripID}) {
 };
 
 export default function Unpack() {
+  
+  useEffect(() => {
+    dispatch({type: 'GET_USER_TRIPS'})
+    dispatch({type: 'GET_USER_CUSTOM'})
+  }, []);
+  
   const userTrips = useSelector((store) => store.headoutTripReducer);
 
   //Updates in case of nav after pack save

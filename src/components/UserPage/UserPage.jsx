@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 //MUI stuff
-import { Box, Container, Paper, Grid, Avatar } from '@mui/material';
+import { Box, Container, Paper, Grid, Avatar, Button } from '@mui/material';
+import HistoryIcon from '@mui/icons-material/History';
+import CategoryIcon from '@mui/icons-material/Category';
 
 function UserPage() {
     //Alias Reducers
@@ -43,8 +46,27 @@ function UserPage() {
                     sx={{ width: 175, height: 175 }}
                   />
                     <h2>Welcome back, {user.username}!</h2>
-                    <h4>You currently have {userTrips.length} packs saved!</h4>
+                    <h4>You currently have {userTrips.length} packs saved! </h4>
+                      <Button
+                        to="/unpack"
+                        component={ Link }
+                        variant="contained"
+                        sx={{ my: 1, color: 'white', display: 'block' }}
+                      >
+                        <HistoryIcon fontSize="small" color="inherit"/>
+                        Unpack
+                      </Button>
+                    
                     <h4> Currently tracking {userGear.length} custom item entries!</h4>
+                    <Button
+                      to="/inventory"
+                      component={ Link }
+                      variant="contained"
+                      sx={{ my: 1, color: 'white', display: 'block' }}
+                    >
+                      <CategoryIcon fontSize="small" color="inherit"/>
+                      Items
+                    </Button>
                 </Grid>
 
                 <Grid item xs={1} sm={1} med={2}>

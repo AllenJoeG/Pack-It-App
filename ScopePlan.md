@@ -1,23 +1,25 @@
 ## Base Mode
 [ 👍 ] Skeleton Component Views
 [ 👍 ] Nav Bar 
-  [ ] Nav Bar STYLING
+  [ 👍 ] Nav Bar STYLING
 [ 👍 ] Database Creation from ERD
 [ 👍 ] Loading Dummy Data for Inventory
 [ 👍 ] Routes & Auth Routes for Views
 <!--  -->
-[ ] Reducers & Sagas
+[ 👍 ] Reducers
   [ 👍 ] gear.reducer
   [ 👍 ] consumables.reducer
   [ 👍 ] categories.reducer
   [ 👍 ] packs.reducer
   [ 👍 ] currentPack.reducer
-  [ 👍 ] CPIndex.reducer
-  [ 👍 ] addtopackdropdown.reducer
-  [ 👍 ] usercustom reducer
-  [ 👍 ] user headouts reducer
+  [ 👍 ] cPIndex.reducer
+  [ 👍 ] userCustom.reducer
+  [ 👍 ] Headouts.reducer
+  [ 👍 ] user.reducer
+  [ 👍 ] error.reducer
 
   <!--  -->
+[ 👍 ] Sagas
   [ 👍 ] Gear.saga GET
   [ 👍 ] Consumables.saga GET
   [ 👍 ] Packs.saga GET
@@ -30,6 +32,8 @@
   [ 👍 ] Unpack DELETE
   [ 👍 ] Pack POST to userCustom
   [ 👍 ] Headouts POST 
+
+  [ ] initial load SCREAMINGCAMEL dispatch to hit all at once
   
 <!--  -->
 [ ] Inventory View
@@ -46,42 +50,38 @@
     [ 👍 ] currently generating new ID to avoid duplication
 [ ] Create Footer Functions
     [ ] Create Pack
-    [ ] Create Item
-
-  [ ] MUI & layout
-    [ ] Needs that stylin'
+    [ 👍 ] Create Item
 
 <!--  -->
 [ ] Pack View
-  [ ] Reducers & Sagas
+  [ 👍 ] Reducers & Sagas
     [ 👍 ] currentPackReducer
-      [ 👍 ] delete item w filter
+    [ 👍 ] delete item w filter
     [ 👍 ] Pack Reducer Dropdown
     [ 👍 ] Category Reducer Dropdown
     [ 👍 ] ADD to pack dispatch
-  [ ] Server-side Axios
+  [ 👍 ] Server-side Axios
     [ 👍 ] POST pack to usercustom
-    [ 👍 ] POST new trip
-    [ ] 
-  [ ] MUI & layout
+    [ 👍 ] POST new trip 
+  [ 👍 ] MUI & layout
     [ 👍 ] Button Grid
     [ 👍 ] Table
-    [ ] Styled
-  [ ] Functionality
+    [ 👍 ] Styled
+  [ 👍 ] Functionality
     [ 👍 ] Pack Dropdown
     [ 👍 ] Pack Capacity
     [ 👍 ] Cumulative Weight
     [ 👍 ] Category Dropdown
-    [ ] Buttons
-      [ 👍 ] Clear Pack Button
-      [ 👍 ] Add line item
-      [ 👍 ] Save Pack
-      [ 👍 ] Load Pack
+  [ 👍 ] Buttons
+    [ 👍 ] Clear Pack Button
+    [ 👍 ] Add line item
+    [ 👍 ] Save Pack
+    [ 👍 ] Load Pack
       [ ] Load Category
 
 <!--  -->
-[ ] Unpack View
-  [ ] Reducers & Sagas
+[ 👍 ] Unpack View
+  [ 👍 ] Reducers & Sagas
     [ 👍 ] Reducer to hold trips
     [ 👍 ] Reducer holds all usercustom
     [ 👍 ] SAGA GETS
@@ -89,12 +89,12 @@
     [ 👍 ] SAGA for gear PUT weight/notes
     [ 👍 ] SAGA for trip DELETE
       trip and gear
-  [ ] Server-side Axios
+  [ 👍 ] Server-side Axios
     [ 👍 ] PUT routes for trip name/notes
     [ 👍 ] PUT routes for gear weight/notes
     [ 👍 ] DELETE headouts route
     [ 👍 ] DELETE assoc usercustom
-  [ ] MUI & layout
+  [ 👍 ] MUI & layout
     [ 👍 ] Collapsible tables (modal?)
     [ 👍 ] Edit Trip info Modal
     [ 👍 ] Edit gear info Modal
@@ -105,47 +105,13 @@
   [ 👍 ] Pack
   [ 👍 ] Unpack
   [ 👍 ] Inventory
-  [ ] Nav
+  [ 👍 ] Nav
   [ 👍 ] EditModal
   [ 👍 ] LoadModal
   [ 👍 ] UnpackModal
   [ 👍 ] Save Pack Modal
   [ 👍 ] Add Custom Gear Modal
   [ ] Add Custom Pack Modal
-
-
-  [ ] Mobile Responsive Breakpoints
-
-<!-- Functional stuff -->
-[ 👍 ] Load Pack not loading duplicates
-[ 👍 ] Add To Pack clear inputs
-
-[ 👍 ] Add Custom Item
-  [ 👍 ] Buttons
-  [ 👍 ] Modal Form
-  [ 👍 ] Saga
-  [ 👍 ] Server Route
-  [ 👍 ] Functionality
-  [ ] Form Controls
-
-[ ] Add Custom Pack
-  [ 👍 ] Buttons
-  [ ] Modal Form
-  [ ] Saga
-  [ ] Server Route
-  [ ] Functionality
-
-[ 👍] Save Pack Modal
-  [ 👍] Button
-  [ 👍] Modal Form
-  [ 👍] Saga
-  [ 👍] Server Route
-  [ 👍] Functionality
-
-[  ] Solo add in Pack
-  Should ref custom items also
-
-[ ] Refactor and Modularize Code
 
 [ 👍 ] Basic style shell for UI/UX
   tertiary pages
@@ -160,6 +126,37 @@
   [ 👍 ] RegisterForm
   [ 👍 ] LoginForm
 
+  [ ] Mobile Responsive Breakpoints
+
+<!-- Functional stuff -->
+[ 👍 ] Load Pack not loading duplicates
+[ 👍 ] Add To Pack clear inputs
+[ 👍 ] Filling user reducers on login
+
+[ 👍 ] Add Custom Item
+  [ 👍 ] Buttons
+  [ 👍 ] Modal Form
+  [ 👍 ] Saga
+  [ 👍 ] Server Route
+  [ 👍 ] Functionality
+  [ ] Form Controls
+
+[ 👍] Save Pack Modal
+  [ 👍] Button
+  [ 👍] Modal Form
+  [ 👍] Saga
+  [ 👍] Server Route
+  [ 👍] Functionality
+
+<!-- Final Sprint -->
+<!-- Content -->
+[ ] Add Custom Pack
+  [ 👍 ] Buttons
+  [ ] Modal Form
+  [ ] Saga
+  [ ] Server Route
+  [ ] Functionality
+
 [ ] InfoPage
   [ ] How to Use PackItApp
 
@@ -168,31 +165,45 @@
   [ ] Tech Info
 
 [ ] UserPage
-  [ ] Picture
-  [ ] Pack Count
+  [ 👍 ] Picture
+  [ 👍 ] Pack Count
   [ ] Weight
   [ ] Customization
+
+<!-- Styling -->
+[ ] Custom Color ThemeProvider
+
+[ ] Snackbars
+  [ ] Save
+  [ ] Item Create
+  [ ] Item Edit
+  [ ] Pack Edit
+  [ ] Pack Create
+  [ ] Load
 
 [ ] LandingPage splash
   [ ] Register and Log-in Buttons
 
-[ ] update database.sql file with newest table structures
-
+<!-- Bugs -->
 [ ] Iron out useEffect dispatches to fill reducers. 
-[ 👍 ] Filling user reducers on login
-
+[ ] Solo add in Pack
+  Should ref custom items also
 [ ] Unpack not populating after save pack or refreshing on delete
 
-[ ] Custom Color ThemeProvider
+<!-- Put a bow on it -->
+[ ] database.sql file with newest table structures
+[ ] Refactor and Modularize Code
+[ ] Readme
 <!--  -->
+
+
+## Stretch Goals
 [ ] Headout Functional Programming
   [ ] squel.js Server-side
 [ ] Headout View
   [ ] Reducers & Sagas
   [ ] Server-side Axios
   [ ] MUI & layout
-
-## Stretch Goals
 [ ] Unpack Modal Views of gear
   [ ] Charts.JS graph of weight/category
 [ ] Custom Headout Functionality
@@ -206,18 +217,10 @@
 [ ] Emergency Contact SMS 
 [ ] redux-Persist for     currentPack
 [ ] Sort Tables by Column
-[ ]
-[ ]
-[ ]
-[ ]
-
-<!-- Next to DO -->
-Think through how to track/save/load a
+[ ] track/save/load a
 pack from "edit"
-
-
-<!-- Known Bugs -->
-[ ] Infinite dispatching on main three, wat?!
+[ ]
+[ ]
 
 
 <!-- Cleared Bugs -->
