@@ -7,9 +7,11 @@ import SavePackModal from '../SavePackModal/SavePackModal';
 
 ////////// MUI stuff
 import { styled } from '@mui/material/styles';
-import {Box, Container, Grid, Table, TableBody, TableFooter, TableCell, 
+import {Box, Table, TableBody, TableFooter, TableCell, 
   tableCellClasses, TableContainer, TableHead, TableRow, Paper, Button,
-  TextField, MenuItem, Typography} from '@mui/material';
+  TextField, MenuItem, Snackbar} from '@mui/material';
+  import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+  import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -27,7 +29,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
+    backgroundColor: '#E8F5E9'
   }
 }));
 
@@ -78,7 +80,6 @@ export default function Pack() {
       payload: id
     })
   }
-
 
 
   const handleClearCurrentPack = () => {
@@ -196,7 +197,7 @@ export default function Pack() {
                     color="error"
                     size="small"
                     onClick={() => handleDeleteFromCurrentPack(item.id)}
-                  >X</Button>
+                  ><RemoveCircleOutlineIcon/></Button>
                 </StyledTableCell>
 
               </StyledTableRow>
@@ -218,6 +219,7 @@ export default function Pack() {
                 <TextField
                   select
                   fullWidth
+                  color="info"
                   variant="outlined"
                   formlabel="Select a Category"
                   label="Select a Category"
@@ -239,6 +241,7 @@ export default function Pack() {
                 <TextField
                   select
                   fullWidth
+                  color="info"
                   variant="outlined"
                   formlabel="Select an item"
                   label="Select Item"

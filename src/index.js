@@ -18,13 +18,13 @@ const theme = createTheme({
     },
     secondary: {
       // light: '#598e89', // auto-gen from main if blank
-      main: '#80cbc4',
+      main: '#FB8C00',
       // dark: '#99d5cf', // auto-gen from main if blank
       // contrastText: '#000',
     },
     success: {
       // light: '#598e89', // auto-gen from main if blank
-      main: '#80cbc4',
+      main: '#29B6F6',
       // dark: '#99d5cf', // auto-gen from main if blank
       // contrastText: '#000',
     },
@@ -42,7 +42,7 @@ const theme = createTheme({
     },
     error: {
       // light: '#598e89', // auto-gen from main if blank
-      main: '#EF5350',
+      main: '#E53935',
       // dark: '#99d5cf', // auto-gen from main if blank
       // contrastText: '#000',
     },

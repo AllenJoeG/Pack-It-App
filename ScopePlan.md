@@ -187,13 +187,13 @@
   [ ] Register and Log-in Buttons
 
 <!-- Bugs -->
-[ ] Iron out useEffect dispatches to fill reducers. 
+[ 👍 ] Iron out useEffect dispatches to fill reducers. 
 [ ] Solo add in Pack
   Should ref custom items also
 [ ] Unpack not populating after save pack or refreshing on delete
 
 <!-- Put a bow on it -->
-[ ] database.sql file with newest table structures
+[ 👍 ] database.sql file with newest table structures
 [ ] Refactor and Modularize Code
 [ ] Readme
 [ ] USER STORY for PRESENT
