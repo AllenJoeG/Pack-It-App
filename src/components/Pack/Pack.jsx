@@ -52,6 +52,10 @@ export default function Pack() {
   const [addToPackDropdown, setAddToPackDropdown] = useState([]);
   const [browseToAdd, setBrowseToAdd] = useState('');
   
+  useEffect(() => {
+    dispatch({type: 'GET_USER_TRIPS'})
+    dispatch({type: 'GET_USER_CUSTOM'})
+  }, []);
 
   const calculatePackWeight = () => {
     if (!currentPack) {
