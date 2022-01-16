@@ -157,8 +157,8 @@
   [ ] Server Route
   [ ] Functionality
 
-[ ] InfoPage
-  [ ] How to Use PackItApp
+[ 👍 ] InfoPage
+  [ 👍 ] How to Use PackItApp
 
 [ ] AboutPage
   [ ] Elevator Pitch
@@ -171,7 +171,9 @@
   [ ] Customization
 
 <!-- Styling -->
-[ ] Custom Color ThemeProvider
+[ 👍 ] Custom Color ThemeProvider
+  [ 👍 ] Imported and app wrapped
+  [ ] Colors finalized
 
 [ ] Snackbars
   [ ] Save

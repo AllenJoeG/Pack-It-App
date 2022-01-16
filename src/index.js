@@ -42,7 +42,7 @@ const theme = createTheme({
     },
     error: {
       // light: '#598e89', // auto-gen from main if blank
-      main: '#E53935',
+      main: '#EF5350',
       // dark: '#99d5cf', // auto-gen from main if blank
       // contrastText: '#000',
     },
