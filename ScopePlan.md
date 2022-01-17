@@ -162,7 +162,7 @@
 
 [ ] AboutPage
   [ ] Elevator Pitch
-  [ ] Tech Info
+  [ 👍 ] Tech Info
 
 [ ] UserPage
   [ 👍 ] Picture
@@ -173,7 +173,7 @@
 <!-- Styling -->
 [ 👍 ] Custom Color ThemeProvider
   [ 👍 ] Imported and app wrapped
-  [ ] Colors finalized
+  [ 👍 ] Colors finalized
 
 [ ] Snackbars
   [ ] Save
@@ -194,23 +194,29 @@
 
 <!-- Put a bow on it -->
 [ 👍 ] database.sql file with newest table structures
-[ ] Refactor and Modularize Code
-[ ] Readme
-[ ] USER STORY for PRESENT
+[  ] Refactor and Modularize Code
+[  ] Readme
+[ 👍 ] USER STORY for PRESENT
 <!--  -->
 
 
 ## Stretch Goals
 [ ] Headout Functional Programming
-  [ ] squel.js Server-side
+  [ ] Custom Headouts
+  [ ] Custom Categories
+  [ ] on gear and packs
+
+
 [ ] Headout View
   [ ] Reducers & Sagas
-  [ ] Server-side Axios
+  [ ] Axios Routes 
+  [ ] Express Routes
+  [ ] squel.js Server-side
   [ ] MUI & layout
+
 [ ] Unpack Modal Views of gear
   [ ] Charts.JS graph of weight/category
-[ ] Custom Headout Functionality
-[ ] Custom Categories
+
 [ ] MUI Accessibility
 [ ] Wolfram API for weight/caloric ratios
 [ ] Export .csv of pack
