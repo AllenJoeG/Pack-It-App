@@ -42,7 +42,7 @@ function UserPage() {
                 >
                   <Avatar
                     alt={user.username}
-                    // src="/static/images/avatar/1.jpg"
+                    // src="src/components/UserPage/IMG_1369.jpeg"
                     sx={{ width: 175, height: 175 }}
                   />
                     <h2>Welcome back, {user.username}!</h2>
