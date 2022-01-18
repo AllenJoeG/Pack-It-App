@@ -18,6 +18,8 @@ function InfoPage() {
             <Paper elevation={3}
               sx={{backgroundColor: "primary.light", height: '100%' }}  
             >
+
+              
             
               <h2>How to use PackItApp</h2>
 
