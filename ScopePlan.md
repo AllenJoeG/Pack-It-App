@@ -191,6 +191,8 @@
 [ ] Solo add in Pack
   Should ref custom items also
 [ ] Unpack not populating after save pack or refreshing on delete
+[ ] Load pack and then saving
+  should move notes, too.
 
 <!-- Put a bow on it -->
 [ 👍 ] database.sql file with newest table structures
@@ -198,6 +200,8 @@
 [ 👍 ] Readme
 [ 👍 ] USER STORY for PRESENT
 <!--  -->
+
+## Development Roadmap!
 
 
 ## Stretch Goals
