@@ -29,15 +29,7 @@ function LandingPage() {
             sx={{backgroundColor: "primary.light", height: '100%'  }}  
           >
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra lacus
-                ut ex molestie blandit. Etiam et turpis sit amet risus mollis
-                interdum. Suspendisse et justo vitae metus bibendum fringilla sed
-                sed justo. Aliquam sollicitudin dapibus lectus, vitae consequat odio
-                elementum eget. Praesent efficitur eros vitae nunc interdum, eu
-                interdum justo facilisis. Sed pulvinar nulla ac dignissim efficitur.
-                Quisque eget eros metus. Vestibulum bibendum fringilla nibh a
-                luctus. Duis a sapien metus.
+                You have unlocked the majestic and hidden portal to Latinate information!
               </p>
 
               <p>

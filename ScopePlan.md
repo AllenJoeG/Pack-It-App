@@ -202,7 +202,7 @@
 <!--  -->
 
 ## Development Roadmap!
-
+  
 
 ## Stretch Goals
 [ ] Headout Functional Programming
