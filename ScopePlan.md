@@ -175,14 +175,6 @@
   [ 👍 ] Imported and app wrapped
   [ 👍 ] Colors finalized
 
-[ ] Snackbars
-  [ ] Save
-  [ ] Item Create
-  [ ] Item Edit
-  [ ] Pack Edit
-  [ ] Pack Create
-  [ ] Load
-
 [ ] LandingPage splash
   [ ] Register and Log-in Buttons
 
@@ -202,9 +194,14 @@
 <!--  -->
 
 ## Development Roadmap!
-  
+[ ] Snackbars
+  [ ] Save
+  [ ] Item Create
+  [ ] Item Edit
+  [ ] Pack Edit
+  [ ] Pack Create
+  [ ] Load
 
-## Stretch Goals
 [ ] Headout Functional Programming
   [ ] Custom Headouts
   [ ] Custom Categories
@@ -220,6 +217,7 @@
 
 [ ] Unpack Modal Views of gear
   [ ] Charts.JS graph of weight/category
+
 
 [ ] MUI Accessibility
 [ ] Wolfram API for weight/caloric ratios
