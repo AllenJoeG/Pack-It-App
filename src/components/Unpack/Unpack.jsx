@@ -7,9 +7,7 @@ import EditGearModal from '../EditGearModal/EditGearModal';
 
 ///////MUI stuff
 import { styled } from '@mui/material/styles';
-import {Box, Container, Grid, Table, TableBody, TableFooter, TableCell, 
-  tableCellClasses, TableContainer, TableHead, TableRow, Paper, Button,
-  TextField, MenuItem, IconButton, Collapse} from '@mui/material';
+import {Box, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow, Paper, IconButton, Collapse} from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import React from 'react';
@@ -33,8 +31,10 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     border: 0,
   },
 }));
-////////
+///////// end MUI Stuff
 
+//
+//
 function GearRows({tripID}) {
   //Alias Reducers
   const userGear = useSelector((store) => store.userCustomReducer);
@@ -137,6 +137,8 @@ function GearRows({tripID}) {
   )
 };
 
+//
+//
 export default function Unpack() {
   
   useEffect(() => {

@@ -6,8 +6,8 @@ import AddCustomGearModal from '../AddCustomGearModal/AddCustomGearModal';
 
 //MUI stuff
 import { styled } from '@mui/material/styles';
-import {Box, Container, Grid, Table, TableBody, TableCell, tableCellClasses, TableContainer, 
-  TableHead, TableRow, TableFooter, TextField, Paper, Button} from '@mui/material';
+import {Box, Table, TableBody, TableCell, tableCellClasses, TableContainer, 
+  TableHead, TableRow, TableFooter, Button} from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -36,7 +36,10 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const cellStyling = {
   width: '19%',
 };
+///////// end MUI Stuff
 
+//
+//
 export default function Inventory() {
   //alias HOOKS
   const dispatch = useDispatch();

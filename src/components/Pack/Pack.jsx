@@ -1,6 +1,5 @@
 import react, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {useHistory} from 'react-router-dom';
 
 import LoadPackModal from '../LoadPackModal/LoadPackModal';
 import SavePackModal from '../SavePackModal/SavePackModal';
@@ -10,7 +9,6 @@ import { styled } from '@mui/material/styles';
 import {Box, Table, TableBody, TableFooter, TableCell, 
   tableCellClasses, TableContainer, TableHead, TableRow, Paper, Button,
   TextField, MenuItem, Snackbar} from '@mui/material';
-  import HighlightOffIcon from '@mui/icons-material/HighlightOff';
   import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -36,9 +34,10 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const cellStyling = {
   width: '19%',
 };
-
 ///////// end MUI Stuff
 
+// 
+// 
 export default function Pack() {
   //alias HOOKS
   const dispatch = useDispatch();
@@ -132,10 +131,6 @@ export default function Pack() {
       setAddToPackDropdown(consumables.filter(item => (item.category_id == categoryID)))
     }
   }
-
-  // const handleLoadPack = () => {
-
-  // }
 
   return(
     <Box>
