@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-import LogOutButton from '../LogOutButton/LogOutButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 //MUI stuff
-import { Box, Container, Paper, Grid, Avatar, Button } from '@mui/material';
+import { Box, Paper, Grid, Avatar, Button } from '@mui/material';
 import HistoryIcon from '@mui/icons-material/History';
 import CategoryIcon from '@mui/icons-material/Category';
 

@@ -1,11 +1,7 @@
 import * as React from 'react';
 
-import { Link } from 'react-router-dom';
-
-import LogOutButton from '../LogOutButton/LogOutButton';
-
 // MUI Stuff
-import { Stack, AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, Button, Tooltip, MenuItem } from '@mui/material';
+import {AppBar, Toolbar } from '@mui/material';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import BackpackIcon from '@mui/icons-material/Backpack';
