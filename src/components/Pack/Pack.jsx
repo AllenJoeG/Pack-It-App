@@ -1,5 +1,6 @@
 import react, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import toast from 'react-hot-toast';
 
 import LoadPackModal from '../LoadPackModal/LoadPackModal';
 import SavePackModal from '../SavePackModal/SavePackModal';
