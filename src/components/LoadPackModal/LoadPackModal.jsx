@@ -1,5 +1,7 @@
 import react, {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import toast from 'react-hot-toast';
+
 //MUI
 import {TextField, Box, Button, Modal, MenuItem, Grid, Paper} from '@mui/material';
 
@@ -52,6 +54,7 @@ export default function LoadPackModal() {
       })
       dispatch({type: 'INCR_CP_INDEX'});
     }
+    toast.success(`Pack Loaded`);
     //clear input and close
     setPackLoad('');
     handleClose();

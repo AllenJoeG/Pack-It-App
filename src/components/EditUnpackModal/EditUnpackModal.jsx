@@ -1,5 +1,7 @@
 import react, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import toast from 'react-hot-toast';
+
 //MUI
 import {TextField, Box, Button, Typography, Modal, Grid, Paper} from '@mui/material';
 
@@ -35,6 +37,7 @@ export default function EditUnpackModal({tripID, trip_Name, trip_Notes}) {
         trip_notes: tripNotes
       }
     })
+    toast.success(`Updated ${tripName} successfully!`);
     handleClose();
   }
 
@@ -46,6 +49,7 @@ export default function EditUnpackModal({tripID, trip_Name, trip_Notes}) {
     dispatch({
       type: 'GET_USER_TRIPS'
     })
+    toast.success(`Trip and Associated Gear deleted.`)
     handleClose();
   }
 

@@ -1,5 +1,7 @@
 import react, {useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import toast from 'react-hot-toast';
+
 //MUI
 import {TextField, Box, Button, Modal, Grid, Paper} from '@mui/material';
 
@@ -36,6 +38,7 @@ export default function EditGearModal({thingID, thingWeight, thinGN, thinPN}) {
         pack_note: packNote
       }
     })
+    toast.success(`Edit saved!`)
     handleClose();
   }
 

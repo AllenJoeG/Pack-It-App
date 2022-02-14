@@ -1,5 +1,6 @@
 import react, {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import toast from 'react-hot-toast';
 
 //MUI
 import {TextField, Box, Button, Modal, MenuItem, Grid, Paper, Typography} from '@mui/material';
@@ -45,6 +46,7 @@ export default function SavePackModal() {
       }
     })
     setSaved(true);
+    toast.success(`${packName} saved. Review in Headouts.`);
     setChosenPack('');
     setPackName('');
     dispatch({

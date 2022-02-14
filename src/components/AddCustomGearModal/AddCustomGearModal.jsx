@@ -1,5 +1,7 @@
 import react, {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import toast from 'react-hot-toast';
+
 //MUI
 import {TextField, Box, Button, Modal, MenuItem, Grid, Paper, Typography} from '@mui/material';
 
@@ -46,6 +48,7 @@ export default function AddCustomGearModal() {
         category_id
       }
     })
+    toast.success(`Custom Gear created!`)
     // Clear inputs, and toggle for confirmation render
     // setItemAdded(!itemAdded);
     setRequired(false);

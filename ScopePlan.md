@@ -195,12 +195,13 @@
 
 ## Development Roadmap!
 [ ] Snackbars
-  [ ] Save
-  [ ] Item Create
-  [ ] Item Edit
-  [ ] Pack Edit
+  [ 👍 ] Save
+  [ 👍 ] Item Create
+  [ 👍 ] Item Edit
+  [ 👍 ] Pack Edit
   [ ] Pack Create
-  [ ] Load
+  [ 👍 ] Load
+  [ 👍 ] Delete Trip
 
 [ ] Headout Functional Programming
   [ ] Custom Headouts
