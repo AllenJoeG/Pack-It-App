@@ -1,7 +1,7 @@
 import React from 'react';
 
 //MUI stuff
-import { Box, Container, Paper, Grid, } from '@mui/material';
+import { Box, Paper, Grid, } from '@mui/material';
 import CategoryIcon from '@mui/icons-material/Category';
 import BackpackIcon from '@mui/icons-material/Backpack';
 import HikingIcon from '@mui/icons-material/Hiking';

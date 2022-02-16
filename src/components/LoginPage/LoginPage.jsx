@@ -3,7 +3,7 @@ import LoginForm from '../LoginForm/LoginForm';
 import { useHistory } from 'react-router-dom';
 
 //MUI stuff
-import { Box, Container, Paper, Grid, } from '@mui/material';
+import { Box, Paper, Grid, } from '@mui/material';
 
 function LoginPage() {
   const history = useHistory();

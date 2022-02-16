@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import toast from 'react-hot-toast';
 
 //MUI
-import {TextField, Box, Button, Modal, MenuItem, Grid, Paper, Typography} from '@mui/material';
+import {TextField, Box, Button, Modal, MenuItem, Grid, Paper} from '@mui/material';
 
 const style = {
   position: 'absolute',

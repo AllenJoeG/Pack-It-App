@@ -1,7 +1,7 @@
 import React from 'react';
 
 //MUI stuff
-import { Box, Container, Paper, Grid, } from '@mui/material';
+import { Box, Paper, Grid, } from '@mui/material';
 
 function AboutPage() {
   return (

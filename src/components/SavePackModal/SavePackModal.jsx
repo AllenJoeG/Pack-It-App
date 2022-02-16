@@ -1,4 +1,4 @@
-import react, {useState, useEffect} from 'react';
+import react, { useState } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import toast from 'react-hot-toast';
 

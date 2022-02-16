@@ -8,9 +8,10 @@ import SavePackModal from '../SavePackModal/SavePackModal';
 ////////// MUI stuff
 import { styled } from '@mui/material/styles';
 import {Box, Table, TableBody, TableFooter, TableCell, 
-  tableCellClasses, TableContainer, TableHead, TableRow, Paper, Button,
-  TextField, MenuItem, Snackbar} from '@mui/material';
-  import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+  tableCellClasses, TableContainer, TableHead, TableRow, Button,
+  TextField, MenuItem } from '@mui/material';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+////////
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {

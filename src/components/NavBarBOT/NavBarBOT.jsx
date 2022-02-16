@@ -3,11 +3,11 @@ import * as React from 'react';
 // MUI Stuff
 import {AppBar, Toolbar } from '@mui/material';
 
-import MenuIcon from '@mui/icons-material/Menu';
-import BackpackIcon from '@mui/icons-material/Backpack';
-import HikingIcon from '@mui/icons-material/Hiking';
-import HistoryIcon from '@mui/icons-material/History';
-import CategoryIcon from '@mui/icons-material/Category';
+// import MenuIcon from '@mui/icons-material/Menu';
+// import BackpackIcon from '@mui/icons-material/Backpack';
+// import HikingIcon from '@mui/icons-material/Hiking';
+// import HistoryIcon from '@mui/icons-material/History';
+// import CategoryIcon from '@mui/icons-material/Category';
 
 ///////////
 
