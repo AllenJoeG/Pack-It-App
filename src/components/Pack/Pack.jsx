@@ -173,33 +173,47 @@ export default function Pack() {
             </TableRow>
           </TableHead>
 
-          <TableBody>
-            {currentPack.map((item) => {
-              return <StyledTableRow key={item.id}>
-                <StyledTableCell sx = {{ ...cellStyling }} align="right">
-                  {item.name}
+          {(currentPack.length != 0) ? 
+            <TableBody>  
+              {currentPack.map((item) => {
+                return <StyledTableRow key={item.id}>
+                  <StyledTableCell sx = {{ ...cellStyling }} align="right">
+                    {item.name}
+                  </StyledTableCell>
+                  <StyledTableCell sx = {{ ...cellStyling }} align="right">
+                    {item.description}
+                  </StyledTableCell>
+                  <StyledTableCell sx = {{ ...cellStyling }} align="right">
+                  {(categories.filter(cat => (cat.id == item.category_id)))[0].category}
+                  </StyledTableCell>
+                  <StyledTableCell sx = {{ ...cellStyling }} align="right">
+                    {item.weight} oz
+                  </StyledTableCell>
+                  <StyledTableCell sx = {{ ...cellStyling }} align="right">
+                    <Button
+                      variant="contained"
+                      color="error"
+                      size="small"
+                      onClick={() => handleDeleteFromCurrentPack(item.id)}
+                    ><RemoveCircleOutlineIcon/></Button>
+                  </StyledTableCell>
+                </StyledTableRow>
+              })}
+            </TableBody>
+          :
+            <TableBody>
+              <StyledTableRow>
+                <StyledTableCell></StyledTableCell>
+                <StyledTableCell></StyledTableCell>
+                <StyledTableCell>
+                  Empty Pack. Load a pack or add an item to start Packing App!
                 </StyledTableCell>
-                <StyledTableCell sx = {{ ...cellStyling }} align="right">
-                  {item.description}
-                </StyledTableCell>
-                <StyledTableCell sx = {{ ...cellStyling }} align="right">
-                {(categories.filter(cat => (cat.id == item.category_id)))[0].category}
-                </StyledTableCell>
-                <StyledTableCell sx = {{ ...cellStyling }} align="right">
-                  {item.weight} oz
-                </StyledTableCell>
-                <StyledTableCell sx = {{ ...cellStyling }} align="right">
-                  <Button
-                    variant="contained"
-                    color="error"
-                    size="small"
-                    onClick={() => handleDeleteFromCurrentPack(item.id)}
-                  ><RemoveCircleOutlineIcon/></Button>
-                </StyledTableCell>
-
+                <StyledTableCell></StyledTableCell>
+                <StyledTableCell></StyledTableCell>
               </StyledTableRow>
-            })}
-          </TableBody>
+            </TableBody>
+          } {/* End Conditional Render */}
+
           {/* TABLE FOOTER CONTAINS LINE ITEM ADD FUNCTIONALITY */}
           <TableFooter style={{left: 0, bottom: 0, zIndex: 2, position: 'sticky'}}>
             <StyledTableRow>
