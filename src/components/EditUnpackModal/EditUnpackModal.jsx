@@ -1,9 +1,9 @@
-import react, {useEffect, useState} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import {useState} from 'react';
+import {useDispatch} from 'react-redux';
 import toast from 'react-hot-toast';
 
 //MUI
-import {TextField, Box, Button, Typography, Modal, Grid, Paper} from '@mui/material';
+import {TextField, Box, Button, Modal, Grid, Paper} from '@mui/material';
 
 const style = {
   position: 'absolute',
